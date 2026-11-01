@@ -1,0 +1,51 @@
+/* Theme: Golden Peak (taken from the STK IF logo).
+   The logo's gold and black, the grey mountains, and the orange morning sun behind the tahr. */
+:root {
+    --t-scheme: light;
+    --t-bg: #fbf8f1;            /* warm ivory */
+    --t-soft: #f8ecc4;          /* pale logo gold */
+    --t-soft-2: #f8f3e5;
+    --t-band: linear-gradient(180deg, #f3eee2 0%, #faf7f0 100%);   /* light mountain stone */
+    --t-card: #ffffff;
+    --t-event-card: #fffbf1;
+    --t-input-bg: #fffdf8;
+    --t-heading: #1f1a15;       /* logo black */
+    --t-text: #2a241e;
+    --t-muted: #5f5a50;         /* logo mountain grey */
+    --t-line: #ebe2c9;
+    --t-accent: #d9a520;        /* logo gold */
+    --t-accent-dark: #8a6418;   /* deep gold, readable on ivory */
+    --t-on-accent: #ffffff;
+    --t-gold: #f1c232;
+    --t-cta: linear-gradient(135deg, #2e2720 0%, #1c1713 60%, #0f0c0a 100%);   /* black badge like the logo */
+    --t-cta-hover: linear-gradient(135deg, #3a3128 0%, #241e18 60%, #15110e 100%);
+    --t-cta-text: #f6cc48;      /* gold lettering like "STKIF" */
+    --t-cta-icon: #ffffff;
+    --t-cta-shadow: rgba(31, 26, 21, 0.28);
+    --t-btn2: linear-gradient(135deg, #f8d873 0%, #f1c232 100%);
+    --t-btn2-hover: linear-gradient(135deg, #f4cd55 0%, #e6b11d 100%);
+    --t-btn2-text: #1f1a15;
+    --t-header-bg: rgba(251, 248, 241, 0.88);
+    --t-footer-1: #2b2620;      /* dark mountains */
+    --t-footer-2: #15120f;
+    --t-footer-text: #f3ead6;
+    --t-shadow-color: rgba(60, 45, 20, 0.10);
+    --t-shadow: 0 6px 18px rgba(60, 45, 20, 0.08);
+    --t-shadow-hover: 0 16px 34px rgba(60, 45, 20, 0.16);
+    --t-overlay: rgba(20, 16, 12, 0.76);
+    --t-body-glow: radial-gradient(1100px 480px at 50% -150px, rgba(246, 181, 46, 0.22), transparent 70%), linear-gradient(180deg, #f8f1df 0px, #fbf8f1 520px);
+    --t-hero-overlay: radial-gradient(65% 55% at 50% 100%, rgba(246, 181, 46, 0.38), transparent 70%), linear-gradient(180deg, rgba(251, 246, 232, 0.60) 0%, rgba(251, 248, 241, 0.68) 55%, rgba(251, 248, 241, 0.85) 100%);
+    --t-sun: #f6b52e;           /* the sun behind the tahr */
+    --t-mtn-1: #e6dfcf;
+    --t-mtn-2: #9b958a;
+    --t-mtn-3: #504d47;
+    --t-cloud-opacity: 1;       /* how strongly the painted clouds show on The Climb */
+    --t-sky-dawn: linear-gradient(180deg, #2a2240 0%, #6b4a6e 34%, #d98b6a 66%, #f6c27a 100%);   /* The Climb: sky at sunrise */
+    --t-sky-day: linear-gradient(180deg, #a9bccb 0%, #dfe2dc 46%, #f8e6bf 100%);   /* The Climb: sky once the sun is up */
+    --t-sky-paint: 1;   /* The Climb: how much of the painted sky shows (0 = only the colours above) */
+    --t-silk: #7a1f2b;           /* Tamil touches: temple-maroon silk */
+    --t-leaf: #4f7a2a;           /* mango leaves of the thoranam garland */
+    --t-marigold: #f29a1f;       /* marigold flowers */
+    --t-palm: #e8d3a0;           /* palm-leaf (olai) manuscript */
+    --t-palm-ink: #4a3218;        /* the writing on it */
+}

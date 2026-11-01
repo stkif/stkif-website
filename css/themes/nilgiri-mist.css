@@ -1,0 +1,49 @@
+/* Theme: Nilgiri Mist. Fresh morning mist over the green Nilgiri hills, with golden sun. Calm and modern. */
+:root {
+    --t-scheme: light;
+    --t-bg: #f4f8f5;
+    --t-soft: #e1efe7;
+    --t-soft-2: #edf5f0;
+    --t-band: linear-gradient(180deg, #e7f2ec 0%, #f2f8f4 100%);
+    --t-card: #ffffff;
+    --t-event-card: #f7fbf8;
+    --t-input-bg: #fbfdfc;
+    --t-heading: #12402f;
+    --t-text: #1f2d27;
+    --t-muted: #4f6158;
+    --t-line: #d3e4da;
+    --t-accent: #2f8f6a;
+    --t-accent-dark: #1d6b4e;
+    --t-on-accent: #ffffff;
+    --t-gold: #e9a93b;
+    --t-cta: linear-gradient(135deg, #1d6b4e 0%, #16573f 55%, #124a37 100%);
+    --t-cta-hover: linear-gradient(135deg, #175c42 0%, #114a35 55%, #0d3d2c 100%);
+    --t-cta-text: #ffffff;
+    --t-cta-shadow: rgba(18, 74, 55, 0.28);
+    --t-btn2: linear-gradient(135deg, #ffe1a3 0%, #f7c871 100%);
+    --t-btn2-hover: linear-gradient(135deg, #fbd38a 0%, #f0b84f 100%);
+    --t-btn2-text: #3a2a07;
+    --t-header-bg: rgba(244, 248, 245, 0.85);
+    --t-footer-1: #1d5a44;
+    --t-footer-2: #123d2f;
+    --t-footer-text: #eef7f2;
+    --t-shadow-color: rgba(18, 64, 47, 0.10);
+    --t-shadow: 0 6px 18px rgba(18, 64, 47, 0.08);
+    --t-shadow-hover: 0 16px 34px rgba(18, 64, 47, 0.16);
+    --t-overlay: rgba(10, 35, 26, 0.72);
+    --t-body-glow: radial-gradient(1100px 480px at 85% -140px, rgba(233, 169, 59, 0.18), transparent 70%), linear-gradient(180deg, #e8f2ec 0px, #f4f8f5 520px);
+    --t-hero-overlay: radial-gradient(60% 50% at 80% 0%, rgba(255, 214, 140, 0.35), transparent 70%), linear-gradient(180deg, rgba(232, 242, 236, 0.55) 0%, rgba(240, 247, 243, 0.68) 55%, rgba(244, 248, 245, 0.85) 100%);
+    --t-sun: #f2c26b;
+    --t-mtn-1: #cfe3d8;
+    --t-mtn-2: #8fbca5;
+    --t-mtn-3: #3f8065;
+    --t-cloud-opacity: 1;       /* how strongly the painted clouds show on The Climb */
+    --t-sky-dawn: linear-gradient(180deg, #22323a 0%, #4f6e6a 36%, #c9a46a 70%, #f2d79a 100%);   /* The Climb: sky at sunrise */
+    --t-sky-day: linear-gradient(180deg, #b3cfcb 0%, #e2ede8 48%, #f6eac4 100%);   /* The Climb: sky once the sun is up */
+    --t-sky-paint: 0.8;   /* The Climb: how much of the painted sky shows (0 = only the colours above) */
+    --t-silk: #6e2434;           /* Tamil touches: temple-maroon silk */
+    --t-leaf: #3f7a3a;           /* mango leaves of the thoranam garland */
+    --t-marigold: #eea12a;       /* marigold flowers */
+    --t-palm: #e6d2a0;           /* palm-leaf (olai) manuscript */
+    --t-palm-ink: #3f2e18;        /* the writing on it */
+}

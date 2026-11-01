@@ -1,0 +1,263 @@
+/* ==========================================================
+   Theme base: applies the active theme's colours to every page.
+   The colours themselves live in css/themes/<name>.css.
+   Pick the theme in css/theme.css (one line).
+   ========================================================== */
+
+:root {
+    /* modern.css and about-styles.css read these names */
+    --stk-green: var(--t-heading);
+    --stk-green-2: var(--t-accent-dark);
+    --stk-gold: var(--t-gold);
+    --stk-gold-soft: var(--t-soft);
+    --stk-cream: var(--t-bg);
+    --stk-ink: var(--t-text);
+    --stk-shadow: var(--t-shadow);
+    --stk-shadow-hover: var(--t-shadow-hover);
+    --primary-color: var(--t-accent-dark);
+    --primary-hover: var(--t-heading);
+    --text-main: var(--t-text);
+    --text-muted: var(--t-muted);
+    --light-bg: var(--t-soft-2);
+    --border-color: var(--t-line);
+    --accent-orange: var(--t-accent);
+    --accent-orange-bg: var(--t-soft-2);
+    color-scheme: var(--t-scheme, light);
+}
+
+/* ---------- Page ---------- */
+
+body {
+    background-color: var(--t-bg);
+    background-image: var(--t-body-glow);
+    background-repeat: no-repeat;
+    color: var(--t-text);
+}
+
+h1 {
+    color: var(--t-heading);
+    letter-spacing: -0.5px;
+}
+
+main h1,
+#activities h1 {
+    background: linear-gradient(120deg, var(--t-heading) 20%, var(--t-accent-dark) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+}
+
+h2 { color: var(--t-accent-dark); }
+main a { color: var(--t-text); }
+main p { color: inherit; }
+
+::selection { background: var(--t-soft); color: var(--t-heading); }
+
+/* ---------- Header ---------- */
+
+header {
+    background: var(--t-header-bg) !important;
+    box-shadow: 0 1px 0 var(--t-line), 0 8px 24px var(--t-shadow-color) !important;
+}
+
+header h1 { color: var(--t-text); }
+ul.site-menu a { color: var(--t-text) !important; }
+
+ul.site-menu a:hover,
+ul.site-menu a.is-current {
+    background: var(--t-soft);
+    color: var(--t-heading) !important;
+}
+
+ul.site-menu a.menu-cta,
+ul.site-menu a.menu-cta.is-current {
+    background: var(--t-cta);
+    color: var(--t-cta-text) !important;
+    box-shadow: 0 6px 16px var(--t-cta-shadow);
+}
+
+ul.site-menu a.menu-cta:hover { background: var(--t-cta-hover); }
+ul.site-menu a.menu-cta .icon-goat,
+.button-register .icon-goat,
+form button[type=submit] .icon-goat { color: var(--t-cta-icon, var(--t-cta-text)); }
+
+.lang-switch { background: var(--t-soft-2); border-color: var(--t-line); }
+.lang-switch button { color: var(--t-muted); }
+.lang-switch button:hover { color: var(--t-heading); background: var(--t-card); }
+.lang-switch button[aria-pressed="true"] { background: var(--t-accent-dark); color: var(--t-on-accent); }
+
+#menu-toggle span { background: var(--t-heading); }
+#menu-toggle:hover { background: var(--t-soft); }
+
+header.compact ul.site-menu {
+    background: var(--t-card);
+    box-shadow: 0 18px 40px var(--t-shadow-color);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    background: linear-gradient(180deg, var(--t-footer-1) 0%, var(--t-footer-2) 100%);
+    border-top: 0;
+}
+
+    footer ul li, footer a, p#footer-disclaimer { color: var(--t-footer-text); }
+    footer a:hover { color: var(--t-gold); }
+
+/* ---------- Home ---------- */
+
+.hero-slideshow::after { background: var(--t-hero-overlay); }
+.hero-title { color: var(--t-heading); }
+.hero-subtitle { color: var(--t-text); text-shadow: 0 0 12px var(--t-bg); }
+
+.button-register,
+.button-primary {
+    background: var(--t-cta) !important;
+    border-color: transparent !important;
+    color: var(--t-cta-text) !important;
+    box-shadow: 0 8px 20px var(--t-cta-shadow);
+}
+
+.button-register:hover,
+.button-primary:hover { background: var(--t-cta-hover) !important; }
+
+.button-secondary { color: var(--t-accent-dark); border-color: var(--t-accent); }
+.button-secondary:hover { background-color: var(--t-soft); }
+
+.introduction-heading { color: var(--t-heading); }
+.about-description { color: var(--t-muted); }
+
+#activities { background: var(--t-band); }
+
+.activity-card {
+    background-color: var(--t-card) !important;
+    box-shadow: var(--t-shadow);
+    border: 1px solid var(--t-line);
+    border-radius: 18px !important;
+}
+
+    .activity-card h2 { color: var(--t-accent-dark); }
+    .activity-card p { color: var(--t-muted); }
+
+/* ---------- Events ---------- */
+
+#events-header p { color: var(--t-muted); }
+
+.event-card-container {
+    background-color: var(--t-event-card);
+    box-shadow: var(--t-shadow);
+    border: 1px solid var(--t-line);
+    border-radius: 20px !important;
+}
+
+.card-title { color: var(--t-heading); }
+.card-txt { color: var(--t-muted); }
+.card-time-hour-container { color: var(--t-text); border-top-color: var(--t-line); }
+.card-calendar-svg, .card-place-svg { filter: var(--t-icon-filter, none); }
+
+.card-button { background: var(--t-btn2); color: var(--t-btn2-text); }
+.card-button:hover { background: var(--t-btn2-hover); }
+
+/* ---------- About ---------- */
+
+main#about-page { color: var(--t-text); }
+.about-lead { color: var(--t-text); }
+
+.card {
+    background-color: var(--t-card) !important;
+    border-color: var(--t-line) !important;
+    border-radius: 20px !important;
+    box-shadow: var(--t-shadow);
+}
+
+.history-card h2, .heritage-card h2, .card h2 { color: var(--t-heading); }
+.history-card p, .card p, .lead-text, .heritage-item p, .feature-list li { color: var(--t-muted); }
+.lead-text { color: var(--t-text); }
+.motto-banner { background-color: var(--t-soft-2); border-left-color: var(--t-accent) !important; }
+.motto-label { color: var(--t-accent-dark); }
+.motto-quote { color: var(--t-accent-dark) !important; }
+.motto-card { background: linear-gradient(180deg, var(--t-card) 0%, var(--t-soft-2) 100%) !important; border-top-color: var(--t-accent) !important; }
+.motto-card h2 { color: var(--t-accent-dark); }
+.card-badge, .motto-badge { background-color: var(--t-soft) !important; color: var(--t-accent-dark) !important; }
+.heritage-item { background-color: var(--t-soft-2); border-color: var(--t-line); }
+.heritage-item h3 { color: var(--t-accent-dark); }
+.emblem-box { background-color: var(--t-soft-2); border-color: var(--t-gold); }
+.emblem-quote { color: var(--t-heading); }
+.feature-list li::before { color: var(--t-accent); }
+.notice-banner { background-color: var(--t-soft-2); border-color: var(--t-gold); }
+.notice-banner p { color: var(--t-text) !important; }
+.notice-tag { background-color: var(--t-accent-dark) !important; color: var(--t-on-accent) !important; }
+
+/* ---------- Gallery ---------- */
+
+div.gallery-image-container {
+    background-color: var(--t-card);
+    box-shadow: var(--t-shadow);
+    border-radius: 18px;
+}
+
+    div.gallery-image-container p { color: var(--t-muted); }
+
+/* ---------- Join us ---------- */
+
+.join-page { color: var(--t-text); }
+
+form {
+    background-color: var(--t-card) !important;
+    box-shadow: var(--t-shadow) !important;
+    border: 1px solid var(--t-line);
+    border-radius: 20px !important;
+    color: var(--t-text);
+}
+
+form input[type=text], form input[type=email], form input[type=tel], form input[type=date], form select {
+    background-color: var(--t-input-bg);
+    color: var(--t-text);
+    border: 1px solid var(--t-line);
+    border-radius: 10px;
+}
+
+form input:focus, form select:focus { outline: 2px solid var(--t-accent); outline-offset: 1px; }
+
+form button[type=submit] {
+    background: var(--t-cta) !important;
+    color: var(--t-cta-text) !important;
+}
+
+form button[type=submit]:hover { background: var(--t-cta-hover) !important; }
+
+/* ---------- Members ---------- */
+
+p.members-lead { color: var(--t-muted); }
+
+article.member-card {
+    background-color: var(--t-card);
+    border-top-color: var(--t-accent);
+    box-shadow: var(--t-shadow);
+    border-radius: 20px;
+}
+
+    div.member-photo {
+        background: var(--t-cta);
+        border-color: var(--t-bg);
+        box-shadow: 0 0 0 3px var(--t-gold);
+    }
+
+    span.member-initials { color: var(--t-cta-text); }
+    h3.member-name { color: var(--t-heading); }
+    p.member-position { color: var(--t-accent-dark); }
+    p.member-about { color: var(--t-muted); }
+    ul.member-contacts { border-top-color: var(--t-line); }
+    ul.member-contacts a { color: var(--t-text); }
+    span.member-icon { color: var(--t-accent-dark); }
+    ul.member-contacts a:hover { color: var(--t-accent-dark); }
+
+/* ---------- Event poster popup ---------- */
+
+#poster-overlay { background-color: var(--t-overlay); }
+.poster-close { color: var(--t-heading); background-color: var(--t-card); }
+.poster-close:hover { background-color: var(--t-soft); }
+
+/* ---------- Focus rings ---------- */
+
+a:focus-visible, button:focus-visible, .button:focus-visible { outline-color: var(--t-gold) !important; }

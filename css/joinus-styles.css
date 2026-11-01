@@ -1,0 +1,193 @@
+main#join-page h1 {
+    text-align: center;
+}
+
+main#join-page > p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgb(207, 206, 199)
+}
+
+label[for="fullname"],
+label[for="email"],
+label[for="phone"],
+label[for="dob"],
+label[for="gender"] {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#fullname,
+#email ,
+#phone,
+#dob,
+#gender,
+#gender-other {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+form label:not([for]) {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 12px;
+    gap: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #102d3d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1b465c;
+}
+
+.join-page {
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: 120px auto 0px;
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.join-info {
+    width: 50%;
+}
+
+.join-form-side {
+    width: 100%;
+}
+
+
+.join-form-side > p {
+    margin-bottom: 40px;
+}
+
+
+@media (max-width: 950px) {
+
+    .join-page {
+    padding-top: 100px;
+    width: 100%;
+    margin-top: 60px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+
+.join-info {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 0px;
+}
+
+.join-form-side {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+    main#join-page {
+        padding: 20px;
+        padding-bottom: 40px;
+    }
+
+    form {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #fullname,
+    #email,
+    #phone,
+    #dob,
+    #gender,
+    #gender-other {
+        width: 100%;
+    }
+
+    form label:not([for]) {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+.join-page {
+    padding-top: 60px;
+}
+
+section#membership {
+    padding-bottom: 10px;
+}
+
+section#volunteer-info {
+    padding-bottom: 10px;
+}
+}
+
+/* Form status message */
+#form-status {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#form-status.success {
+    color: #1e6b3a;
+}
+
+#form-status.error {
+    color: #b3261e;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+#gender-other[hidden] {
+    display: none;
+}
+
+/* Consent checkbox: box beside left-aligned text */
+#joinForm label.consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
+
+#joinForm label.consent input {
+    flex-shrink: 0;
+    margin-top: 3px;
+}

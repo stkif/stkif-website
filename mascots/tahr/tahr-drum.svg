@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 -40 212 182" class="mascot-svg" role="img" aria-label="Nilgiri tahr mascot">
+<path d="M14 138 Q100 136 214 138 L214 144 L14 144 Z" fill="#9fb06a"/><path d="M30 138 l3 -7 l2 7 M160 145 l3 -8 l2 8 M110 142 l2 -6 l2 6" stroke="#7d8f4f" stroke-width="2" stroke-linecap="round" fill="none"/><g class="tahr-notes" fill="#e3a63f">
+<path d="M28 40 v-16 l12 -3 v16" stroke="#e3a63f" stroke-width="2.4" fill="none"/><ellipse cx="25" cy="-6" rx="4.5" ry="3.4"/><ellipse cx="37" cy="37" rx="4.5" ry="3.4"/>
+<path d="M200 0 v-14" stroke="#e3a63f" stroke-width="2.4"/><ellipse cx="187" cy="22" rx="4.2" ry="3.2"/><path d="M200 -14 q6 2 6 8" stroke="#e3a63f" stroke-width="2.2" fill="none"/>
+</g><g class="tahr tahr-wave"><g class="tahr-legs-back"><ellipse cx="72" cy="118" rx="22" ry="15" fill="#432419"/><path d="M80 126 L104 132" stroke="#432419" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="98.5" y="128.5" width="15" height="9" rx="3" fill="#2b1712" transform="rotate(0 106 133)"/></g><g transform="rotate(-24 66 116)"><g class="tahr-body">
+<path class="tahr-tail" d="M50 74 C42 70 40 62 44 58 C48 62 52 66 54 70 Z" fill="#432419"/>
+<path d="M52 76 C56 61 76 55 98 56 L124 57 C141 58 151 70 149 85 C147 100 135 108 120 108 L70 108 C55 108 47 96 52 76 Z" fill="#5b3427"/>
+<path d="M70 104 C90 110 115 110 134 102 C128 106 122 108 116 108 L72 108 Z" fill="#7b4a35" opacity=".7"/>
+<path d="M66 64 C82 55 112 55 128 61 C122 72 88 74 68 70 Z" fill="#d9c6b0"/></g><g class="tahr-head">
+<path d="M118 66 C124 50 132 40 142 34 L160 38 C158 52 156 66 151 80 Z" fill="#5b3427"/>
+<path d="M136 38 C138 24 150 18 161 22 C168 25 172 32 177 40 C180 46 177 52 171 52 L160 51 C149 50 138 47 136 38 Z" fill="#5b3427"/>
+<path d="M164 40 C169 41 175 43 177 46 C177 50 174 52 170 52 L161 51 C163 48 164 44 164 40 Z" fill="#8a5a44"/>
+<path d="M166 49 q4 2 7 -1" stroke="#2b1712" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+<path d="M140 30 L124 27 L139 38 Z" fill="#432419"/>
+<path d="M150 27 C148 11 133 3 115 12 C131 9 141 17 142 31 Z" fill="#e3a63f" stroke="#b17829" stroke-width="1.6" stroke-linejoin="round"/><path d="M136 11 l1.5 4.5 M129 10.5 l0.5 4.5 M143 15 l-2.5 3.2 M146 21 l-3.5 2" stroke="#b17829" stroke-width="1.5" stroke-linecap="round"/>
+<g class="tahr-eye"><circle cx="157" cy="32" r="4.4" fill="#1b0f0b"/><circle cx="158.6" cy="30.6" r="1.6" fill="#fff7ef"/></g>
+<path d="M151 26 q5 -3 10 0" stroke="#432419" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+</g></g><g class="tahr-legs-front"><path d="M126 82 L132 132" stroke="#5b3427" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="125.5" y="129.5" width="15" height="9" rx="3" fill="#2b1712" transform="rotate(0 133 134)"/></g><g class="tahr-drum"><ellipse cx="160" cy="104" rx="10" ry="30" fill="#b5651d" stroke="#6b3a12" stroke-width="3"/>
+<ellipse cx="163" cy="104" rx="8" ry="27" fill="#f3dcb0"/><path d="M155 76 L170 132" stroke="#6b3a12" stroke-width="1.5" opacity=".4"/></g><g class="tahr-wave-leg tahr-drum-arm"><path d="M138 76 Q160 70 168 58" stroke="#432419" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/><ellipse cx="169" cy="55" rx="5.5" ry="7" fill="#2b1712" transform="rotate(30 169 55)"/><path d="M168 56 L190 76" stroke="#3a2a1e" stroke-width="3.5" stroke-linecap="round"/></g></g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="goat-svg">
+  <g class="goat-body">
+  <g class="goat-leg goat-leg-back">
+  <path d="M19 40l-2 14M25 41l1 13" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" fill="none"/></g>
+  <g class="goat-leg goat-leg-front">
+  <path d="M37 40l-1 14M42 39l2 15" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" fill="none"/></g>
+  <path class="goat-tail" d="M16 30c-2-2-2-5 0-7 1 2 2 4 2 6z" fill="currentColor"/>
+  <path d="M15 32c1-5 7-7 15-7h7c5 0 8 3 7 8-1 6-5 9-11 9H22c-5 0-8-4-7-10z" fill="currentColor"/>
+  <path d="M20 31c5 3 13 3 20-1" stroke="#FFBF00" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <g class="goat-head">
+  <path d="M35 28l6-14h6l-1 17z" fill="currentColor"/>
+  <path d="M41 13c3-4 9-4 11 0l5 6c1 2 0 4-2 4h-5c-4 0-7-2-9-6z" fill="currentColor"/>
+  <path d="M43 14l-6-2 4 5z" fill="currentColor"/>
+  <path d="M45 12C42 3 32 0 25 6" stroke="#FFBF00" stroke-width="3.6" stroke-linecap="round" fill="none"/>
+  <path d="M48 12C46 5 40 3 34 6" stroke="#FFBF00" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".8"/>
+  <circle cx="48.5" cy="15.5" r="1.3" fill="#FFBF00"/>
+  <path d="M53 22l-1 5-2-4z" fill="currentColor"/></g></g>
+  <g class="goat-notes" fill="#FFBF00">
+  <circle cx="8" cy="16" r="2"/>
+  <circle cx="60" cy="8" r="1.6"/>
+  <circle cx="12" cy="7" r="1.3"/></g>
+</svg>

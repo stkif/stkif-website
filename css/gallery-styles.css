@@ -1,0 +1,39 @@
+/* Gallery page */
+
+main#gallery-page {
+  padding: 0 10%;
+}
+
+section#gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#gallery .gallery-grid-container {
+  columns: 3 300px;
+  column-gap: 25px;
+  margin: 0 auto;
+}
+
+  div.gallery-image-container {
+    margin: 0 10px 10px 0;
+    display: inline-block;
+    width: 100%;
+    padding: 7px;
+    background-color: #FFF;
+    border-radius: 14px;
+    box-shadow: 0 4px 8px rgb(207, 206, 199);
+  }
+
+    div.gallery-image-container img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    div.gallery-image-container p {
+      margin: 5px 0;
+      padding: 0;
+      text-align: center;
+    }

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" class="mascot-svg" role="img" aria-label="Nilgiri tahr mascot">
+<circle class="ridge-sun" cx="1150" cy="58" r="46" fill="var(--t-sun, #f6b26b)" opacity=".9"/>
+<path d="M0 120 C120 70 210 96 320 66 C430 36 520 92 640 74 C760 56 860 30 980 58 C1100 86 1190 40 1300 52 C1370 60 1410 74 1440 80 L1440 160 L0 160 Z" fill="var(--t-mtn-1, #f6cdbb)"/>
+<path d="M0 132 C140 96 240 120 360 102 C480 84 560 116 700 106 C840 96 920 72 1040 92 C1110 104 1150 72 1186 66 C1220 72 1260 96 1340 100 C1390 102 1420 108 1440 110 L1440 160 L0 160 Z" fill="var(--t-mtn-2, #e7a48c)"/>
+</svg>

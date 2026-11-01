@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="mascot-svg" role="img" aria-label="Nilgiri tahr mascot">
+<g class="tahr-face">
+<circle cx="100" cy="100" r="96" fill="#ffe6d6"/>
+<path d="M78 62 C64 30 36 22 18 40 C40 34 56 46 66 72 Z" fill="#e3a63f" stroke="#b17829" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M122 62 C136 30 164 22 182 40 C160 34 144 46 134 72 Z" fill="#e3a63f" stroke="#b17829" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M66 82 L28 76 L60 100 Z M134 82 L172 76 L140 100 Z" fill="#432419"/>
+<path d="M100 54 C126 54 140 76 138 104 C136 134 122 168 100 170 C78 168 64 134 62 104 C60 76 74 54 100 54 Z" fill="#5b3427"/>
+<path d="M100 60 C108 60 112 70 110 82 L100 92 L90 82 C88 70 92 60 100 60 Z" fill="#432419" opacity=".5"/>
+<path d="M82 146 C86 130 114 130 118 146 C118 160 110 170 100 170 C90 170 82 160 82 146 Z" fill="#8a5a44"/>
+<ellipse cx="92" cy="146" rx="3" ry="4" fill="#2b1712"/><ellipse cx="108" cy="146" rx="3" ry="4" fill="#2b1712"/>
+<path d="M93 158 q7 5 14 0" stroke="#2b1712" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+<g class="tahr-eye"><circle cx="82" cy="106" r="7" fill="#1b0f0b"/><circle cx="84.5" cy="103.5" r="2.4" fill="#fff7ef"/></g>
+<g class="tahr-eye"><circle cx="118" cy="106" r="7" fill="#1b0f0b"/><circle cx="120.5" cy="103.5" r="2.4" fill="#fff7ef"/></g>
+<path d="M72 94 q9 -6 18 -1 M110 93 q9 -5 18 1" stroke="#432419" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+</g>
+</svg>

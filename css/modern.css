@@ -1,0 +1,480 @@
+/* Modern look: icons, menu, buttons and motion.
+   Loaded on every page after the page's own styles. Works together with js/site.js. */
+
+:root {
+    --stk-green: #083D16;
+    --stk-green-2: #305739;
+    --stk-gold: #FFBF00;
+    --stk-gold-soft: #FFF3CC;
+    --stk-cream: #fffcf0;
+    --stk-ink: #141414;
+    --stk-radius: 14px;
+    --stk-shadow: 0 6px 18px rgba(20, 20, 20, 0.08);
+    --stk-shadow-hover: 0 14px 30px rgba(8, 61, 22, 0.16);
+}
+
+/* ---------- Icons ---------- */
+
+.icon {
+    display: inline-flex;
+    width: 1.25em;
+    height: 1.25em;
+    flex-shrink: 0;
+}
+
+    .icon svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    }
+
+    .icon img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Simple-picture fallback (only when the site is opened straight from a computer):
+       make icons on dark buttons white so they stay visible */
+    .menu-cta .icon img.icon-fallback,
+    .button-register .icon img.icon-fallback,
+    form button[type=submit] .icon img.icon-fallback {
+        filter: brightness(0) invert(1);
+    }
+
+    /* Your own small picture as an icon (set in mascots/mascot-list.js): it dances too */
+    .icon-picture {
+        width: 1.9em;
+        height: 1.9em;
+        margin: -0.4em 0 -0.4em -0.25em;
+    }
+
+        .icon-picture img {
+            object-fit: contain;
+            transform-origin: 50% 85%;
+            animation: pic-dance 1.6s ease-in-out infinite;
+        }
+
+        a:hover .icon-picture img,
+        button:hover .icon-picture img,
+        a:focus-visible .icon-picture img { animation: pic-dance-fast 0.5s ease-in-out infinite; }
+
+@keyframes pic-dance { 0%, 100% { transform: rotate(0) translateY(0); } 25% { transform: rotate(-10deg) translateY(-1px); } 50% { transform: rotate(0) translateY(-3px); } 75% { transform: rotate(10deg) translateY(-1px); } }
+@keyframes pic-dance-fast { 0%, 100% { transform: rotate(-12deg) translateY(0); } 50% { transform: rotate(12deg) translateY(-4px) scale(1.08); } }
+
+    .icon-goat {
+        width: 2em;
+        height: 2em;
+        margin: -0.45em 0 -0.45em -0.15em;
+    }
+
+.has-icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+/* ---------- Header ---------- */
+
+header {
+    background: rgba(255, 255, 255, 0.86) !important;
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    backdrop-filter: saturate(160%) blur(12px);
+    box-shadow: 0 1px 0 rgba(8, 61, 22, 0.08), 0 8px 24px rgba(20, 20, 20, 0.06) !important;
+}
+
+    header #logo img {
+        transition: transform 0.4s ease;
+    }
+
+    header #logo:hover img {
+        transform: rotate(-8deg) scale(1.06);
+    }
+
+ul.site-menu {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+    ul.site-menu li {
+        float: none !important;
+        padding: 0 !important;
+    }
+
+    ul.site-menu li.menu-sep {
+        display: none !important;
+    }
+
+    ul.site-menu a {
+        white-space: nowrap;
+        padding: 9px 14px;
+        border-radius: 999px;
+        font-weight: 500;
+        color: var(--stk-ink) !important;
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        min-height: 24px;
+    }
+
+    ul.site-menu a:hover {
+        background: var(--stk-gold-soft);
+        color: var(--stk-green) !important;
+    }
+
+    ul.site-menu a.is-current {
+        background: var(--stk-gold-soft);
+        color: var(--stk-green) !important;
+        font-weight: 700;
+    }
+
+    ul.site-menu a:focus-visible {
+        outline: 3px solid var(--stk-gold);
+        outline-offset: 2px;
+    }
+
+    /* Join Us stands out as the main call to action */
+    ul.site-menu a.menu-cta {
+        background: var(--stk-green);
+        color: #fff !important;
+        font-weight: 700;
+        margin-left: 8px;
+        padding: 9px 18px 9px 14px;
+        box-shadow: 0 4px 12px rgba(8, 61, 22, 0.25);
+    }
+
+    ul.site-menu a.menu-cta:hover,
+    ul.site-menu a.menu-cta.is-current {
+        background: #0c5420;
+        color: #fff !important;
+        transform: translateY(-1px);
+    }
+
+    ul.site-menu a.menu-cta .icon-goat {
+        color: #fff;
+    }
+
+/* Mobile menu button (built by site.js from the hamburger image) */
+
+#menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+    #menu-toggle span {
+        display: block;
+        height: 2.5px;
+        width: 100%;
+        background: var(--stk-ink);
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    #menu-toggle:hover {
+        background: var(--stk-gold-soft);
+    }
+
+    #menu-toggle:focus-visible {
+        outline: 3px solid var(--stk-gold);
+    }
+
+    header.menu-open #menu-toggle span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    header.menu-open #menu-toggle span:nth-child(2) { opacity: 0; }
+    header.menu-open #menu-toggle span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* Compact header: used on phones, and whenever the menu does not fit on one line
+   (site.js adds the "compact" class, e.g. for long Tamil words on a laptop) */
+    header.compact #menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    header.compact ul.site-menu {
+        position: absolute;
+        top: 100%;
+        left: 12px;
+        right: 12px;
+        margin-top: 8px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 18px 40px rgba(20, 20, 20, 0.18);
+        display: none !important;
+    }
+
+    header.compact.menu-open ul.site-menu {
+        display: flex !important;
+        animation: menu-drop 0.22s ease-out;
+    }
+
+    header.compact ul.site-menu li {
+        display: block !important;
+        font-size: 1rem !important;
+        text-align: left;
+    }
+
+    header.compact ul.site-menu a {
+        display: flex !important;
+        justify-content: flex-start;
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+
+    header.compact ul.site-menu a.menu-cta {
+        margin: 6px 0 0;
+        justify-content: center;
+    }
+
+
+@keyframes menu-drop {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: none; }
+}
+
+/* ---------- Language switcher (built by js/i18n.js) ---------- */
+
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+    margin-left: 14px;
+    border-radius: 999px;
+    background: #f1efe6;
+    border: 1px solid rgba(8, 61, 22, 0.08);
+    flex-shrink: 0;
+}
+
+    .lang-switch button {
+        border: 0;
+        background: transparent;
+        font: inherit;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        color: #4a4a4a;
+        min-width: 36px;
+        height: 32px;
+        padding: 0 10px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .lang-switch button[lang="ta"] {
+        font-family: 'Noto Sans Tamil', sans-serif;
+        font-size: 0.85rem;
+    }
+
+    .lang-switch button:hover {
+        color: var(--stk-green);
+        background: var(--stk-gold-soft);
+    }
+
+    .lang-switch button[aria-pressed="true"] {
+        background: var(--stk-green);
+        color: #fff;
+    }
+
+    .lang-switch button:focus-visible {
+        outline: 3px solid var(--stk-gold);
+        outline-offset: 1px;
+    }
+
+/* Tamil words are longer: tighten the menu so it still fits on one line */
+html[data-lang="ta"] ul.site-menu a { padding: 9px 10px; font-size: 0.92rem; }
+html[data-lang="ta"] ul.site-menu a.menu-cta { padding: 9px 14px 9px 10px; }
+
+/* Compact header: used on phones, and whenever the menu does not fit on one line
+   (site.js adds the "compact" class, e.g. for long Tamil words on a laptop) */
+    header.compact .lang-switch {
+        position: absolute;
+        right: 66px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+    }
+
+    header.compact .lang-switch button {
+        min-width: 32px;
+        height: 30px;
+        padding: 0 8px;
+    }
+
+    html[data-lang="ta"] header.compact ul.site-menu a { font-size: 1rem; padding: 12px 16px; }
+
+
+/* ---------- Buttons ---------- */
+
+.button,
+.card-button,
+form button[type=submit] {
+    border-radius: 999px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+
+.button:hover,
+.card-button:hover,
+form button[type=submit]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(8, 61, 22, 0.22);
+}
+
+.button:active,
+.card-button:active,
+form button[type=submit]:active {
+    transform: translateY(0);
+}
+
+.button-register {
+    padding: 14px 34px 14px 26px !important;
+    font-size: 1.05rem !important;
+    box-shadow: 0 8px 20px rgba(8, 61, 22, 0.28);
+}
+
+/* ---------- Cards ---------- */
+
+.activity-card,
+.gallery-image-container,
+.member-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.activity-card:hover,
+.gallery-image-container:hover,
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--stk-shadow-hover) !important;
+}
+
+.event-card-container:hover {
+    box-shadow: var(--stk-shadow-hover) !important;
+}
+
+.event-card-image,
+.activity-card-image,
+.gallery-image {
+    transition: transform 0.5s ease;
+}
+
+.activity-card:hover .activity-card-image,
+.gallery-image-container:hover .gallery-image {
+    transform: scale(1.03);
+}
+
+/* ---------- Scroll reveal (added by site.js) ---------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.25s ease !important;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal.is-visible:hover {
+    transform: translateY(-5px);
+    transition-delay: 0ms !important;
+}
+
+/* ---------- Icon animations ---------- */
+
+/* The goat dances all the time, and dances harder on hover */
+.icon-goat .goat-body { transform-origin: 32px 52px; animation: goat-hop 1.6s ease-in-out infinite; }
+.icon-goat .goat-head { transform-origin: 40px 28px; animation: goat-nod 0.8s ease-in-out infinite; }
+.icon-goat .goat-leg-front { transform-origin: 39px 39px; animation: goat-kick 0.8s ease-in-out infinite; }
+.icon-goat .goat-leg-back { transform-origin: 22px 40px; animation: goat-kick 0.8s ease-in-out infinite reverse; }
+.icon-goat .goat-tail { transform-origin: 17px 29px; animation: goat-wag 0.4s ease-in-out infinite alternate; }
+.icon-goat .goat-notes { opacity: 0; }
+
+a:hover .icon-goat .goat-body,
+button:hover .icon-goat .goat-body,
+a:focus-visible .icon-goat .goat-body { animation-duration: 0.6s; }
+a:hover .icon-goat .goat-notes,
+button:hover .icon-goat .goat-notes { animation: goat-notes 0.9s ease-out infinite; }
+
+@keyframes goat-hop {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    25% { transform: translateY(-5px) rotate(-6deg); }
+    50% { transform: translateY(0) rotate(0); }
+    75% { transform: translateY(-5px) rotate(6deg); }
+}
+@keyframes goat-nod {
+    0%, 100% { transform: rotate(0); }
+    50% { transform: rotate(-12deg); }
+}
+@keyframes goat-kick {
+    0%, 100% { transform: rotate(10deg); }
+    50% { transform: rotate(-12deg); }
+}
+@keyframes goat-wag {
+    from { transform: rotate(-15deg); }
+    to { transform: rotate(20deg); }
+}
+@keyframes goat-notes {
+    0% { opacity: 0; transform: translateY(6px); }
+    40% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-8px); }
+}
+
+/* Other icons move when you hover the link or button */
+.icon svg:not(.goat-svg) g { transform-box: fill-box; transform-origin: center; }
+
+a:hover .i-roof { animation: i-bounce 0.6s ease; }
+a:hover .i-rings { animation: i-bounce 0.5s ease 2; }
+a:hover .i-dot { animation: i-pulse 0.8s ease infinite; }
+a:hover .i-info { animation: i-bounce 0.6s ease; }
+a:hover .i-lens { animation: i-pulse 0.7s ease; }
+a:hover .i-page { animation: i-nudge 0.6s ease 2; }
+a:hover .i-flash { animation: i-flash 0.6s ease infinite; }
+a:hover .i-wave { animation: i-wave 0.6s ease 2; }
+button:hover .i-ticket, a:hover .i-ticket { animation: i-wiggle 0.5s ease 2; }
+button:hover .i-send, a:hover .i-send { animation: i-send 0.7s ease; }
+button:hover .i-arrow, a:hover .i-arrow { animation: i-nudge 0.6s ease infinite; }
+
+@keyframes i-bounce { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-3px); } }
+@keyframes i-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.35); } }
+@keyframes i-flash { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes i-wave { 0%, 100% { transform: rotate(0); } 30% { transform: rotate(-14deg); } 70% { transform: rotate(10deg); } }
+@keyframes i-wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-10deg); } 75% { transform: rotate(10deg); } }
+@keyframes i-send { 0% { transform: translate(0, 0); } 50% { transform: translate(4px, -4px); opacity: 0; } 51% { transform: translate(-4px, 4px); opacity: 0; } 100% { transform: translate(0, 0); opacity: 1; } }
+@keyframes i-nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(3px); } }
+
+/* Respect visitors who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    .icon *, .reveal, .menu-open ul.site-menu {
+        animation: none !important;
+        transition: none !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+}
+
+header #logo h1 {
+    white-space: nowrap;
+}
+
+header ul.site-menu li.menu-sep,
+header.compact ul.site-menu li.menu-sep {
+    display: none !important;
+}
+
+/* The Join Us page styles every <button> as a big form button; keep header buttons compact */
+.lang-switch button { width: auto !important; margin: 0 !important; }
+#menu-toggle { margin: 0 !important; }

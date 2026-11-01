@@ -1,0 +1,50 @@
+/* Theme: Twilight. Dark evening sky with deep plum and lamp-gold. Elegant, easy on the eyes at night. */
+:root {
+    --t-scheme: dark;
+    --t-bg: #17111d;
+    --t-soft: #2c2236;
+    --t-soft-2: #221a2b;
+    --t-band: linear-gradient(180deg, #1d1624 0%, #17111d 100%);
+    --t-card: #211a29;
+    --t-event-card: #251d2e;
+    --t-input-bg: #1a1420;
+    --t-heading: #ffd998;
+    --t-text: #f1e9ef;
+    --t-muted: #c3b5c1;
+    --t-line: #3a2e45;
+    --t-accent: #f0a85a;
+    --t-accent-dark: #f6b96e;
+    --t-on-accent: #24160b;
+    --t-gold: #f4c06a;
+    --t-cta: linear-gradient(135deg, #f6c46f 0%, #f0a85a 55%, #e68f55 100%);
+    --t-cta-hover: linear-gradient(135deg, #ffd182 0%, #f7b468 55%, #ee9c62 100%);
+    --t-cta-text: #2a170a;
+    --t-cta-shadow: rgba(240, 168, 90, 0.25);
+    --t-btn2: linear-gradient(135deg, #3a2d47 0%, #33273f 100%);
+    --t-btn2-hover: linear-gradient(135deg, #47375a 0%, #3e304f 100%);
+    --t-btn2-text: #ffe2b0;
+    --t-header-bg: rgba(23, 17, 29, 0.82);
+    --t-footer-1: #120d17;
+    --t-footer-2: #0c0810;
+    --t-footer-text: #e6dbe4;
+    --t-shadow-color: rgba(0, 0, 0, 0.35);
+    --t-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    --t-shadow-hover: 0 18px 38px rgba(0, 0, 0, 0.5);
+    --t-overlay: rgba(8, 5, 12, 0.80);
+    --t-body-glow: radial-gradient(1000px 460px at 50% -160px, rgba(240, 168, 90, 0.18), transparent 70%), linear-gradient(180deg, #1e1626 0px, #17111d 600px);
+    --t-hero-overlay: radial-gradient(70% 55% at 50% 100%, rgba(240, 168, 90, 0.25), transparent 70%), linear-gradient(180deg, rgba(23, 17, 29, 0.55) 0%, rgba(23, 17, 29, 0.70) 55%, rgba(23, 17, 29, 0.92) 100%);
+    --t-icon-filter: invert(1) brightness(1.6);
+    --t-sun: #f4c06a;
+    --t-mtn-1: #3a2c48;
+    --t-mtn-2: #2b2036;
+    --t-mtn-3: #1f1728;
+    --t-cloud-opacity: 0.55;    /* fainter clouds against the night sky */
+    --t-sky-dawn: linear-gradient(180deg, #120d17 0%, #2b2036 34%, #5a3a5c 66%, #a7646a 100%);   /* The Climb: sky at sunrise */
+    --t-sky-day: linear-gradient(180deg, #1c1526 0%, #34263f 50%, #6e4656 100%);   /* The Climb: sky once the sun is up */
+    --t-sky-paint: 0;   /* The Climb: how much of the painted sky shows (0 = only the colours above) */
+    --t-silk: #d0657d;           /* Tamil touches: temple-maroon silk */
+    --t-leaf: #5f8a3c;           /* mango leaves of the thoranam garland */
+    --t-marigold: #f0a640;       /* marigold flowers */
+    --t-palm: #cdb486;           /* palm-leaf (olai) manuscript */
+    --t-palm-ink: #3a2614;        /* the writing on it */
+}

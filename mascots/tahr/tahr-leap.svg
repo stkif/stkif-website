@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="18 -4 172 150" class="mascot-svg" role="img" aria-label="Nilgiri tahr mascot">
+<g class="tahr tahr-leap"><g transform="rotate(-10 100 85)"><g class="tahr-legs-back"><path d="M66 96 Q50 112 34 116" stroke="#432419" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M78 100 Q64 120 48 128" stroke="#5b3427" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/><ellipse cx="31" cy="117" rx="6" ry="4.5" fill="#2b1712"/><ellipse cx="45" cy="129" rx="6" ry="4.5" fill="#2b1712"/></g><g class="tahr-legs-front"><path d="M124 98 Q132 116 148 114" stroke="#432419" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M138 96 Q148 112 162 106" stroke="#5b3427" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/><ellipse cx="151" cy="114" rx="6" ry="4.5" fill="#2b1712"/><ellipse cx="165" cy="105" rx="6" ry="4.5" fill="#2b1712"/></g><g class="tahr-body">
+<path class="tahr-tail" d="M50 74 C42 70 40 62 44 58 C48 62 52 66 54 70 Z" fill="#432419"/>
+<path d="M52 76 C56 61 76 55 98 56 L124 57 C141 58 151 70 149 85 C147 100 135 108 120 108 L70 108 C55 108 47 96 52 76 Z" fill="#5b3427"/>
+<path d="M70 104 C90 110 115 110 134 102 C128 106 122 108 116 108 L72 108 Z" fill="#7b4a35" opacity=".7"/>
+<path d="M66 64 C82 55 112 55 128 61 C122 72 88 74 68 70 Z" fill="#d9c6b0"/></g><g class="tahr-head">
+<path d="M118 66 C124 50 132 40 142 34 L160 38 C158 52 156 66 151 80 Z" fill="#5b3427"/>
+<path d="M136 38 C138 24 150 18 161 22 C168 25 172 32 177 40 C180 46 177 52 171 52 L160 51 C149 50 138 47 136 38 Z" fill="#5b3427"/>
+<path d="M164 40 C169 41 175 43 177 46 C177 50 174 52 170 52 L161 51 C163 48 164 44 164 40 Z" fill="#8a5a44"/>
+<path d="M166 49 q4 2 7 -1" stroke="#2b1712" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+<path d="M140 30 L124 27 L139 38 Z" fill="#432419"/>
+<path d="M150 27 C148 11 133 3 115 12 C131 9 141 17 142 31 Z" fill="#e3a63f" stroke="#b17829" stroke-width="1.6" stroke-linejoin="round"/><path d="M136 11 l1.5 4.5 M129 10.5 l0.5 4.5 M143 15 l-2.5 3.2 M146 21 l-3.5 2" stroke="#b17829" stroke-width="1.5" stroke-linecap="round"/>
+<g class="tahr-eye"><circle cx="157" cy="32" r="4.4" fill="#1b0f0b"/><circle cx="158.6" cy="30.6" r="1.6" fill="#fff7ef"/></g>
+<path d="M151 26 q5 -3 10 0" stroke="#432419" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+</g></g></g>
+</svg>

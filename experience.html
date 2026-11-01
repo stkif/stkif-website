@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Climb | Stockholm Tamil Kultur &amp; IF</title>
+    <meta name="description" content="Climb the mountain with the Nilgiri tahr and discover STK IF: culture, sport and community for every generation of the Tamil community in Stockholm.">
+    <!-- Preview page: kept out of search results until it replaces the home page -->
+    <meta name="robots" content="noindex">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Stockholm Tamil Kultur IF">
+    <meta property="og:title" content="The Climb | Stockholm Tamil Kultur &amp; IF">
+    <meta property="og:description" content="Climb the mountain with the Nilgiri tahr and discover STK IF: culture, sport and community for every generation of the Tamil community in Stockholm.">
+    <meta property="og:image" content="https://teamraat.github.io/STK-IF/images/og-image.jpg">
+    <link rel="stylesheet" href="css/shared-styles.css?v=20261028-8">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/modern.css?v=20261028-8">
+    <link rel="stylesheet" href="css/theme.css?v=20261028-8" id="theme-css">
+    <link rel="stylesheet" href="css/mascots.css?v=20261028-8">
+    <link rel="stylesheet" href="css/refresh.css?v=20261028-8">
+    <link rel="stylesheet" href="css/experience.css?v=20261028-8">
+    <link rel="preload" as="image" href="images/hero-logo.webp">
+    <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Variable-latin.woff2" crossorigin>
+    <script>
+        // Show the loading screen only for the moving version (js/experience.js removes it)
+        if (!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) document.documentElement.classList.add("story-loading");
+    </script>
+</head>
+<body class="experience-page">
+
+<!-- Loading screen while the mountain paintings arrive (decorative; the page text is already there) -->
+<div class="story-loader" aria-hidden="true">
+    <img class="story-loader-crest" src="images/hero-logo.webp" width="600" height="600" alt="">
+    <span class="story-loader-bar"><span></span></span>
+</div>
+
+<!-- Header-->
+
+    <header>
+        <div id="logo">
+            <a class="logo-link" href="index.html" aria-label="STK IF home page">
+                <img src="images/logo.webp" alt="Stockholm Tamil Kultur IF Logo">
+                <h1>STK IF</h1>
+            </a>
+            <img id="hamburguer-buttom"src="images/hamburg.button.svg" alt="Hamburger menu button">
+
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>|</li>
+            <li><a href="events.html">Events</a></li>
+            <li>|</li>
+            <li><a href="about.html">About</a></li>
+            <li>|</li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li>|</li>
+            <li><a href="learn-tamil.html">Learn Tamil</a></li>
+            <li>|</li>
+            <li><a href="members.html">Members</a></li>
+            <li>|</li>
+            <li><a href="joinus.html">Join Us</a></li>
+        </ul>
+
+    </header>
+
+<!-- Main Content -->
+
+<main id="experience">
+
+    <!-- The Climb: a mountain scene that moves as you scroll (js/experience.js).
+         The scene is decoration only; all the text is in the chapters below it. -->
+    <section class="story" id="story">
+
+        <div class="story-stage" aria-hidden="true">
+            <div class="story-sky"></div>
+            <div class="story-sky story-sky--dawn"></div>
+            <div class="story-sky story-sky--paint"></div>
+            <div class="story-sky story-sky--paint story-sky--paint-dawn"></div>
+            <div class="story-glow"></div>
+            <div class="story-night"></div>
+            <svg class="story-layer story-stars" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice"></svg>
+
+            <svg class="story-layer story-sun" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                <defs>
+                    <radialGradient id="sun-core">
+                        <stop offset="0" style="stop-color: var(--t-footer-text)"/>
+                        <stop offset="0.55" style="stop-color: var(--t-gold)"/>
+                        <stop offset="1" style="stop-color: var(--t-sun)"/>
+                    </radialGradient>
+                    <radialGradient id="sun-halo">
+                        <stop offset="0" style="stop-color: var(--t-sun); stop-opacity: 0.55"/>
+                        <stop offset="1" style="stop-color: var(--t-sun); stop-opacity: 0"/>
+                    </radialGradient>
+                </defs>
+                <circle cx="870" cy="285" r="190" fill="url(#sun-halo)"/>
+                <circle cx="870" cy="285" r="74" fill="url(#sun-core)"/>
+            </svg>
+
+            <!-- Clouds and kites are page elements, not drawings, so the graphics card moves them
+                 without redrawing the sky. .story-art matches the 1440 x 900 scene on any screen. -->
+            <!-- Rays of the rising sun (strongest at sunrise) -->
+            <div class="story-layer story-sun story-rays"><div class="story-art">
+                <div class="sun-rays"></div>
+            </div></div>
+
+            <div class="story-layer story-clouds"><div class="story-art">
+                <img class="cloud" data-src="images/story/cloud-puff-1.webp" alt="" decoding="async" style="left:9.722%;top:7.778%;width:18.889%;height:23.000%">
+                <img class="cloud cloud--slow" data-src="images/story/cloud-bank-1.webp" alt="" decoding="async" style="left:36.111%;top:16.667%;width:38.889%;height:15.778%">
+                <img class="cloud cloud--slower" data-src="images/story/cloud-puff-2.webp" alt="" decoding="async" style="left:72.917%;top:12.222%;width:15.694%;height:19.000%">
+            </div></div>
+
+            <div class="story-layer story-birds"><div class="story-art">
+                <div class="bird" style="left:46.389%;top:18.178%;width:4.444%;height:10.311%"><div class="bird-fly"><div class="kite"></div></div></div>
+                <div class="bird" style="left:49.861%;top:16.478%;width:3.611%;height:8.378%"><div class="bird-fly"><div class="kite"></div></div></div>
+                <div class="bird" style="left:44.236%;top:15.850%;width:3.194%;height:7.411%"><div class="bird-fly"><div class="kite"></div></div></div>
+                <div class="bird" style="left:53.056%;top:22.111%;width:2.778%;height:6.444%"><div class="bird-fly"><div class="kite"></div></div></div>
+            </div></div>
+
+            <!-- Far range: the painted mountains with the summit -->
+            <svg class="story-layer story-far" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                <!-- Painted far range; its main peak sits off to the left, the goal on the horizon -->
+                <rect x="-1050" y="700" width="2960" height="700" fill="#44596f"/>
+                <image href="images/story/mountains-far.webp" x="-1030" y="-217" width="2824" height="941"/>
+            </svg>
+
+            <!-- Warm sunlight spilling over the far range from the sun's side -->
+            <svg class="story-layer story-sunlight" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                <defs>
+                    <radialGradient id="sunlight">
+                        <stop offset="0" style="stop-color: var(--t-sun); stop-opacity: 0.55"/>
+                        <stop offset="0.45" style="stop-color: var(--t-sun); stop-opacity: 0.18"/>
+                        <stop offset="1" style="stop-color: var(--t-sun); stop-opacity: 0"/>
+                    </radialGradient>
+                </defs>
+                <ellipse cx="870" cy="330" rx="760" ry="520" fill="url(#sunlight)"/>
+            </svg>
+
+
+            <div class="story-layer story-clouds-low"><div class="story-art">
+                <img class="cloud cloud--slow" data-src="images/story/cloud-bank-2.webp" alt="" decoding="async" style="left:56.944%;top:62.222%;width:52.778%;height:22.889%">
+            </div></div>
+
+            <div class="story-mist"></div>
+
+            <svg class="story-layer story-mid" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                <!-- Painted Nilgiri hills with shola forest; low in the middle so the far range shows -->
+                <image href="images/story/hills-mid.webp" x="-130" y="343" width="1700" height="708"/>
+            </svg>
+
+            <div class="story-mist story-mist--low"></div>
+
+            <svg class="story-layer story-near" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                <!-- The near rocky ridge with the goat path the tahr climbs; its crest is the summit -->
+                <image href="images/story/ridge-near.webp" x="-108" y="279" width="1584" height="659"/>
+            </svg>
+
+            <!-- The flag and tahr on their own layer, moving exactly with the near ridge.
+                 Kept apart so the walking legs never force the big painting to be redrawn. -->
+            <svg class="story-layer story-near story-climb" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+                <defs>
+                    <radialGradient id="summit-mist">
+                        <stop offset="0" style="stop-color: var(--t-footer-text); stop-opacity: 0.85"/>
+                        <stop offset="1" style="stop-color: var(--t-footer-text); stop-opacity: 0"/>
+                    </radialGradient>
+                </defs>
+                <!-- The route of the goat path painted on the near ridge (invisible; the tahr follows it) -->
+                <path class="trail" id="story-trail" d="M88.9 760.3 L154.5 716.6 L234.8 696.1 L344.2 681.6 L446.3 665.5 L541.1 637.8 L475.4 615.9 L424.4 607.2 L475.4 598.4 L592.1 570.7 L723.4 540.1 L665.0 519.7 L570.2 501.4 L628.6 486.8 L730.7 465.0 L810.9 428.5 L780.0 405.0"/>
+                <!-- The club flag on the summit: a swallowtail pennant carrying the STK IF crest -->
+                <g class="summit-flag">
+                    <path class="flag-pole" stroke-width="2.6" stroke-linecap="round" d="M826 401 V326"/>
+                    <circle class="flag-finial" cx="826" cy="325" r="2.4"/>
+                    <g class="flag-cloth">
+                        <path class="flag-cloth-bg" d="M827.5 328 H874 L866 345 L874 362 H827.5 Z"/>
+                        <path class="flag-cloth-edge" d="M827.5 328 H874 L866 345 L874 362 H827.5 Z"/>
+                        <image href="images/logo.webp" x="833" y="333" width="25" height="25"/>
+                    </g>
+                </g>
+                <!-- The Nilgiri tahr. js/experience.js walks it up the trail: it turns at each bend,
+                     leans into the slope and moves its legs in a real four-beat walk. -->
+                <g class="climber" transform="translate(767.1 403.0)">
+                    <g class="tahr-turn">
+                        <ellipse class="tahr-shadow" cx="0" cy="0" rx="38" ry="3.4"/>
+                        <g class="tahr-lean">
+                            <!-- Painted cut-out parts; js/experience.js swings the legs in a four-beat walk -->
+                            <g class="tahr-rig" transform="scale(0.0872) translate(-512 -688)">
+                                <g transform="translate(42 150)"><g class="tahr-tail"><image href="images/story/tahr-tail.webp" x="-60" y="-25" width="85" height="201"/></g></g>
+                                <g class="leg leg-fh" transform="translate(178 262)"><g class="seg-top"><g class="seg-low" transform="translate(-19 197)"><image href="images/story/tahr-hind-low-b.webp" x="-50" y="-18" width="214" height="235"/></g><image href="images/story/tahr-hind-up-b.webp" x="-115" y="-45" width="240" height="292"/></g></g>
+                                <g class="leg leg-ff" transform="translate(662 258)"><g class="seg-top"><g class="seg-low" transform="translate(10 197)"><image href="images/story/tahr-fore-low-b.webp" x="-48" y="-18" width="130" height="239"/></g><image href="images/story/tahr-fore-up-b.webp" x="-100" y="-45" width="215" height="281"/></g></g>
+                                <g class="tahr-body">
+                                    <image href="images/story/tahr-body.webp" x="0" y="0" width="835" height="379"/>
+                                    <g transform="translate(725 250)"><g class="tahr-head"><image href="images/story/tahr-head.webp" x="-95" y="-400" width="409" height="455"/></g></g>
+                                </g>
+                                <g class="leg leg-nh" transform="translate(150 265)"><g class="seg-top"><g class="seg-low" transform="translate(-28 191)"><image href="images/story/tahr-hind-low-a.webp" x="-50" y="-18" width="182" height="245"/></g><image href="images/story/tahr-hind-up-a.webp" x="-120" y="-45" width="268" height="284"/></g></g>
+                                <g class="leg leg-nf" transform="translate(690 262)"><g class="seg-top"><g class="seg-low" transform="translate(10 201)"><image href="images/story/tahr-fore-low-a.webp" x="-52" y="-18" width="119" height="242"/></g><image href="images/story/tahr-fore-up-a.webp" x="-100" y="-45" width="212" height="294"/></g></g>
+                            </g>
+                        </g>
+                        <!-- Turning round at a bend: three-quarter, facing you, three-quarter the other way.
+                             js/experience.js blends through them, tied to the scroll. Hooves sit on y = 0. -->
+                        <g class="tahr-turning" transform="scale(1 1)">
+                            <image class="turn-pose" data-pose="right" href="images/story/tahr-turn-right.webp" x="-25" y="-73" width="57.8" height="73" opacity="0"/>
+                            <image class="turn-pose" data-pose="front" href="images/story/tahr-turn-front.webp" x="-14.1" y="-73" width="28.5" height="73" opacity="0"/>
+                            <image class="turn-pose" data-pose="left" href="images/story/tahr-turn-left.webp" x="-34.5" y="-73" width="57.9" height="73" opacity="0"/>
+                        </g>
+                        <!-- On the summit it stands proudly on a rock (css/experience.css fades it in) -->
+                        <image class="tahr-summit-pose" href="images/story/tahr-summit.webp" x="-55.2" y="-86" width="101.4" height="99.6"/>
+                        <!-- a wisp of mist where the rock meets the peak -->
+                        <ellipse class="summit-mist" cx="0" cy="8" rx="64" ry="13" fill="url(#summit-mist)"/>
+                    </g>
+                </g>
+            </svg>
+
+            <!-- Mist that rolls in low over the ridge in the Family chapter -->
+            <div class="story-fog"></div>
+
+            <div class="story-layer story-front"><div class="story-art">
+                <!-- Pines and tall grass right in front of the camera; they sweep away as you climb -->
+                <img data-src="images/story/pines-front.webp" alt="" decoding="async" style="left:-7.5%;top:38.667%;width:115%;height:61.333%">
+            </div></div>
+
+            <!-- Dust and pollen drifting in the sunlight, close to the camera (filled in by js/experience.js) -->
+            <div class="story-motes"></div>
+
+            <!-- A kite swoops past close to the camera in the Youth chapter -->
+            <div class="kite-swoop"><div class="kite"></div></div>
+
+            <!-- Warm golden-hour light for the last stretch to the summit -->
+            <div class="story-golden"></div>
+
+            <div class="story-night-tint"></div>
+            <p class="summit-bubble">Vanakkam! Welcome to STK IF</p>
+        </div>
+
+        <button class="sound-toggle" type="button" aria-pressed="false" hidden>
+            <svg class="sound-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="sound-waves" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/><path class="sound-off" d="M16 9l5 6M21 9l-5 6"/></svg>
+            <span>Sound</span>
+        </button>
+
+        <nav class="story-nav" aria-label="Story chapters">
+            <ol>
+                <li><a href="#dawn"><span>Dawn</span></a></li>
+                <li><a href="#sunrise"><span>Sunrise</span></a></li>
+                <li><a href="#culture"><span>Culture</span></a></li>
+                <li><a href="#sport"><span>Sports</span></a></li>
+                <li><a href="#youth"><span>Youth</span></a></li>
+                <li><a href="#family"><span>Family</span></a></li>
+                <li><a href="#community"><span>Community</span></a></li>
+                <li><a href="#summit"><span>Summit</span></a></li>
+            </ol>
+        </nav>
+
+        <div class="story-chapters">
+
+            <!-- 1. Dawn -->
+            <div class="chapter chapter-dawn" id="dawn">
+                <div class="dawn-content">
+                    <img class="dawn-crest" src="images/hero-logo.webp" width="600" height="600" fetchpriority="high" alt="Stockholm Tamil Kultur och Idrottsförening crest">
+                    <h1 class="dawn-title" data-no-translate>Stockholm Tamil Kultur &amp; IF</h1>
+                    <p class="dawn-subtitle">Culture, sport and community in Stockholm</p>
+                    <p class="dawn-roots">From the Nilgiri hills of India to Stockholm</p>
+                    <p class="dawn-cue">Scroll to climb</p>
+                    <a class="dawn-skip" href="#summit">Skip to the summit</a>
+                </div>
+            </div>
+
+            <!-- 2. Sunrise -->
+            <div class="chapter chapter-sunrise" id="sunrise">
+                <div class="chapter-card chapter-card--center">
+                    <h2 class="sunrise-tamil" lang="ta">தமிழால் இணைவோம்.<br>ஒன்றாக வளர்வோம்.</h2>
+                    <h2 class="sunrise-heading">Connected through Tamil.<br>Growing together.</h2>
+                    <p>STK IF is a Tamil cultural and sports club taking shape in Stockholm, bringing together culture, sport and community for every generation.</p>
+                </div>
+            </div>
+
+            <!-- 3. Culture -->
+            <div class="chapter chapter--left" id="culture">
+                <div class="chapter-card chapter-card--photo">
+                    <img src="images/story/culture.webp" width="960" height="640" loading="lazy" decoding="async" alt="Dancers and members of the club on stage at a celebration">
+                    <div class="chapter-text">
+                        <span class="chapter-num" aria-hidden="true">01</span>
+                        <h2>Culture</h2>
+                        <p>Music, dance and Tamil language — for children, youth and adults.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Sport -->
+            <div class="chapter chapter--right" id="sport">
+                <div class="chapter-card chapter-card--photo">
+                    <img src="images/story/sport.webp" width="720" height="960" loading="lazy" decoding="async" alt="A young runner getting ready for a race">
+                    <div class="chapter-text">
+                        <span class="chapter-num" aria-hidden="true">02</span>
+                        <h2>Sports</h2>
+                        <p>Cricket, badminton, basketball, and more — for children, youth and adults.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Youth -->
+            <div class="chapter chapter--left" id="youth">
+                <div class="chapter-card chapter-card--photo">
+                    <img src="images/story/youth.webp" width="720" height="960" loading="lazy" decoding="async" alt="A child and an adult playing carrom together">
+                    <div class="chapter-text">
+                        <span class="chapter-num" aria-hidden="true">03</span>
+                        <h2>Youth</h2>
+                        <p>Learn, Create, and Share — for children, youth and adults.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Family -->
+            <div class="chapter chapter--right" id="family">
+                <div class="chapter-card chapter-card--photo">
+                    <img src="images/story/family.webp" width="720" height="960" loading="lazy" decoding="async" alt="A family on a forest walk at a club outing">
+                    <div class="chapter-text">
+                        <span class="chapter-num" aria-hidden="true">04</span>
+                        <h2>Family</h2>
+                        <p>Outdoor days and celebrations across generations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Community -->
+            <div class="chapter chapter--left" id="community">
+                <div class="chapter-card chapter-card--photo">
+                    <img src="images/story/community.webp" width="720" height="960" loading="lazy" decoding="async" alt="Club families together on the lawn at a summer get-together">
+                    <div class="chapter-text">
+                        <span class="chapter-num" aria-hidden="true">05</span>
+                        <h2>Community</h2>
+                        <p>Swedish–Tamil exchange for newcomers, volunteers and everyone.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Summit -->
+            <div class="chapter chapter-summit" id="summit">
+                <div class="chapter-card chapter-card--center">
+                    <h2 class="summit-heading">Climb with us</h2>
+                    <p>We bring people together through Culture, Sports, Youth, Family, and Community. Every generation and background is welcome; you do not need to speak Tamil to take part.</p>
+                    <div class="summit-buttons">
+                        <a class="button button-register" href="joinus.html">Join Us</a>
+                        <a class="button button-secondary" href="events.html">See events</a>
+                    </div>
+                    <a class="summit-event" href="events.html">
+                        <img src="posters/poster-1.jpg" width="56" height="78" loading="lazy" alt="">
+                        <div class="summit-event-text">
+                            <div class="summit-event-label">Next event</div>
+                            <div class="summit-event-title">SSK IF Diwali</div>
+                            <div class="summit-event-date">Nov 7. 11:00-16:00</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+    <footer id="footer-eventpage">
+        <div id="footer-container">
+            <ul id="footer-copyright">
+                <li class="footer-heading">© 2026 Stockholm Tamil Kultur IF</li>
+            </ul>
+
+            <ul id="footer-info">
+                <li class="footer-heading">Location</li>
+                <li>Botkyrka, Stockholm, Sweden</li>
+                <li>Roots: Tamil Nadu, India</li>
+            </ul>
+
+
+            <ul>
+                <li class="footer-heading">Languages</li>
+                <li><span lang="sv"></span>Svenska · English · <span lang="ta">தமிழ்</span></li>
+            </ul>
+            <ul id="footer-social">
+                <li class="footer-heading">Follow us</li>
+                <li><a href="https://www.instagram.com/sskvibessweden" target="_blank" rel="noopener" data-icon="instagram">Instagram</a></li>
+                <li><a href="https://www.facebook.com/StockholmSuperKings" target="_blank" rel="noopener" data-icon="facebook">Facebook</a></li>
+            </ul>
+        </div>
+
+    </footer>
+
+    <script src="lang/languages.js?v=20261028-8"></script>
+    <script src="js/i18n.js?v=20261028-8"></script>
+    <script src="mascots/mascot-list.js?v=20261028-8"></script>
+    <script src="js/site.js?v=20261028-8"></script>
+    <script src="js/experience.js?v=20261028-8"></script>
+</body>
+</html>

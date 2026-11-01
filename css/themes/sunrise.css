@@ -1,0 +1,49 @@
+/* Theme: Sunrise. Soft dawn blush, coral sun and golden light. Mild and warm. */
+:root {
+    --t-scheme: light;
+    --t-bg: #fff7f2;
+    --t-soft: #ffe9df;
+    --t-soft-2: #fff2ec;
+    --t-band: linear-gradient(180deg, #ffeee5 0%, #fff4ee 100%);
+    --t-card: #ffffff;
+    --t-event-card: #fff1ea;
+    --t-input-bg: #fffaf7;
+    --t-heading: #7f2e22;
+    --t-text: #3b2621;
+    --t-muted: #6f5049;
+    --t-line: #f3d6c8;
+    --t-accent: #e2694f;
+    --t-accent-dark: #b9472f;
+    --t-on-accent: #ffffff;
+    --t-gold: #f3a64a;
+    --t-cta: linear-gradient(135deg, #cf5d3d 0%, #bf4a3a 50%, #b03f4b 100%);
+    --t-cta-hover: linear-gradient(135deg, #c2502f 0%, #ab3e30 50%, #9c3442 100%);
+    --t-cta-text: #ffffff;
+    --t-cta-shadow: rgba(207, 85, 96, 0.30);
+    --t-btn2: linear-gradient(135deg, #ffd3ad 0%, #ffbd96 100%);
+    --t-btn2-hover: linear-gradient(135deg, #ffc496 0%, #ffa97f 100%);
+    --t-btn2-text: #4a1c12;
+    --t-header-bg: rgba(255, 247, 242, 0.86);
+    --t-footer-1: #a9533f;
+    --t-footer-2: #86392e;
+    --t-footer-text: #fff4ee;
+    --t-shadow-color: rgba(170, 70, 40, 0.10);
+    --t-shadow: 0 6px 18px rgba(170, 70, 40, 0.10);
+    --t-shadow-hover: 0 16px 34px rgba(170, 70, 40, 0.18);
+    --t-overlay: rgba(70, 25, 18, 0.70);
+    --t-body-glow: radial-gradient(1200px 500px at 50% -120px, rgba(255, 190, 150, 0.35), transparent 70%), linear-gradient(180deg, #ffece3 0px, #fff7f2 520px);
+    --t-hero-overlay: radial-gradient(70% 55% at 50% 100%, rgba(255, 176, 120, 0.45), transparent 70%), linear-gradient(180deg, rgba(255, 214, 200, 0.62) 0%, rgba(255, 236, 226, 0.66) 50%, rgba(255, 247, 242, 0.80) 100%);
+    --t-sun: #f6b26b;
+    --t-mtn-1: #f6cdbb;
+    --t-mtn-2: #e7a48c;
+    --t-mtn-3: #c4705a;
+    --t-cloud-opacity: 1;       /* how strongly the painted clouds show on The Climb */
+    --t-sky-dawn: linear-gradient(180deg, #3b2a4d 0%, #a8607a 36%, #f2a07e 68%, #fbd3a6 100%);   /* The Climb: sky at sunrise */
+    --t-sky-day: linear-gradient(180deg, #e9cfd6 0%, #fbe9e2 48%, #ffe4c4 100%);   /* The Climb: sky once the sun is up */
+    --t-sky-paint: 0.6;   /* The Climb: how much of the painted sky shows (0 = only the colours above) */
+    --t-silk: #8e2a3a;           /* Tamil touches: temple-maroon silk */
+    --t-leaf: #5b7d34;           /* mango leaves of the thoranam garland */
+    --t-marigold: #f08a24;       /* marigold flowers */
+    --t-palm: #ecd6a6;           /* palm-leaf (olai) manuscript */
+    --t-palm-ink: #4f3019;        /* the writing on it */
+}

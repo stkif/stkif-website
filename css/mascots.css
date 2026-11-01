@@ -1,0 +1,226 @@
+/* ==========================================================
+   Our mascot: the Nilgiri tahr (வரையாடு)
+   Pictures live in the "mascots" folder; js/site.js puts them on the page.
+   ========================================================== */
+
+.mascot {
+    display: inline-block;
+    line-height: 0;
+}
+
+    .mascot svg,
+    .mascot img {
+        width: 100%;
+        height: auto;
+        display: block;
+        overflow: visible;
+    }
+
+/* ---------- Your pictures (png, jpg, webp, gif in mascots/my-goats) ---------- */
+/* A gentle sway, and a happy hop when you point at them */
+
+.mascot-picture img {
+    object-fit: contain;
+    transform-origin: 50% 100%;
+    animation: mascot-sway 3.6s ease-in-out infinite;
+}
+
+.mascot-picture:hover img { animation: mascot-hop 0.7s ease; }
+
+@keyframes mascot-sway { 0%, 100% { transform: rotate(0) translateY(0); } 30% { transform: rotate(-2.5deg) translateY(-2px); } 70% { transform: rotate(2.5deg) translateY(-1px); } }
+@keyframes mascot-hop { 0%, 100% { transform: translateY(0) scale(1); } 35% { transform: translateY(-12px) scale(1.04, 0.97); } 60% { transform: translateY(0) scale(1.03, 0.96); } }
+
+/* ---------- Drawn tahr pictures (mascots/tahr): breathing, nodding, blinking, tail wag ---------- */
+
+.mascot .tahr-head { transform-box: view-box; transform-origin: 140px 60px; animation: tahr-nod 4.5s ease-in-out infinite; }
+.mascot .tahr-tail { transform-box: view-box; transform-origin: 50px 72px; animation: tahr-wag 1.6s ease-in-out infinite; }
+.mascot .tahr-eye { transform-box: fill-box; transform-origin: center; animation: tahr-blink 5s infinite; }
+
+.mascot svg .tahr-leap { transform-box: view-box; transform-origin: 100px 90px; animation: tahr-leap 2.4s ease-in-out infinite; }
+.mascot svg .tahr-run { animation: tahr-gallop 0.45s ease-in-out infinite; }
+.mascot svg .tahr-dust { animation: tahr-puff 0.9s ease-out infinite; }
+.mascot svg .tahr-peek-body { transform-box: view-box; animation: tahr-peek 5s ease-in-out infinite; }
+.mascot svg .tahr-dance-body { transform-box: view-box; transform-origin: 76px 136px; animation: tahr-sway 1.2s ease-in-out infinite; }
+.mascot svg .tahr-arm-a, .mascot svg .tahr-arm-b { transform-box: fill-box; transform-origin: 0% 100%; animation: tahr-swing 0.6s ease-in-out infinite alternate; }
+.mascot svg .tahr-arm-b { animation-direction: alternate-reverse; }
+.mascot svg .tahr-wave-leg { transform-box: fill-box; transform-origin: 0% 100%; animation: tahr-waving 1.4s ease-in-out infinite; }
+.mascot svg .tahr-drum-arm { animation: tahr-drumming 0.5s ease-in-out infinite; }
+.mascot svg .tahr-notes, .mascot svg .tahr-zzz { animation: tahr-float 2.4s ease-in-out infinite; }
+.mascot svg .tahr-flag-cloth { transform-box: fill-box; transform-origin: 0% 50%; animation: tahr-flag 1.2s ease-in-out infinite; }
+.mascot svg .tahr-sun { transform-box: fill-box; transform-origin: center; animation: tahr-glow 4s ease-in-out infinite; }
+
+/* A little jump when you point at a drawn mascot */
+.mascot:hover svg .tahr,
+.mascot:hover svg .tahr-peek-body { animation: tahr-hop 0.6s ease; transform-box: view-box; transform-origin: 100px 140px; }
+
+@keyframes tahr-nod { 0%, 70%, 100% { transform: rotate(0); } 78% { transform: rotate(-7deg); } 86% { transform: rotate(3deg); } }
+@keyframes tahr-wag { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-18deg); } }
+@keyframes tahr-blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+@keyframes tahr-leap { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(-3deg); } }
+@keyframes tahr-gallop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes tahr-puff { 0% { opacity: 0.9; transform: translateX(0); } 100% { opacity: 0; transform: translateX(-10px); } }
+@keyframes tahr-peek { 0%, 100% { transform: translateY(0); } 45%, 55% { transform: translateY(6px); } }
+@keyframes tahr-sway { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg) translateY(-3px); } }
+@keyframes tahr-swing { from { transform: rotate(-12deg); } to { transform: rotate(14deg); } }
+@keyframes tahr-waving { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-16deg); } 75% { transform: rotate(10deg); } }
+@keyframes tahr-drumming { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(14deg); } }
+@keyframes tahr-float { 0%, 100% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(-6px); opacity: 0.6; } }
+@keyframes tahr-flag { 0%, 100% { transform: skewY(0) scaleX(1); } 50% { transform: skewY(6deg) scaleX(0.9); } }
+@keyframes tahr-glow { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes tahr-hop { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-14px); } }
+
+/* ---------- Home: the tahr greets visitors on the hero ---------- */
+
+.hero-mascot {
+    position: absolute;
+    right: max(4%, 24px);
+    /* keep the whole tahr on the first screen, even when the photo is taller than the window */
+    bottom: max(28px, calc(100% - 100vh + 24px));
+    width: clamp(120px, 14vw, 180px);
+    z-index: 1;
+    filter: drop-shadow(0 10px 18px var(--t-shadow-color, rgba(0, 0, 0, 0.15)));
+}
+
+.mascot-bubble {
+    position: absolute;
+    right: 70%;
+    top: -6px;
+    background: var(--t-card, #fff);
+    color: var(--t-heading, #7f2e22);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+    padding: 10px 14px;
+    border-radius: 16px 16px 4px 16px;
+    box-shadow: var(--t-shadow, 0 6px 18px rgba(0, 0, 0, 0.1));
+    animation: bubble-in 0.6s 0.8s ease-out both;
+}
+
+@keyframes bubble-in { from { opacity: 0; transform: translateY(8px) scale(0.9); } to { opacity: 1; transform: none; } }
+
+/* ---------- Small mascots next to page headings ---------- */
+
+.heading-mascot {
+    display: block;
+    width: 96px;
+    margin: 0 auto -6px;
+}
+
+.mascot-beside {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+    .mascot-beside .mascot { width: 104px; flex-shrink: 0; }
+
+.activities-mascot {
+    display: block;
+    width: 130px;
+    margin: 0 auto 6px;
+}
+
+.emblem-mascot {
+    width: 92px;
+    flex-shrink: 0;
+}
+
+/* ---------- Mountain ridge with the tahr, above every footer ---------- */
+
+.mascot-ridge {
+    display: block;
+    width: 100%;
+    margin: 40px 0 -1px;
+    line-height: 0;
+    pointer-events: none;
+}
+
+    .mascot-ridge { position: relative; overflow: hidden; }
+    .mascot-ridge > svg, .mascot-ridge > img { width: 100%; height: auto; display: block; }
+
+/* A photo above the footer (e.g. footer-sunrise.webp): a wide band that fades
+   into the page at the top and into the footer at the bottom */
+.mascot-ridge.mascot-picture { margin-top: 30px; }
+
+    .mascot-ridge.mascot-picture > img {
+        width: 100%;
+        height: clamp(240px, 34vw, 540px);
+        object-fit: cover;
+        object-position: 50% 8%;
+        animation: none;
+    }
+
+    .mascot-ridge.mascot-picture::before,
+    .mascot-ridge.mascot-picture::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .mascot-ridge.mascot-picture::before { top: 0; height: 28%; background: linear-gradient(180deg, var(--t-bg, #fbf8f1) 0%, transparent 100%); }
+    .mascot-ridge.mascot-picture::after { bottom: 0; height: 30%; background: linear-gradient(0deg, var(--t-footer-1, #2b2620) 0%, transparent 100%); }
+
+/* The tahr running across the mountains, left to right, again and again */
+.ridge-runner {
+    position: absolute;
+    left: 0;
+    bottom: 6%;
+    width: clamp(46px, 5.5vw, 78px);
+    z-index: 2;
+    animation: ridge-run 14s linear infinite;
+}
+
+    .ridge-runner svg, .ridge-runner img { width: 100%; height: auto; display: block; }
+    /* a still picture (your own) bounces as it goes, so it looks like it's running */
+    .ridge-runner.mascot-picture img { animation: ridge-bounce 0.4s ease-in-out infinite; }
+
+@keyframes ridge-run { from { transform: translateX(-110%); } to { transform: translateX(calc(100vw + 10%)); } }
+@keyframes ridge-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14%); } }
+
+footer { margin-top: 0 !important; }
+
+/* ---------- Back to top: the tahr leaps you up ---------- */
+
+#to-top {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 58px;
+    height: 58px;
+    border: 0;
+    border-radius: 50%;
+    padding: 6px;
+    background: var(--t-card, #fff);
+    box-shadow: var(--t-shadow-hover, 0 10px 24px rgba(0, 0, 0, 0.18));
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+    #to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+    #to-top:hover { transform: translateY(-3px); }
+    #to-top:focus-visible { outline: 3px solid var(--t-gold, #f3a64a); outline-offset: 3px; }
+    #to-top .mascot { width: 100%; }
+    #to-top .mascot-picture img { animation: none; border-radius: 50%; }
+    #to-top:hover .mascot-picture img { animation: mascot-hop 0.7s ease; }
+
+@media (max-width: 600px) {
+    .hero-mascot { width: 104px; right: 10px; bottom: 16px; }
+    /* on phones the bubble sits above the tahr's head, clear of the Register button */
+    .mascot-bubble { font-size: 0.72rem; padding: 7px 10px; right: 6px; top: auto; bottom: 100%; margin-bottom: 4px; border-radius: 14px 14px 4px 14px; }
+    .heading-mascot { width: 68px; }
+    .mascot-beside .mascot { width: 72px; }
+    #to-top { width: 50px; height: 50px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mascot *, .mascot-bubble, .icon-picture img { animation: none !important; }
+    .ridge-runner { animation: none; left: 72%; }
+}

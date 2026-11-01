@@ -1,0 +1,280 @@
+/* Font files
+   Compressed WOFF2 copies that keep only the letters the site uses (English, Swedish
+   and other Latin letters; Tamil). Made from the .ttf originals in the fonts folder.
+   The weight range lets headings use the font's real bold instead of a faked one. */
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("../fonts/Montserrat-Variable-latin.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("../fonts/Montserrat-Italic-Variable-latin.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Tamil';
+    src: url("../fonts/NotoSansTamil-Variable-tamil.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* Full Page Styles */
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: clamp(13px, 2vw, 16px);
+    background-color: #fffcf0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding-bottom: 40px;
+}
+
+
+main {
+    margin: 0;
+    margin-top: 120px;
+    flex: 1;
+}
+
+/* Text styles */
+
+h1 {
+    font-size: clamp(28px, 5vw, 36px);
+    font-weight: 700;
+    color: #083D16;
+    margin: 0;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: rgb(180, 129, 0);;
+    font-size: clamp(20px, 2vw, 40px);
+    line-height: 1.8;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+:lang(ta) {
+    font-family: 'Noto Sans Tamil', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+main a {
+    color: #141414;
+}
+
+/* Header */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0px 5%;
+    margin: 0;
+    max-height: 100px;
+    min-height: 80px;
+    background: #fff;
+    box-shadow: 0px 4px 10px #41414140;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+    header #logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 100%;
+    }
+
+        header #logo img {
+            height: 50px;
+            width: auto;
+        }
+
+    header h1 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #141414;
+    }
+
+        header h1 span {
+        font-weight: 400;
+        }
+
+    header ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    header ul li {
+        float: left;
+        display: block;
+        color: #141414;
+        font-size: 1rem;
+        text-align: center;
+        padding: 10px;
+    }
+
+    header ul li a {
+        color: #141414;
+        text-decoration: none;
+    }
+
+        header ul li a:hover {
+        color: #FFBF00;
+        text-decoration: none;
+    }
+
+#hamburguer-buttom{
+        display: none;
+        height: auto;
+        cursor: pointer;
+
+    }
+    
+
+    /* Footer */
+
+footer {
+    bottom: 0;
+    padding: 30px 10%;
+    margin: 0;
+    margin-top: 40px;
+    height: fit-content;
+    background: #305739;
+}
+
+    div#footer-container {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 10px;
+        box-sizing: border-box;
+    }
+
+    footer a {
+        color: #FFF;
+    }
+
+    footer a:hover {
+        color:#ffd453;
+    }
+
+    footer ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    footer ul li {
+        text-align: left;
+        display: block;
+        color: #FFF;
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+        li.footer-heading {
+            font-weight: 700;
+        }
+    
+
+/* Media Queries */
+
+/* Less than or equal to 800px */
+@media (width <= 800px) {
+
+body {
+    font-size: clamp(5px, 5vw, 12px);
+}
+
+/* Header */
+
+header {
+    padding: 10px 20px;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header #logo {
+    height: 50px;
+}
+
+header ul {
+    display: none !important;
+}
+
+header h1 {
+    display: none;
+}
+
+#hamburguer-buttom {
+    display: block !important;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px !important;
+    height: auto !important;
+    max-width: 25px !important;
+    margin: 0 !important;
+    }
+}
+
+
+/* Less than or equal to 600px */
+@media (max-width: 600px) {
+
+        header ul li {
+        font-size: 0.6rem;
+        display: none;
+    }
+
+    #hamburguer-buttom{
+        display: block;
+        
+    }
+
+/* Footer */
+    #footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer ul li {
+        text-align: center;
+    }
+
+    footer ul {
+        text-align: center;
+    }
+
+}

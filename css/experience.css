@@ -1,0 +1,1133 @@
+/* The Climb (experience.html): a mountain scene that moves as you scroll.
+   js/experience.js sets these numbers on #story as you scroll (all between 0 and 1):
+     --p      how far through the story you are
+     --night  how dark the sky is (1 at the start, 0 once the sun is up)
+     --sun    how high the sun has risen
+     --glow   the warm sunrise glow
+     --tp     how far the tahr has climbed
+     --mx --my  where the mouse is (-1 to 1), for a gentle 3D tilt on computers
+   The values below are the still picture shown without JavaScript, or to visitors
+   who prefer less motion: daylight, with the tahr standing on the summit.
+   All colours come from the theme (css/themes/), so every theme works. */
+
+/* --settle glides from 0 to 1 when the tahr reaches the summit: the camera eases in */
+@property --settle {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+.experience-page main {
+    margin-top: 0;
+}
+
+/* See-through header: the scene shows faintly behind it instead of a solid bar.
+   (No background blur: blurring the moving scene every frame halves the frame rate.) */
+.experience-page header {
+    background: color-mix(in srgb, var(--t-header-bg) 82%, transparent) !important;
+}
+
+/* ---------- Loading screen ---------- */
+
+.story-loader {
+    display: none;
+}
+
+.story-loading .story-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 22px;
+    background: radial-gradient(60% 50% at 50% 45%, var(--t-footer-1), var(--t-footer-2));
+    /* safety net: never stay longer than 6 seconds, even if a picture fails to load */
+    animation: loader-out 0.6s ease 6s forwards;
+}
+
+.story-loader.is-done {
+    animation: loader-out 0.6s ease forwards;
+}
+
+.story-loader-crest {
+    width: clamp(110px, 18vh, 170px);
+    height: auto;
+    animation: loader-breathe 1.8s ease-in-out infinite;
+}
+
+.story-loader-bar {
+    width: 140px;
+    height: 3px;
+    border-radius: 3px;
+    background: color-mix(in srgb, var(--t-footer-text) 20%, transparent);
+    overflow: hidden;
+}
+
+.story-loader-bar span {
+    display: block;
+    height: 100%;
+    width: calc(var(--loaded, 0) * 100%);
+    background: var(--t-gold);
+    transition: width 0.3s ease;
+}
+
+@keyframes loader-breathe {
+    50% { transform: scale(1.05); filter: drop-shadow(0 0 18px var(--t-sun)); }
+}
+
+@keyframes loader-out {
+    to { opacity: 0; visibility: hidden; }
+}
+
+.story {
+    --p: 0;
+    --night: 0;
+    --sun: 1;
+    --glow: 0.35;
+    --tp: 1;
+    --mx: 0;
+    --my: 0;
+    --oy: 40%;                       /* height of the summit on screen (set by js) */
+    --stage-h: 100vh;
+    --chapter-gap: clamp(16px, 4vw, 48px);
+    position: relative;
+    display: grid;
+    padding-bottom: 0;
+}
+
+@supports (height: 100svh) {
+    .story { --stage-h: 100svh; }
+}
+
+/* ---------- The scene ---------- */
+
+.story-stage,
+.story-chapters {
+    grid-area: 1 / 1;
+}
+
+.story-stage {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: var(--stage-h);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.story-sky,
+.story-glow,
+.story-night,
+.story-mist,
+.story-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.story-sky {
+    background: var(--t-sky-day, var(--t-bg));
+}
+
+/* Rose and gold sunrise sky, strongest while the sun comes up */
+/* Painted skies (themes choose how much with --t-sky-paint) */
+.story-sky--paint {
+    background: url("../images/story/sky-day.webp") center bottom / cover no-repeat;
+    opacity: var(--t-sky-paint, 0);
+}
+
+.story-sky--paint-dawn {
+    background-image: url("../images/story/sky-dawn.webp");
+    opacity: calc(var(--t-sky-paint, 0) * var(--dawn, 0));
+}
+
+.story-sky--dawn {
+    background: var(--t-sky-dawn, var(--t-bg));
+    opacity: var(--dawn, 0);
+}
+
+.story-glow {
+    background: radial-gradient(70% 55% at 70% 68%, var(--t-sun), transparent 70%);
+    opacity: var(--glow);
+}
+
+.story-night {
+    background: linear-gradient(180deg, var(--t-footer-2) 0%, var(--t-footer-1) 100%);
+    opacity: var(--night);
+}
+
+.story-stars {
+    opacity: var(--night);
+}
+
+/* The sunlight on the mountains grows as the sun rises */
+.story-sunlight {
+    opacity: calc(var(--sun) * 0.9);
+}
+
+/* Darkens the mountains before sunrise */
+.story-night-tint {
+    position: absolute;
+    inset: 0;
+    background: var(--t-footer-2);
+    opacity: calc(var(--night) * 0.6);
+}
+
+.story-stars circle { fill: var(--t-footer-text); }
+
+/* The camera pushes in towards the summit of the near ridge as you climb. Each layer
+   grows a different amount around that point, which gives the feeling of depth: the far
+   range barely moves, the pines in front rush past. On narrow screens --pan (set by
+   js/experience.js) slides the layers sideways so the tahr stays in view, nearer layers
+   moving further. */
+.story-layer {
+    overflow: visible;          /* paintings reach past the box, so a sideways pan never shows an edge */
+    transform-origin: var(--ox, 50%) var(--oy);
+    will-change: transform;
+}
+
+.story-sun,
+.story-sunlight {
+    transform: translate3d(calc(var(--mx) * -4px + var(--pan-x, 0px) * 0.15), calc((1 - var(--sun)) * 46vh + var(--pan-y, 0px) * 0.15), 0);
+}
+
+.story-far {
+    transform: translate3d(calc(var(--mx) * -8px + var(--pan-x, 0px) * 0.3), calc(var(--p) * 20px + var(--my) * -4px + var(--pan-y, 0px) * 0.3), 0) scale(calc(1 + var(--p) * 0.1 + var(--settle) * 0.015));
+}
+
+.story-mid {
+    transform: translate3d(calc(var(--mx) * -16px + var(--pan-x, 0px) * 0.6), calc(var(--p) * 4vh + var(--my) * -8px + var(--pan-y, 0px) * 0.6), 0) scale(calc(1 + var(--p) * 0.2 + var(--settle) * 0.03));
+}
+
+.story-near {
+    transform: translate3d(calc(var(--mx) * -26px + var(--pan-x, 0px)), calc(var(--my) * -12px + var(--pan-y, 0px)), 0) scale(calc(1 + var(--p) * 0.32 + var(--settle) * 0.07));
+}
+
+.story-front {
+    transform: translate3d(calc(var(--mx) * -40px + var(--pan-x, 0px)), calc(var(--p) * 10vh + var(--my) * -16px + var(--pan-y, 0px)), 0) scale(calc(1 + var(--p) * 0.55));
+}
+
+/* Thin haze between the ranges, like morning mist in the hills */
+.story-mist {
+    background: linear-gradient(0deg, var(--t-header-bg) 0%, transparent 38%);
+    opacity: calc(0.55 - var(--night) * 0.4);
+    transform: translateY(calc(var(--p) * 20vh));
+}
+
+.story-mist--low {
+    background: linear-gradient(0deg, var(--t-header-bg) 0%, transparent 22%);
+    transform: translateY(calc(var(--p) * 40vh));
+}
+
+/* The route the tahr follows; the path itself is painted on the ridge */
+.trail {
+    fill: none;
+    stroke: none;
+}
+
+.summit-flag {
+    transform-box: fill-box;
+    transform-origin: 0 100%;
+    transform: scaleY(clamp(0, (var(--tp) - 0.95) * 20, 1));
+}
+
+/* ---------- The Nilgiri tahr ---------- */
+
+/* Soft shadow where the hooves meet the ground */
+.tahr-shadow {
+    fill: var(--t-footer-2);
+    opacity: 0.22;
+}
+
+/* Turning round at a bend: a quick squash through side-on, like a real turn */
+/* Small signs of life, even when the scroll stops: the tail flicks */
+.story-live .tahr-tail {
+    transform-box: fill-box;
+    transform-origin: 70% 12%;
+    animation: tail-flick 3.4s ease-in-out infinite;
+}
+
+@keyframes tail-flick {
+    0%, 80%, 100% { transform: none; }
+    85% { transform: rotate(14deg); }
+    90% { transform: rotate(-4deg); }
+    94% { transform: rotate(8deg); }
+}
+
+/* At the summit the walking tahr gives way to the painting of it standing on a rock.
+   Without JavaScript, or with less motion, the still picture shows the summit pose. */
+.tahr-rig,
+.tahr-shadow,
+.tahr-summit-pose,
+.summit-mist {
+    transition: opacity 0.7s ease;
+}
+
+.tahr-summit-pose,
+.summit-mist { opacity: 0; }
+
+.summit-reached .tahr-summit-pose,
+.summit-reached .summit-mist,
+.story:not(.story-live) .tahr-summit-pose,
+.story:not(.story-live) .summit-mist { opacity: 1; }
+
+.summit-reached .tahr-rig,
+.summit-reached .tahr-shadow,
+.story:not(.story-live) .tahr-rig,
+.story:not(.story-live) .tahr-shadow { opacity: 0; }
+
+/* ---------- Birds at sunrise (only while the scene moves) ---------- */
+
+.story-birds {
+    opacity: 0;
+    transform: translate3d(calc((var(--birds, 0) - 0.5) * 140vw), calc(var(--birds, 0) * -8vh), 0);
+}
+
+.story-live .story-birds { opacity: var(--birdsop, 0); }
+
+/* A few wingbeats, then a long glide, like a real kite riding the morning air.
+   The 8 wing positions sit side by side in one picture; this steps through them. */
+.kite {
+    width: 100%;
+    height: 100%;
+    background: 0 0 / 800% 100% no-repeat;
+    animation: kite-wingbeat 2.6s infinite;
+    animation-timing-function: step-end;
+}
+
+/* the kite picture is fetched after the main scene (js/experience.js adds .story-extras) */
+.story-extras .kite {
+    background-image: url("../images/story/kite-flight.webp");
+}
+
+@keyframes kite-wingbeat {
+    0.00% { background-position: 0.000% 0; }
+    6.25% { background-position: 14.286% 0; }
+    12.50% { background-position: 28.571% 0; }
+    18.75% { background-position: 42.857% 0; }
+    25.00% { background-position: 57.143% 0; }
+    31.25% { background-position: 71.429% 0; }
+    37.50% { background-position: 85.714% 0; }
+    43.75% { background-position: 100.000% 0; }
+    50.00% { background-position: 71.429% 0; }
+    56.25% { background-position: 71.429% 0; }
+    62.50% { background-position: 71.429% 0; }
+    68.75% { background-position: 71.429% 0; }
+    75.00% { background-position: 71.429% 0; }
+    81.25% { background-position: 71.429% 0; }
+    87.50% { background-position: 71.429% 0; }
+    93.75% { background-position: 71.429% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Kites ride rising warm air: each one circles in a slow, tilted loop while the
+   flock crosses the sky, banking into the turns */
+.bird-fly {
+    width: 100%;
+    height: 100%;
+    animation: kite-soar 11s ease-in-out infinite;
+}
+
+.bird:nth-child(2) .kite { animation-duration: 2.3s; animation-delay: -0.7s; }
+.bird:nth-child(3) .kite { animation-duration: 2.9s; animation-delay: -1.3s; }
+.bird:nth-child(4) .kite { animation-duration: 2.5s; animation-delay: -0.3s; }
+
+.bird:nth-child(2) .bird-fly { animation-duration: 13s; animation-delay: -4s; }
+.bird:nth-child(3) .bird-fly { animation-duration: 9.5s; animation-delay: -7s; animation-direction: reverse; }
+.bird:nth-child(4) .bird-fly { animation-duration: 15s; animation-delay: -2s; }
+
+@keyframes kite-soar {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    25% { transform: translate(34px, -16px) rotate(-9deg) scale(0.94); }
+    50% { transform: translate(62px, -4px) rotate(3deg) scale(0.9); }
+    75% { transform: translate(30px, 12px) rotate(10deg) scale(0.96); }
+}
+
+/* A box with the scene's 1440 x 900 shape, filling the screen the same way the SVG
+   layers do (centred, cut at the sides or top, anchored to the bottom). Clouds and
+   kites are placed inside it in percentages of the scene. */
+.story-art {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: max(100%, calc(var(--stage-h) * 1.6));
+    aspect-ratio: 1440 / 900;
+    transform: translateX(-50%);
+}
+
+.story-art > * {
+    position: absolute;
+}
+
+/* ---------- Dust and pollen in the light ---------- */
+
+.story-motes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: calc(var(--sun) * 0.85);
+    transform: translate3d(calc(var(--mx) * -34px), calc(var(--my) * -14px), 0);
+}
+
+.mote {
+    position: absolute;
+    width: var(--s);
+    height: var(--s);
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--t-footer-text) 0%, var(--t-gold) 30%, color-mix(in srgb, var(--t-sun) 45%, transparent) 55%, transparent 72%);
+    animation: mote-float var(--d) ease-in-out var(--delay) infinite alternate;
+    will-change: transform, opacity;
+}
+
+@keyframes mote-float {
+    0% { transform: translate(0, 0); opacity: 0; }
+    20% { opacity: 0.9; }
+    60% { opacity: 0.5; }
+    100% { transform: translate(var(--dx), -60px); opacity: 0; }
+}
+
+/* ---------- Chapter moments ----------
+   js/experience.js sets data-chapter on #story to the chapter you are reading,
+   and each chapter changes something in the world. */
+
+.story {
+    transition: --settle 3.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.story.summit-reached { --settle: 1; }
+
+/* Sunrise: rays fan out from the sun (--rays is set by the scroll) */
+.story-rays {
+    opacity: var(--rays, 0);
+    pointer-events: none;
+}
+
+/* switched off completely outside the sunrise, so it costs nothing */
+.story-rays.is-off { visibility: hidden; }
+
+.sun-rays {
+    position: absolute;
+    left: 60.417%;          /* the sun's place in the 1440 x 900 scene */
+    top: 31.667%;
+    width: 90%;
+    aspect-ratio: 1;
+    translate: -50% -50%;
+    /* soft shafts of light, painted once into a small picture (cheap to turn) */
+    background: url("../images/story/sun-rays.webp") center / contain no-repeat;
+}
+
+.story-live .sun-rays {
+    animation: rays-turn 160s linear infinite;
+}
+
+@keyframes rays-turn {
+    to { rotate: 360deg; }
+}
+
+/* Sports: a gust of wind bends the pines and blows the pollen sideways */
+.story-front img {
+    transform-origin: 50% 100%;
+}
+
+.story-live[data-chapter="sport"] .story-front img {
+    animation: gust 3.6s ease-in-out infinite;
+}
+
+@keyframes gust {
+    0%, 100% { transform: skewX(0deg); }
+    35% { transform: skewX(-2.2deg); }
+    55% { transform: skewX(-0.8deg); }
+    70% { transform: skewX(-1.6deg); }
+}
+
+.story-live[data-chapter="sport"] .mote {
+    --dx: 180px !important;
+    animation-duration: 3.2s;
+}
+
+/* Youth: a kite swoops past, close to the camera */
+.kite-swoop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: clamp(90px, 16vmin, 170px);
+    aspect-ratio: 104 / 150;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.story-live[data-chapter="youth"] .kite-swoop {
+    animation: kite-swoop 4.6s cubic-bezier(0.45, 0.05, 0.4, 1) 0.5s 1 both;
+}
+
+@keyframes kite-swoop {
+    0% { opacity: 0; transform: translate(-30vw, 46vh) rotate(-14deg) scale(0.6); }
+    12% { opacity: 1; }
+    50% { transform: translate(45vw, 22vh) rotate(4deg) scale(1.15); }
+    88% { opacity: 1; }
+    100% { opacity: 0; transform: translate(115vw, 30vh) rotate(12deg) scale(0.8); }
+}
+
+/* Family: mist rolls into the valley */
+.story-fog {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(60% 22% at 25% 78%, color-mix(in srgb, var(--t-footer-text) 70%, transparent), transparent 70%),
+        radial-gradient(55% 20% at 78% 70%, color-mix(in srgb, var(--t-footer-text) 60%, transparent), transparent 70%),
+        linear-gradient(0deg, color-mix(in srgb, var(--t-footer-text) 55%, transparent) 0%, color-mix(in srgb, var(--t-footer-text) 30%, transparent) 22%, transparent 45%);
+    opacity: 0;
+    transform: translateY(10vh);
+    transition: opacity 2.6s ease, transform 4s ease;
+}
+
+.story-live[data-chapter="family"] .story-fog {
+    opacity: calc(var(--t-cloud-opacity, 1) * 0.85);
+    transform: translateY(0);
+}
+
+/* Community to the summit: the light turns golden */
+.story-golden {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(70% 60% at 62% 32%, color-mix(in srgb, var(--t-sun) 40%, transparent), transparent 72%),
+        linear-gradient(0deg, color-mix(in srgb, var(--t-sun) 16%, transparent), transparent 60%);
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+
+.story-live[data-chapter="community"] .story-golden,
+.story-live[data-chapter="summit"] .story-golden {
+    opacity: 1;
+}
+
+/* ---------- Sound ---------- */
+
+.sound-toggle {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px 10px 12px;
+    border: 1px solid var(--t-line);
+    border-radius: 999px;
+    background: var(--t-header-bg);
+    color: var(--t-heading);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: var(--t-shadow);
+    cursor: pointer;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.sound-toggle[hidden] { display: none; }
+
+.sound-toggle:focus-visible {
+    outline: 3px solid var(--t-accent);
+    outline-offset: 3px;
+}
+
+.sound-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.sound-icon .sound-waves,
+.sound-icon .sound-off {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.sound-toggle[aria-pressed="false"] .sound-waves,
+.sound-toggle[aria-pressed="true"] .sound-off { display: none; }
+
+.story-past .sound-toggle {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ---------- Clouds ---------- */
+
+/* Clouds fade back at night and in the dark theme (opacity costs nothing to animate,
+   unlike a brightness filter on a full-screen layer) */
+.story-clouds {
+    opacity: calc(var(--t-cloud-opacity, 1) * (1 - var(--night) * 0.75));
+}
+
+.story-clouds {
+    transform: translate3d(calc(var(--mx) * -3px), calc(var(--p) * 18vh), 0);
+}
+
+.story-clouds-low {
+    opacity: calc(0.85 * var(--t-cloud-opacity, 1) * (1 - var(--night) * 0.75));
+    transform: translate3d(calc(var(--mx) * -12px + var(--pan-x, 0px) * 0.45), calc(var(--p) * 8vh), 0);
+}
+
+.story-live .cloud {
+    animation: cloud-drift 60s ease-in-out infinite alternate;
+}
+
+.story-live .cloud--slow { animation-duration: 85s; animation-delay: -20s; }
+.story-live .cloud--slower { animation-duration: 110s; animation-delay: -45s; }
+
+@keyframes cloud-drift {
+    from { transform: translateX(-40px); }
+    to { transform: translateX(40px); }
+}
+
+/* ---------- Arriving at the summit: the flag starts to wave ---------- */
+
+.flag-pole { stroke: var(--t-heading); }
+.flag-finial { fill: var(--t-gold); }
+.flag-cloth-bg { fill: var(--t-footer-2); }
+
+.flag-cloth-edge {
+    fill: none;
+    stroke: var(--t-gold);
+    stroke-width: 1.4;
+    stroke-linejoin: round;
+}
+
+/* The pennant ripples in the summit wind, hinged at the pole */
+.flag-cloth {
+    transform-box: fill-box;
+    transform-origin: 0 50%;
+}
+
+.summit-reached .flag-cloth {
+    animation: flag-wave 2.2s ease-in-out infinite;
+}
+
+@keyframes flag-wave {
+    0%, 100% { transform: skewY(0deg) scaleX(1); }
+    30% { transform: skewY(-4deg) scaleX(0.94); }
+    60% { transform: skewY(3deg) scaleX(0.97); }
+}
+
+/* "Vanakkam!" bubble; js/experience.js places it above the tahr. It leans to the
+   left so it stays clear of the flag on the right. */
+.summit-bubble {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--t-card);
+    color: var(--t-heading);
+    font-size: clamp(13px, 1.4vw, 15px);
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: var(--t-shadow-hover);
+    opacity: 0;
+    transform: translate(-74%, calc(-100% + 10px)) scale(0.85);
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.3, 1.5, 0.5, 1);
+    pointer-events: none;
+}
+
+.summit-bubble::after {
+    content: "";
+    position: absolute;
+    left: 74%;
+    bottom: -6px;
+    width: 12px;
+    height: 12px;
+    background: inherit;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.summit-reached .summit-bubble {
+    opacity: 1;
+    transform: translate(-74%, -100%) scale(1);
+}
+
+/* ---------- Chapter list (dots on the right) ---------- */
+
+.story-nav {
+    position: fixed;
+    right: clamp(12px, 2vw, 28px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: none;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.story-nav ol {
+    list-style: none;
+    margin: 0;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-radius: 999px;
+    background: var(--t-header-bg);
+    box-shadow: var(--t-shadow);
+}
+
+.story-nav a {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.story-nav a::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--t-accent-dark);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.story-nav a[aria-current="step"]::before {
+    background: var(--t-accent-dark);
+    transform: scale(1.25);
+}
+
+/* The chapter name slides out next to the dot on hover or keyboard focus */
+.story-nav span {
+    position: absolute;
+    right: calc(100% + 12px);
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--t-card);
+    color: var(--t-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: var(--t-shadow);
+    opacity: 0;
+    transform: translateX(6px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.story-nav a:hover span,
+.story-nav a:focus-visible span {
+    opacity: 1;
+    transform: none;
+}
+
+.story-nav a:focus-visible {
+    outline: 3px solid var(--t-accent);
+    outline-offset: 2px;
+}
+
+@media (min-width: 900px) {
+    .story-nav { display: block; }
+}
+
+/* Thin gold progress line along the top of the screen */
+.story-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 5;
+    background: var(--t-accent);
+    transform-origin: 0 50%;
+    transform: scaleX(var(--p));
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.story-past .story-progress,
+.story-past .story-nav {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ---------- Chapters (the real content) ---------- */
+
+.story-chapters {
+    position: relative;
+    z-index: 1;
+    overflow-x: clip;   /* cards tilting in from the side never cause sideways scrolling */
+}
+
+.chapter {
+    min-height: var(--stage-h);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 16px 48px;
+}
+
+.chapter--left { justify-content: flex-start; }
+
+@media (max-width: 700px) {
+    /* the tahr climbs in the lower half of the screen, so the cards sit at the top */
+    .chapter:not(.chapter-dawn):not(.chapter-summit) {
+        align-items: flex-start;
+        padding-top: 76px;
+    }
+
+    /* near the top the tahr is high on the screen, so this card moves to the bottom */
+    #community.chapter {
+        align-items: flex-end;
+        padding-bottom: 84px;
+    }
+
+    /* compact cards on phones: a small photo beside the text, so the climb stays in view */
+    .chapter-card--photo {
+        display: grid;
+        grid-template-columns: 34% 1fr;
+        align-items: stretch;
+        max-width: 100%;
+    }
+
+    .chapter-card--photo img {
+        height: 100%;
+        min-height: 128px;
+    }
+
+    .chapter-card--photo .chapter-text {
+        padding: 14px 16px;
+        align-self: center;
+    }
+
+    .chapter-card--photo h2 {
+        font-size: 26px;
+        margin-bottom: 6px;
+    }
+
+    .chapter-card--photo p {
+        font-size: 14.5px;
+        line-height: 1.5;
+    }
+}
+.chapter--right { justify-content: flex-end; }
+
+@media (min-width: 900px) {
+    .chapter--left { padding-left: 6vw; }
+    .chapter--right { padding-right: calc(6vw + 48px); }
+}
+
+/* 1. Dawn: light text on the night sky */
+.chapter-dawn {
+    text-align: center;
+}
+
+.dawn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+}
+
+.dawn-crest {
+    width: clamp(150px, 26vh, 250px);
+    height: auto;
+    filter: drop-shadow(0 12px 32px var(--t-footer-2));
+}
+
+/* Light title on the night sky (the site's headings are otherwise gold-gradient text) */
+.experience-page .dawn-title {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    margin: 20px 0 8px;
+    font-size: clamp(34px, 6.4vw, 84px);
+    line-height: 1.02;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    color: var(--t-footer-text) !important;
+    text-shadow: 0 2px 18px var(--t-footer-2);
+}
+
+.dawn-subtitle {
+    margin: 0;
+    font-size: clamp(16px, 2.2vw, 22px);
+    font-weight: 600;
+    color: var(--t-footer-text);
+    text-shadow: 0 2px 12px var(--t-footer-2);
+}
+
+.dawn-roots {
+    margin: 10px 0 0;
+    font-size: clamp(13px, 1.5vw, 15px);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--t-gold);
+    text-shadow: 0 2px 10px var(--t-footer-2);
+}
+
+.dawn-cue {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: clamp(28px, 6vh, 56px) 0 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--t-footer-text);
+}
+
+/* A small arrow that gently bobs, inviting the scroll */
+.dawn-cue::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    animation: cue-bob 1.8s ease-in-out infinite;
+}
+
+@keyframes cue-bob {
+    0%, 100% { transform: translateY(0) rotate(45deg); opacity: 0.6; }
+    50% { transform: translateY(6px) rotate(45deg); opacity: 1; }
+}
+
+.experience-page .dawn-skip {
+    margin-top: 14px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--t-footer-text);
+    text-underline-offset: 4px;
+}
+
+.experience-page .dawn-skip:focus-visible {
+    outline: 3px solid var(--t-gold);
+    outline-offset: 2px;
+}
+
+/* Glass cards that float over the scene */
+.chapter-card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 520px;
+    padding: clamp(22px, 4vw, 36px);
+    border-radius: calc(var(--stk-radius) + 6px);
+    border: 1px solid var(--t-line);
+    background: var(--t-header-bg);
+    box-shadow: var(--t-shadow-hover);
+    color: var(--t-text);
+}
+
+.chapter-card--center {
+    max-width: 640px;
+    text-align: center;
+}
+
+.chapter-card h2 {
+    margin: 0 0 12px;
+    font-size: var(--r-h2);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    color: var(--t-heading);
+}
+
+.chapter-card p {
+    margin: 0;
+    font-size: clamp(16px, 1.6vw, 19px);
+    line-height: 1.6;
+}
+
+.experience-page .sunrise-tamil {
+    font-family: 'Noto Sans Tamil', sans-serif;
+    font-size: clamp(22px, 3.2vw, 34px);
+    line-height: 1.5;
+    color: var(--t-accent-dark);
+}
+
+.experience-page .sunrise-heading {
+    font-size: clamp(26px, 4vw, 44px);
+    margin-bottom: 16px;
+}
+
+/* Photo cards: Culture, Sports, Community */
+.chapter-card--photo {
+    padding: 0;
+    overflow: hidden;
+    max-width: 460px;
+}
+
+.chapter-card--photo img {
+    display: block;
+    width: 100%;
+    height: clamp(180px, 34vh, 320px);
+    object-fit: cover;
+}
+
+.chapter-text {
+    padding: clamp(20px, 3.4vw, 30px);
+}
+
+.chapter-num {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: var(--t-accent-dark);
+}
+
+/* 6. Summit: card sits low so the tahr and flag stay in view above it */
+.chapter-summit {
+    align-items: flex-end;
+    padding-bottom: clamp(24px, 6vh, 64px);
+}
+
+.summit-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* Next event, under the buttons */
+.experience-page .summit-event {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 18px auto 0;
+    padding: 8px 18px 8px 8px;
+    border-radius: var(--stk-radius);
+    border: 1px solid var(--t-line);
+    background: var(--t-soft-2);
+    color: var(--t-text);
+    text-align: left;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-page .summit-event:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--t-shadow);
+}
+
+.experience-page .summit-event:focus-visible {
+    outline: 3px solid var(--t-accent);
+    outline-offset: 3px;
+}
+
+.summit-event img {
+    width: 42px;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.summit-event-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.summit-event-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--t-accent-dark);
+}
+
+.summit-event-title {
+    font-weight: 800;
+    color: var(--t-heading);
+}
+
+.summit-event-date {
+    font-size: 0.85rem;
+    color: var(--t-muted);
+}
+
+.experience-page .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 30px;
+    border: 2px solid transparent;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.experience-page .button-secondary {
+    border-color: var(--t-accent);
+    color: var(--t-accent-dark);
+}
+
+.experience-page .button:focus-visible {
+    outline: 3px solid var(--t-accent);
+    outline-offset: 3px;
+}
+
+/* Still picture (no JavaScript, or less motion): the sky is light,
+   so the opening title sits on a dark panel to stay readable */
+.story:not(.story-live) .dawn-content {
+    padding: clamp(24px, 4vw, 40px);
+    border-radius: calc(var(--stk-radius) + 6px);
+    background: var(--t-overlay);
+}
+
+/* ---------- 3D entrance of the cards (only when the scene is moving) ---------- */
+
+.story-live .chapter-card,
+.story-live .dawn-content {
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.story-live .chapter:not(.is-in) .chapter-card {
+    opacity: 0;
+    transform: perspective(1100px) translate3d(0, 48px, -140px) rotateX(10deg);
+}
+
+.story-live .chapter--left:not(.is-in) .chapter-card {
+    transform: perspective(1100px) translate3d(-40px, 40px, -140px) rotateY(22deg);
+}
+
+.story-live .chapter--right:not(.is-in) .chapter-card {
+    transform: perspective(1100px) translate3d(40px, 40px, -140px) rotateY(-22deg);
+}
+
+/* The opening title drifts up and fades as the climb begins */
+.story-live .dawn-content {
+    transition: none;
+    opacity: clamp(0, 1 - var(--p) * 9, 1);
+    transform: translateY(calc(var(--p) * -50vh)) scale(calc(1 - var(--p) * 0.8));
+}
+
+/* ---------- Less motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .dawn-cue::after,
+    .sun-rays,
+    .mote,
+    .kite,
+    .bird-fly,
+    .cloud { animation: none; }
+    .story-nav span,
+    .story-nav a::before { transition: none; }
+}

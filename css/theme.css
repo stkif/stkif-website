@@ -1,0 +1,13 @@
+/* ==========================================================
+   CHOOSE THE WEBSITE THEME HERE (change one line)
+   Available themes in css/themes/:
+     golden-peak.css   colours from the STK IF logo: gold, black, stone grey (default)
+     sunrise.css       soft dawn blush, coral and gold
+     nilgiri-mist.css  misty green Nilgiri hills with golden sun
+     twilight.css      dark evening sky, plum and lamp-gold
+   Tip: preview any theme without changing files by adding
+   ?theme=sunrise (or nilgiri-mist, twilight) to the page address.
+   ========================================================== */
+
+@import url("themes/golden-peak.css?v=20261028-8");
+@import url("theme-base.css?v=20261028-8");

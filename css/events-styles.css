@@ -1,0 +1,178 @@
+/* Main Content Wrapper */
+
+main#events-page {
+    font-size: clamp(12px, 1.5vw, 15px);
+    color: #141414;
+}
+
+a {
+    color: inherit;
+}
+
+/* Events Header Section */
+#events-header {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0px 20px 20px;
+    text-align: center;
+    flex: 1;
+}
+
+#events-header p {
+    font-size: clamp(14px, 2vw, 17px);
+    line-height: 1.6;
+    color: #5B665F;
+    margin: 0;
+}
+
+/* Events Cards Section */
+#events {
+    padding: 30px 5% 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+#events-h2{
+    font-size: 30px;
+}
+
+.div-all-event-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Individual Card Styling */
+.event-card-container {
+    background-color: #FFF2DC;
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgb(207, 206, 199);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgb(207, 206, 199);
+}
+
+.event-card-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 14px;
+}
+
+/* Event posters are portrait: show the title area */
+.event-card-poster {
+    object-position: center 42%;
+}
+
+.card-txt-container {
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1C392B;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+}
+
+.card-txt {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #4A5568;
+    margin: 0 0 16px 0;
+}
+
+/* Date and Location Metadata */
+.card-time-hour-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #2D3748;
+    margin-bottom: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card-svg-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card-calendar-svg, .card-place-svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.card-hour, .card-place {
+    margin: 0;
+    font-weight: 500;
+}
+
+.card-button {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+    background-color: #FFBC12;
+    font-family: inherit;
+    color: #141414;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.card-button:hover {
+    background-color: #E0A30D;
+}
+
+
+/* Media Queries */
+
+/* Tablet Screens (<= 768px) */
+@media (max-width: 768px) {
+
+    .divider {
+        display: none;
+    }
+}
+
+/* Small Mobile Screens (<= 480px) */
+@media (max-width: 480px) {
+    #events-header {
+        padding: 20px 16px;
+    }
+
+    #events {
+        padding: 20px 16px 40px;
+    }
+
+    .div-all-event-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card-time-hour-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 8h3l1.6-2.5h6.8L17 8h3v11H4z"/>
+  <g class="i-lens">
+  <circle cx="12" cy="13.2" r="3.4"/></g>
+  <g class="i-flash">
+  <path d="M18.5 3.5l1-1M20.5 5.5l1.2-.4"/></g>
+</svg>

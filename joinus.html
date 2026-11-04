@@ -15,13 +15,13 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="css/shared-styles.css?v=20261104-1">
-    <link rel="stylesheet" href="css/joinus-styles.css?v=20261104-1">
+    <link rel="stylesheet" href="css/shared-styles.css?v=20261105-1">
+    <link rel="stylesheet" href="css/joinus-styles.css?v=20261105-1">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="css/modern.css?v=20261104-1">
-    <link rel="stylesheet" href="css/theme.css?v=20261104-1" id="theme-css">
-    <link rel="stylesheet" href="css/mascots.css?v=20261104-1">
-    <link rel="stylesheet" href="css/refresh.css?v=20261104-1">
+    <link rel="stylesheet" href="css/modern.css?v=20261105-1">
+    <link rel="stylesheet" href="css/theme.css?v=20261105-1" id="theme-css">
+    <link rel="stylesheet" href="css/mascots.css?v=20261105-1">
+    <link rel="stylesheet" href="css/refresh.css?v=20261105-1">
 </head>
 
 <body>
@@ -55,6 +55,23 @@
     </header>
 
 
+    <!-- Lucky draw banner: shown by js/joinus.js only until the draw is over (see DRAW_ENDS there) -->
+    <section id="draw-banner" class="draw-only" hidden>
+        <div class="draw-wheel" aria-hidden="true"><span></span></div>
+        <div class="draw-text">
+            <p class="draw-kicker">STK Super Lucky Draw · Saturday 7 November</p>
+            <h2>Join STK and you could win!</h2>
+            <p>Register as an STK member today and you are in the Super Lucky Draw at SSK Diwali Thiruvizha. Amazing prizes are waiting for the lucky winners!</p>
+            <ol class="draw-steps">
+                <li>Fill in the form</li>
+                <li>You are in the draw</li>
+                <li>Stay tuned for 7 November</li>
+            </ol>
+            <a class="draw-cta" href="#join-form">Register and join the draw</a>
+        </div>
+        <img class="draw-tahr" src="mascots/my-goats/tahr-celebrate.webp" alt="">
+    </section>
+
     <main class="join-page">
 
     <div class="join-info">
@@ -70,10 +87,6 @@
         <p>
             <strong>Registration is open!</strong> Fill in the form to become
             a member, and we will contact you about the next steps.
-        </p>
-
-        <p>
-            <strong>Super Lucky Draw:</strong> everyone who joins is entered in the STK Super Lucky Draw at SSK Diwali Thiruvizha on Saturday 7 November 2026.
         </p>
     </section>
 
@@ -165,7 +178,20 @@
 
 </main>   
 
-    <script src="js/joinus.js?v=20261104-1"></script>
+    <!-- Shown when the form has been sent -->
+    <dialog id="join-success" aria-labelledby="join-success-title">
+        <div class="join-tick" aria-hidden="true">&#10003;</div>
+        <h2 id="join-success-title">You are registered!</h2>
+        <p>We have received your details, so there is no need to fill in the form again.</p>
+        <div class="draw-only join-success-draw" hidden>
+            <img src="mascots/my-goats/tahr-celebrate.webp" alt="">
+            <h3>You are in the Super Lucky Draw!</h3>
+            <p>You might be one of the lucky winners. Stay tuned until the draw on Saturday 7 November at SSK Diwali Thiruvizha.</p>
+        </div>
+        <button type="button" id="join-success-close">Close</button>
+    </dialog>
+
+    <script src="js/joinus.js?v=20261105-1"></script>
 
 
 
@@ -194,10 +220,10 @@
         </div>
 
     </footer>
-    <script src="lang/languages.js?v=20261104-1"></script>
-    <script src="js/i18n.js?v=20261104-1"></script>
-    <script src="mascots/mascot-list.js?v=20261104-1"></script>
-    <script src="js/site.js?v=20261104-1"></script>
+    <script src="lang/languages.js?v=20261105-1"></script>
+    <script src="js/i18n.js?v=20261105-1"></script>
+    <script src="mascots/mascot-list.js?v=20261105-1"></script>
+    <script src="js/site.js?v=20261105-1"></script>
 </body>
 
 </html>

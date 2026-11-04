@@ -417,8 +417,6 @@ window.STK_TRANSLATIONS.ta = {
         "பல பண்பாடுகள் சந்தித்து வரவேற்கப்படும் இடமாக போட்கிர்கா ஸ்வீடன் முழுவதும் அறியப்படுகிறது. உள்ளூர் சங்கங்களுக்கும் பண்பாட்டு வாழ்விற்கும் போட்கிர்கா நகராட்சி அளிக்கும் ஆதரவுக்கு நாங்கள் மனமார்ந்த நன்றி கூறுகிறோம். அந்த ஆதரவு, எங்களைப் போன்ற குடும்பங்கள் தமிழ் மற்றும் இந்தியப் பண்பாட்டை அண்டை வீட்டாருடன் பகிர வாய்ப்பளிக்கிறது; ஒவ்வொரு தலைமுறையும் ஸ்வீடனில் தம் வீட்டில் இருப்பதுபோல் உணர உதவுகிறது.",
     "Botkyrka, Stockholm, Sweden":
         "போட்கிர்கா, ஸ்டாக்ஹோம், சுவீடன்",
-    "<strong>Super Lucky Draw:</strong> everyone who joins is entered in the STK Super Lucky Draw at SSK Diwali Thiruvizha on Saturday 7 November 2026.":
-        "<strong>சூப்பர் அதிர்ஷ்டக் குலுக்கல்:</strong> இணையும் அனைவரும் 2026 நவம்பர் 7 சனிக்கிழமை நடைபெறும் SSK தீபாவளி திருவிழாவில் STK சூப்பர் அதிர்ஷ்டக் குலுக்கலில் சேர்க்கப்படுவார்கள்.",
     "Area in Stockholm (optional)":
         "ஸ்டாக்ஹோமில் வசிக்கும் பகுதி (விருப்பத்தேர்வு)",
     "I agree that Stockholm Tamil Kultur (STK) stores my name, email, mobile number, WhatsApp number (if given) and date of birth for the STK membership register and the Super Lucky Draw, and may contact me about STK events by email, phone or WhatsApp. If I win, my first name and last initial may be shown on screen. My details are never shared, and I can ask for them to be deleted at any time.":
@@ -428,5 +426,29 @@ window.STK_TRANSLATIONS.ta = {
     "Please enter a valid mobile number, e.g. 070 123 45 67.":
         "சரியான கைபேசி எண்ணை உள்ளிடுங்கள், எ.கா. 070 123 45 67.",
     "Please enter a valid WhatsApp number, or leave it empty.":
-        "சரியான WhatsApp எண்ணை உள்ளிடுங்கள், அல்லது காலியாக விடுங்கள்."
+        "சரியான WhatsApp எண்ணை உள்ளிடுங்கள், அல்லது காலியாக விடுங்கள்.",
+    "STK Super Lucky Draw · Saturday 7 November":
+        "STK சூப்பர் அதிர்ஷ்டக் குலுக்கல் · சனிக்கிழமை, நவம்பர் 7",
+    "Join STK and you could win!":
+        "STK-இல் இணையுங்கள், நீங்களும் வெல்லலாம்!",
+    "Register as an STK member today and you are in the Super Lucky Draw at SSK Diwali Thiruvizha. Amazing prizes are waiting for the lucky winners!":
+        "இன்றே STK உறுப்பினராகப் பதிவு செய்யுங்கள்; SSK தீபாவளி திருவிழாவில் நடைபெறும் சூப்பர் அதிர்ஷ்டக் குலுக்கலில் நீங்களும் இடம்பெறுவீர்கள். அதிர்ஷ்டசாலிகளுக்கு அருமையான பரிசுகள் காத்திருக்கின்றன!",
+    "Fill in the form":
+        "படிவத்தை நிரப்புங்கள்",
+    "You are in the draw":
+        "குலுக்கலில் நீங்களும் உண்டு",
+    "Stay tuned for 7 November":
+        "நவம்பர் 7 வரை காத்திருங்கள்",
+    "Register and join the draw":
+        "பதிவு செய்து குலுக்கலில் பங்கேற்கவும்",
+    "You are registered!":
+        "உங்கள் பதிவு முடிந்தது!",
+    "We have received your details, so there is no need to fill in the form again.":
+        "உங்கள் விவரங்கள் எங்களுக்குக் கிடைத்துவிட்டன; படிவத்தை மீண்டும் நிரப்ப வேண்டாம்.",
+    "You are in the Super Lucky Draw!":
+        "சூப்பர் அதிர்ஷ்டக் குலுக்கலில் நீங்களும் இடம்பெற்றுவிட்டீர்கள்!",
+    "You might be one of the lucky winners. Stay tuned until the draw on Saturday 7 November at SSK Diwali Thiruvizha.":
+        "அதிர்ஷ்டசாலி வெற்றியாளர்களில் நீங்களும் ஒருவராக இருக்கலாம். சனிக்கிழமை, நவம்பர் 7 அன்று SSK தீபாவளி திருவிழாவில் நடைபெறும் குலுக்கல் வரை காத்திருங்கள்.",
+    "Close":
+        "மூடு"
 };

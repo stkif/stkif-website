@@ -417,8 +417,6 @@ window.STK_TRANSLATIONS.sv = {
         "Botkyrka är känt i hela Sverige som en plats där många kulturer möts och välkomnas. Vi är djupt tacksamma mot Botkyrka kommun för dess stöd till det lokala föreningslivet och kulturlivet. Det stödet ger familjer som våra möjlighet att dela tamilsk och indisk kultur med våra grannar, och hjälper alla generationer att känna sig hemma i Sverige.",
     "Botkyrka, Stockholm, Sweden":
         "Botkyrka, Stockholm, Sverige",
-    "<strong>Super Lucky Draw:</strong> everyone who joins is entered in the STK Super Lucky Draw at SSK Diwali Thiruvizha on Saturday 7 November 2026.":
-        "<strong>Superlotteriet:</strong> alla som går med är med i STK:s superlotteri på SSK Diwali Thiruvizha lördag 7 november 2026.",
     "Area in Stockholm (optional)":
         "Område i Stockholm (valfritt)",
     "I agree that Stockholm Tamil Kultur (STK) stores my name, email, mobile number, WhatsApp number (if given) and date of birth for the STK membership register and the Super Lucky Draw, and may contact me about STK events by email, phone or WhatsApp. If I win, my first name and last initial may be shown on screen. My details are never shared, and I can ask for them to be deleted at any time.":
@@ -428,5 +426,29 @@ window.STK_TRANSLATIONS.sv = {
     "Please enter a valid mobile number, e.g. 070 123 45 67.":
         "Ange ett giltigt mobilnummer, t.ex. 070 123 45 67.",
     "Please enter a valid WhatsApp number, or leave it empty.":
-        "Ange ett giltigt WhatsApp-nummer, eller lämna fältet tomt."
+        "Ange ett giltigt WhatsApp-nummer, eller lämna fältet tomt.",
+    "STK Super Lucky Draw · Saturday 7 November":
+        "STK:s superlotteri · lördag 7 november",
+    "Join STK and you could win!":
+        "Gå med i STK och du kan vinna!",
+    "Register as an STK member today and you are in the Super Lucky Draw at SSK Diwali Thiruvizha. Amazing prizes are waiting for the lucky winners!":
+        "Bli medlem i STK i dag så är du med i superlotteriet på SSK Diwali Thiruvizha. Fantastiska priser väntar på de lyckliga vinnarna!",
+    "Fill in the form":
+        "Fyll i formuläret",
+    "You are in the draw":
+        "Du är med i lotteriet",
+    "Stay tuned for 7 November":
+        "Håll utkik den 7 november",
+    "Register and join the draw":
+        "Anmäl dig och var med i lotteriet",
+    "You are registered!":
+        "Du är anmäld!",
+    "We have received your details, so there is no need to fill in the form again.":
+        "Vi har tagit emot dina uppgifter, så du behöver inte fylla i formuläret igen.",
+    "You are in the Super Lucky Draw!":
+        "Du är med i superlotteriet!",
+    "You might be one of the lucky winners. Stay tuned until the draw on Saturday 7 November at SSK Diwali Thiruvizha.":
+        "Du kan bli en av de lyckliga vinnarna. Håll utkik fram till dragningen lördag 7 november på SSK Diwali Thiruvizha.",
+    "Close":
+        "Stäng"
 };

@@ -195,3 +195,307 @@ button:disabled {
     flex-shrink: 0;
     margin-top: 3px;
 }
+
+/* Form status: easy to see once sent */
+#form-status.success,
+#form-status.error {
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+#form-status.success {
+    background: #e3f4e8;
+    border: 2px solid #1e6b3a;
+}
+
+#form-status.error {
+    background: #fdecea;
+    border: 2px solid #b3261e;
+}
+
+/* Success popup */
+#join-success {
+    width: calc(100% - 32px);
+    max-width: 440px;
+    max-height: calc(100dvh - 32px);
+    box-sizing: border-box;
+    padding: 28px 24px 24px;
+    border: 0;
+    border-radius: 24px;
+    text-align: center;
+    color: #1b1b1b;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(15, 5, 20, 0.45);
+}
+
+#join-success::backdrop {
+    background: rgba(15, 5, 20, 0.65);
+}
+
+.join-tick {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #1e6b3a;
+    color: #fff;
+    font-size: 36px;
+    line-height: 64px;
+}
+
+#join-success h2 {
+    margin: 0 0 8px;
+    font-size: 1.6rem;
+    color: #1e6b3a;
+}
+
+#join-success > p {
+    margin: 0 0 16px;
+    color: #1b1b1b;
+}
+
+.join-success-draw {
+    margin-bottom: 18px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 2px solid #f9cf4a;
+    color: #fff;
+    background: linear-gradient(135deg, #2a0c2e, #7a1238);
+}
+
+.join-success-draw[hidden] {
+    display: none;
+}
+
+.join-success-draw img {
+    display: block;
+    width: 96px;
+    height: auto;
+    margin: 0 auto 6px;
+}
+
+.join-success-draw h3 {
+    margin: 0 0 6px;
+    font-size: 1.15rem;
+    color: #f9cf4a;
+}
+
+.join-success-draw p {
+    margin: 0;
+    color: #fff;
+}
+
+#join-success-close {
+    margin-top: 0;
+}
+
+/* Lucky draw banner (hidden after the draw by js/joinus.js) */
+#draw-banner {
+    box-sizing: border-box;
+    width: calc(100% - 60px);
+    max-width: 1140px;
+    margin: 120px auto 0;
+    padding: 26px 32px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 28px;
+    border: 2px solid #f9cf4a;
+    border-radius: 24px;
+    color: #fff;
+    background: radial-gradient(circle at 12% 50%, rgba(249, 207, 74, 0.22), transparent 45%), linear-gradient(135deg, #2a0c2e, #7a1238);
+    box-shadow: 0 10px 30px rgba(122, 18, 56, 0.3);
+}
+
+#draw-banner[hidden] {
+    display: none;
+}
+
+#draw-banner:not([hidden]) + .join-page {
+    margin-top: 48px;
+}
+
+#join-form {
+    scroll-margin-top: 100px;
+}
+
+.draw-wheel {
+    position: relative;
+    width: 130px;
+    height: 130px;
+}
+
+.draw-wheel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 5px solid #f9cf4a;
+    box-sizing: border-box;
+    background: conic-gradient(#e39b1d 0 60deg, #5b2a86 0 120deg, #1e7d3a 0 180deg, #c0392b 0 240deg, #1f3a5f 0 300deg, #f9cf4a 0 360deg);
+    animation: draw-spin 9s linear infinite;
+}
+
+/* the pointer */
+.draw-wheel::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #fff;
+}
+
+/* the hub */
+.draw-wheel span {
+    position: absolute;
+    z-index: 1;
+    inset: 38%;
+    border-radius: 50%;
+    background: #2a0c2e;
+    border: 3px solid #f9cf4a;
+}
+
+@keyframes draw-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .draw-wheel::before { animation: none; }
+}
+
+.draw-text > * {
+    color: #fff;
+}
+
+#draw-banner .draw-kicker {
+    margin: 0 0 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #f9cf4a;
+}
+
+#draw-banner h2 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #f9cf4a;
+}
+
+#draw-banner .draw-text > p:not(.draw-kicker) {
+    margin: 0 0 14px;
+}
+
+.draw-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+    counter-reset: draw-step;
+}
+
+.draw-steps li {
+    counter-increment: draw-step;
+    padding: 6px 12px 6px 6px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.draw-steps li::before {
+    content: counter(draw-step);
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+    color: #2a0c2e;
+    background: #f9cf4a;
+}
+
+a.draw-cta {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #2a0c2e;
+    background: linear-gradient(#ffe27a, #e39b1d);
+}
+
+a.draw-cta:hover {
+    filter: brightness(1.06);
+}
+
+.draw-tahr {
+    width: 130px;
+    height: auto;
+}
+
+@media (max-width: 950px) {
+    #draw-banner {
+        width: calc(100% - 32px);
+        margin-top: 104px;
+        padding: 20px 16px;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 12px;
+        text-align: center;
+    }
+
+    #draw-banner:not([hidden]) + .join-page {
+        margin-top: 0;
+        padding-top: 32px;
+    }
+
+    #draw-banner h2 {
+        font-size: 1.6rem;
+    }
+
+    .draw-wheel {
+        width: 90px;
+        height: 90px;
+    }
+
+    .draw-tahr {
+        display: none;
+    }
+
+    .draw-steps {
+        justify-content: center;
+    }
+}
+
+/* Short screens: keep the Close button in view */
+@media (max-height: 720px) {
+    #join-success {
+        padding: 18px 18px 16px;
+    }
+
+    .join-tick {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 8px;
+        font-size: 24px;
+        line-height: 44px;
+    }
+
+    .join-success-draw {
+        margin-bottom: 12px;
+        padding: 10px 12px;
+    }
+
+    .join-success-draw img {
+        width: 56px;
+    }
+}

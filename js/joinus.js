@@ -23,6 +23,33 @@ const CONFIG = {
 const PHONE_RULE = /^[+0-9 ()-]{6,20}$/;
 const EMAIL_RULE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// The lucky draw is on one day only. Everything marked "draw-only" on the page hides itself at this
+// moment (Stockholm time), with no change needed to the website. Nothing else on the page depends on it.
+const DRAW_ENDS = new Date("2026-11-07T18:00:00+01:00");
+
+function applyDrawCampaign(now) {
+    const on = (now || new Date()) < DRAW_ENDS;
+    document.querySelectorAll(".draw-only").forEach(function (el) {
+        el.hidden = !on;
+    });
+}
+applyDrawCampaign();
+
+const successPopup = document.getElementById("join-success");
+
+function showSuccessPopup() {
+    applyDrawCampaign();   // the page may have been open since before the draw ended
+    successPopup.showModal();
+}
+
+document.getElementById("join-success-close").addEventListener("click", function () {
+    successPopup.close();
+});
+// A click outside the card closes it too
+successPopup.addEventListener("click", function (event) {
+    if (event.target === successPopup) successPopup.close();
+});
+
 const form = document.getElementById("joinForm");
 const statusMessage = document.getElementById("form-status");
 const submitButton = form.querySelector('button[type="submit"]');
@@ -111,6 +138,7 @@ form.addEventListener("submit", async function (event) {
 
         form.reset();
         showStatus("Thank you! Your details have been sent.", "success");
+        showSuccessPopup();
     } catch (error) {
         showStatus("Something went wrong. Please try again later.", "error");
     } finally {

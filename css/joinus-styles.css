@@ -19,7 +19,9 @@ form {
 label[for="fullname"],
 label[for="email"],
 label[for="phone"],
+label[for="whatsapp"],
 label[for="dob"],
+label[for="area"],
 label[for="gender"] {
     display: block;
     margin-bottom: 8px;
@@ -28,7 +30,9 @@ label[for="gender"] {
 #fullname,
 #email ,
 #phone,
+#whatsapp,
 #dob,
+#area,
 #gender,
 #gender-other {
     display: block;

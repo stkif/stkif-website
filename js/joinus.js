@@ -1,18 +1,27 @@
-// Join Us form -> Google Form (back end)
+// Join Us form -> the STK membership & Super Lucky Draw Google Form (back end).
+// Every sign-up lands in the same sheet as the QR-code form, so it is also on the lucky-draw wheel.
 // Entry IDs come from the Google Form's pre-filled link.
 
 const CONFIG = {
-    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdRcuRZGzLjbVEYVWoW2SJCEIqmtq-DB_0zYjj-XAur3bN4lg/formResponse",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSev8uhQVU8lrrZ8FrfyntH2pnVBUv7adPz_jetuH9novJTM0g/formResponse",
 
     entries: {
-        fullname: "entry.31414593",
-        email: "entry.928234848",
-        phone: "entry.1662124608",
-        dob: "entry.790732369",               // Date question
-        gender: "entry.1035762172",         // Multiple choice question (no longer asked on the website, see below)
-        activities: "entry.1446018950"  // Checkboxes question
-    }
+        fullname: "entry.1341806306",
+        email: "entry.1423375731",
+        phone: "entry.1735404168",
+        whatsapp: "entry.568488317",      // optional
+        dob: "entry.1697873479",          // Date question
+        area: "entry.1259779861",         // optional
+        activities: "entry.959228870",    // Checkboxes question ("Interested in")
+        consent: "entry.817569883"        // Checkbox, the only choice below
+    },
+    consentChoice: "I agree to the above"
 };
+
+// The same rules the Google Form uses. Google never tells the page when it rejects an answer,
+// so anything it would reject must be caught here, or the visitor sees "Thank you" for nothing.
+const PHONE_RULE = /^[+0-9 ()-]{6,20}$/;
+const EMAIL_RULE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const form = document.getElementById("joinForm");
 const statusMessage = document.getElementById("form-status");
@@ -41,36 +50,33 @@ function showStatus(message, type) {
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    // Safety check: don't pretend to send if the entry IDs are not filled in yet
-    const idsMissing = Object.values(CONFIG.entries).some(function (id) {
-        return id.includes("REPLACE_ME");
-    });
-    if (idsMissing) {
-        showStatus("This form is not connected yet. Please try again later.", "error");
+    const data = new FormData(form);
+    const email = data.get("email").trim();
+    const phone = data.get("phone").trim();
+    const whatsapp = (data.get("whatsapp") || "").trim();
+
+    if (!EMAIL_RULE.test(email)) {
+        showStatus("Please enter a valid email address.", "error");
         return;
     }
-
-    const data = new FormData(form);
-
-    // The Google Form requires at least one activity
+    if (!PHONE_RULE.test(phone)) {
+        showStatus("Please enter a valid mobile number, e.g. 070 123 45 67.", "error");
+        return;
+    }
+    if (whatsapp && !PHONE_RULE.test(whatsapp)) {
+        showStatus("Please enter a valid WhatsApp number, or leave it empty.", "error");
+        return;
+    }
     if (data.getAll("activities").length === 0) {
         showStatus("Please choose at least one activity.", "error");
         return;
     }
+
     const body = new URLSearchParams();
-
     body.append(CONFIG.entries.fullname, data.get("fullname").trim());
-    body.append(CONFIG.entries.email, data.get("email").trim());
-    // The Google Form has one phone question, so the WhatsApp number goes in it too
-    const phone = data.get("phone").trim();
-    const whatsapp = (data.get("whatsapp") || "").trim();
-    body.append(CONFIG.entries.phone, whatsapp ? phone + " (WhatsApp: " + whatsapp + ")" : phone);
-
-    // Gender is no longer asked. Until the question is made optional in the
-    // Google Form, answer it with "Other: Not asked" so the form still accepts the entry.
-    // Once it is optional (or deleted), remove these two lines.
-    body.append(CONFIG.entries.gender, "__other_option__");
-    body.append(CONFIG.entries.gender + ".other_option_response", "Not asked");
+    body.append(CONFIG.entries.email, email);
+    body.append(CONFIG.entries.phone, phone);
+    if (whatsapp) body.append(CONFIG.entries.whatsapp, whatsapp);
 
     // Google Forms expects dates as separate year / month / day values
     const [year, month, day] = data.get("dob").split("-");
@@ -78,10 +84,16 @@ form.addEventListener("submit", async function (event) {
     body.append(CONFIG.entries.dob + "_month", String(Number(month)));
     body.append(CONFIG.entries.dob + "_day", String(Number(day)));
 
+    const area = (data.get("area") || "").trim();
+    if (area) body.append(CONFIG.entries.area, area);
+
     // Checkboxes: repeat the same entry for every ticked option
     data.getAll("activities").forEach(function (activity) {
         body.append(CONFIG.entries.activities, activity);
     });
+
+    // The page's consent box is required, so reaching this point means it was ticked
+    body.append(CONFIG.entries.consent, CONFIG.consentChoice);
 
     submitButton.disabled = true;
     setButtonLabel("Sending...");

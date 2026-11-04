@@ -289,8 +289,6 @@ window.STK_TRANSLATIONS.sv = {
         "Mobilnummer",
     "WhatsApp Number (if different)":
         "WhatsApp-nummer (om annat)",
-    "I agree that Stockholm Tamil Kultur IF may store these details to handle my membership and contact me about club activities. They are never shared, and I can ask for them to be deleted at any time.":
-        "Jag godkänner att Stockholm Tamil Kultur IF sparar dessa uppgifter för att hantera mitt medlemskap och kontakta mig om föreningens aktiviteter. De delas aldrig, och jag kan när som helst be om att de raderas.",
     "Please choose at least one activity.":
         "Välj minst en aktivitet.",
     "Chairman":
@@ -418,5 +416,17 @@ window.STK_TRANSLATIONS.sv = {
     "Botkyrka is known across Sweden as a place where many cultures meet and are made welcome. We are deeply grateful to Botkyrka kommun for its support of local associations and cultural life. That support gives families like ours the chance to share Tamil and Indian culture with our neighbours, and helps every generation feel at home in Sweden.":
         "Botkyrka är känt i hela Sverige som en plats där många kulturer möts och välkomnas. Vi är djupt tacksamma mot Botkyrka kommun för dess stöd till det lokala föreningslivet och kulturlivet. Det stödet ger familjer som våra möjlighet att dela tamilsk och indisk kultur med våra grannar, och hjälper alla generationer att känna sig hemma i Sverige.",
     "Botkyrka, Stockholm, Sweden":
-        "Botkyrka, Stockholm, Sverige"
+        "Botkyrka, Stockholm, Sverige",
+    "<strong>Super Lucky Draw:</strong> everyone who joins is entered in the STK Super Lucky Draw at SSK Diwali Thiruvizha on Saturday 7 November 2026.":
+        "<strong>Superlotteriet:</strong> alla som går med är med i STK:s superlotteri på SSK Diwali Thiruvizha lördag 7 november 2026.",
+    "Area in Stockholm (optional)":
+        "Område i Stockholm (valfritt)",
+    "I agree that Stockholm Tamil Kultur (STK) stores my name, email, mobile number, WhatsApp number (if given) and date of birth for the STK membership register and the Super Lucky Draw, and may contact me about STK events by email, phone or WhatsApp. If I win, my first name and last initial may be shown on screen. My details are never shared, and I can ask for them to be deleted at any time.":
+        "Jag godkänner att Stockholm Tamil Kultur (STK) sparar mitt namn, min e-post, mitt mobilnummer, mitt WhatsApp-nummer (om jag anger det) och mitt födelsedatum för STK:s medlemsregister och superlotteriet, och får kontakta mig om STK:s evenemang via e-post, telefon eller WhatsApp. Om jag vinner kan mitt förnamn och första bokstaven i mitt efternamn visas på skärmen. Mina uppgifter delas aldrig, och jag kan när som helst be om att de raderas.",
+    "Please enter a valid email address.":
+        "Ange en giltig e-postadress.",
+    "Please enter a valid mobile number, e.g. 070 123 45 67.":
+        "Ange ett giltigt mobilnummer, t.ex. 070 123 45 67.",
+    "Please enter a valid WhatsApp number, or leave it empty.":
+        "Ange ett giltigt WhatsApp-nummer, eller lämna fältet tomt."
 };

@@ -289,8 +289,6 @@ window.STK_TRANSLATIONS.ta = {
         "கைபேசி எண்",
     "WhatsApp Number (if different)":
         "WhatsApp எண் (வேறாக இருந்தால்)",
-    "I agree that Stockholm Tamil Kultur IF may store these details to handle my membership and contact me about club activities. They are never shared, and I can ask for them to be deleted at any time.":
-        "எனது உறுப்பினர் சேர்க்கையைக் கையாளவும் சங்க நிகழ்வுகள் பற்றி என்னைத் தொடர்புகொள்ளவும் Stockholm Tamil Kultur IF இந்த விவரங்களைச் சேமிக்க ஒப்புக்கொள்கிறேன். இவை யாருடனும் பகிரப்படாது; எப்போது வேண்டுமானாலும் அவற்றை நீக்கக் கோரலாம்.",
     "Please choose at least one activity.":
         "குறைந்தது ஒரு செயல்பாட்டைத் தேர்ந்தெடுங்கள்.",
     "Chairman":
@@ -418,5 +416,17 @@ window.STK_TRANSLATIONS.ta = {
     "Botkyrka is known across Sweden as a place where many cultures meet and are made welcome. We are deeply grateful to Botkyrka kommun for its support of local associations and cultural life. That support gives families like ours the chance to share Tamil and Indian culture with our neighbours, and helps every generation feel at home in Sweden.":
         "பல பண்பாடுகள் சந்தித்து வரவேற்கப்படும் இடமாக போட்கிர்கா ஸ்வீடன் முழுவதும் அறியப்படுகிறது. உள்ளூர் சங்கங்களுக்கும் பண்பாட்டு வாழ்விற்கும் போட்கிர்கா நகராட்சி அளிக்கும் ஆதரவுக்கு நாங்கள் மனமார்ந்த நன்றி கூறுகிறோம். அந்த ஆதரவு, எங்களைப் போன்ற குடும்பங்கள் தமிழ் மற்றும் இந்தியப் பண்பாட்டை அண்டை வீட்டாருடன் பகிர வாய்ப்பளிக்கிறது; ஒவ்வொரு தலைமுறையும் ஸ்வீடனில் தம் வீட்டில் இருப்பதுபோல் உணர உதவுகிறது.",
     "Botkyrka, Stockholm, Sweden":
-        "போட்கிர்கா, ஸ்டாக்ஹோம், சுவீடன்"
+        "போட்கிர்கா, ஸ்டாக்ஹோம், சுவீடன்",
+    "<strong>Super Lucky Draw:</strong> everyone who joins is entered in the STK Super Lucky Draw at SSK Diwali Thiruvizha on Saturday 7 November 2026.":
+        "<strong>சூப்பர் அதிர்ஷ்டக் குலுக்கல்:</strong> இணையும் அனைவரும் 2026 நவம்பர் 7 சனிக்கிழமை நடைபெறும் SSK தீபாவளி திருவிழாவில் STK சூப்பர் அதிர்ஷ்டக் குலுக்கலில் சேர்க்கப்படுவார்கள்.",
+    "Area in Stockholm (optional)":
+        "ஸ்டாக்ஹோமில் வசிக்கும் பகுதி (விருப்பத்தேர்வு)",
+    "I agree that Stockholm Tamil Kultur (STK) stores my name, email, mobile number, WhatsApp number (if given) and date of birth for the STK membership register and the Super Lucky Draw, and may contact me about STK events by email, phone or WhatsApp. If I win, my first name and last initial may be shown on screen. My details are never shared, and I can ask for them to be deleted at any time.":
+        "எனது பெயர், மின்னஞ்சல், கைபேசி எண், WhatsApp எண் (கொடுத்திருந்தால்), பிறந்த தேதி ஆகியவற்றை STK உறுப்பினர் பதிவேட்டுக்கும் சூப்பர் அதிர்ஷ்டக் குலுக்கலுக்கும் ஸ்டாக்ஹோம் தமிழ் கல்ச்சர் (STK) சேமிக்கவும், STK நிகழ்வுகள் பற்றி மின்னஞ்சல், தொலைபேசி அல்லது WhatsApp மூலம் என்னைத் தொடர்பு கொள்ளவும் ஒப்புக்கொள்கிறேன். நான் வென்றால், என் முதல் பெயரும் குடும்பப் பெயரின் முதல் எழுத்தும் திரையில் காட்டப்படலாம். என் விவரங்கள் யாருடனும் பகிரப்படாது; எப்போது வேண்டுமானாலும் அவற்றை நீக்கச் சொல்லலாம்.",
+    "Please enter a valid email address.":
+        "சரியான மின்னஞ்சல் முகவரியை உள்ளிடுங்கள்.",
+    "Please enter a valid mobile number, e.g. 070 123 45 67.":
+        "சரியான கைபேசி எண்ணை உள்ளிடுங்கள், எ.கா. 070 123 45 67.",
+    "Please enter a valid WhatsApp number, or leave it empty.":
+        "சரியான WhatsApp எண்ணை உள்ளிடுங்கள், அல்லது காலியாக விடுங்கள்."
 };

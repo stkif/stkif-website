@@ -15,13 +15,13 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="css/shared-styles.css?v=20261028-8">
-    <link rel="stylesheet" href="css/joinus-styles.css?v=20261028-8">
+    <link rel="stylesheet" href="css/shared-styles.css?v=20261104-1">
+    <link rel="stylesheet" href="css/joinus-styles.css?v=20261104-1">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="css/modern.css?v=20261028-8">
-    <link rel="stylesheet" href="css/theme.css?v=20261028-8" id="theme-css">
-    <link rel="stylesheet" href="css/mascots.css?v=20261028-8">
-    <link rel="stylesheet" href="css/refresh.css?v=20261028-8">
+    <link rel="stylesheet" href="css/modern.css?v=20261104-1">
+    <link rel="stylesheet" href="css/theme.css?v=20261104-1" id="theme-css">
+    <link rel="stylesheet" href="css/mascots.css?v=20261104-1">
+    <link rel="stylesheet" href="css/refresh.css?v=20261104-1">
 </head>
 
 <body>
@@ -71,6 +71,10 @@
             <strong>Registration is open!</strong> Fill in the form to become
             a member, and we will contact you about the next steps.
         </p>
+
+        <p>
+            <strong>Super Lucky Draw:</strong> everyone who joins is entered in the STK Super Lucky Draw at SSK Diwali Thiruvizha on Saturday 7 November 2026.
+        </p>
     </section>
 
     <section id="volunteer-info">
@@ -106,13 +110,16 @@
     <input type="email" id="email" name="email" required>
 
     <label for="phone">Mobile Number</label>
-    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+    <input type="tel" id="phone" name="phone" autocomplete="tel" required pattern="[+0-9 ()\-]{6,20}">
 
     <label for="whatsapp">WhatsApp Number (if different)</label>
-    <input type="tel" id="whatsapp" name="whatsapp">
+    <input type="tel" id="whatsapp" name="whatsapp" pattern="[+0-9 ()\-]{6,20}">
 
     <label for="dob">Date of Birth</label>
     <input type="date" id="dob" name="dob" required>
+
+    <label for="area">Area in Stockholm (optional)</label>
+    <input type="text" id="area" name="area" autocomplete="address-level2">
 
     <p>Select Activities</p>
 
@@ -143,7 +150,7 @@
 
     <label class="consent">
         <input type="checkbox" id="consent" name="consent" required>
-        I agree that Stockholm Tamil Kultur IF may store these details to handle my membership and contact me about club activities. They are never shared, and I can ask for them to be deleted at any time.
+        I agree that Stockholm Tamil Kultur (STK) stores my name, email, mobile number, WhatsApp number (if given) and date of birth for the STK membership register and the Super Lucky Draw, and may contact me about STK events by email, phone or WhatsApp. If I win, my first name and last initial may be shown on screen. My details are never shared, and I can ask for them to be deleted at any time.
     </label>
 
     <button type="submit">Join Us</button>
@@ -158,7 +165,7 @@
 
 </main>   
 
-    <script src="js/joinus.js?v=20261028-8"></script>
+    <script src="js/joinus.js?v=20261104-1"></script>
 
 
 
@@ -187,10 +194,10 @@
         </div>
 
     </footer>
-    <script src="lang/languages.js?v=20261028-8"></script>
-    <script src="js/i18n.js?v=20261028-8"></script>
-    <script src="mascots/mascot-list.js?v=20261028-8"></script>
-    <script src="js/site.js?v=20261028-8"></script>
+    <script src="lang/languages.js?v=20261104-1"></script>
+    <script src="js/i18n.js?v=20261104-1"></script>
+    <script src="mascots/mascot-list.js?v=20261104-1"></script>
+    <script src="js/site.js?v=20261104-1"></script>
 </body>
 
 </html>

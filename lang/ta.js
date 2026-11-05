@@ -450,5 +450,9 @@ window.STK_TRANSLATIONS.ta = {
     "You might be one of the lucky winners. Stay tuned until the draw on Saturday 7 November at SSK Diwali Thiruvizha.":
         "அதிர்ஷ்டசாலி வெற்றியாளர்களில் நீங்களும் ஒருவராக இருக்கலாம். சனிக்கிழமை, நவம்பர் 7 அன்று SSK தீபாவளி திருவிழாவில் நடைபெறும் குலுக்கல் வரை காத்திருங்கள்.",
     "Close":
-        "மூடு"
+        "மூடு",
+    "Duplicate entries are not allowed. This name and date of birth are already registered.":
+        "நகல் பதிவுகளுக்கு அனுமதி இல்லை. இந்தப் பெயரும் பிறந்த தேதியும் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளன.",
+    "Checking...":
+        "சரிபார்க்கிறது..."
 };

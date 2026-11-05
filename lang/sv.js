@@ -450,5 +450,9 @@ window.STK_TRANSLATIONS.sv = {
     "You might be one of the lucky winners. Stay tuned until the draw on Saturday 7 November at SSK Diwali Thiruvizha.":
         "Du kan bli en av de lyckliga vinnarna. Håll utkik fram till dragningen lördag 7 november på SSK Diwali Thiruvizha.",
     "Close":
-        "Stäng"
+        "Stäng",
+    "Duplicate entries are not allowed. This name and date of birth are already registered.":
+        "Dubbletter är inte tillåtna. Det här namnet och födelsedatumet är redan registrerade.",
+    "Checking...":
+        "Kontrollerar..."
 };

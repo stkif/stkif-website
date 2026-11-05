@@ -15,7 +15,10 @@ const CONFIG = {
         activities: "entry.959228870",    // Checkboxes question ("Interested in")
         consent: "entry.817569883"        // Checkbox, the only choice below
     },
-    consentChoice: "I agree to the above"
+    consentChoice: "I agree to the above",
+
+    // The registration script: tells us if this full name + date of birth is already in the sheet
+    checkUrl: "https://script.google.com/macros/s/AKfycbxZ9wRulGYf0Ew4M918LOB4bJFxR-GscicUEvx3cOzO76UeofEpy1MsDGfI4H0MvawA/exec"
 };
 
 // The same rules the Google Form uses. Google never tells the page when it rejects an answer,
@@ -74,6 +77,65 @@ function showStatus(message, type) {
     statusMessage.className = type || "";
 }
 
+// One registration per person (full name + date of birth).
+const DUPLICATE_MESSAGE = "Duplicate entries are not allowed. This name and date of birth are already registered.";
+const nameInput = document.getElementById("fullname");
+const dobInput = document.getElementById("dob");
+const duplicateMessage = document.getElementById("duplicate-msg");
+const checks = new Map();   // answers already known on this page
+
+function checkKey() {
+    return nameInput.value.trim().replace(/\s+/g, " ").toLowerCase() + "|" + dobInput.value;
+}
+
+// If the check can't be reached, the visitor can still register: the lucky-draw wheel
+// gets its names from the same script, which counts each person once.
+function isDuplicate() {
+    const key = checkKey();
+    if (!checks.has(key)) {
+        const controller = new AbortController();
+        const timer = setTimeout(function () { controller.abort(); }, 10000);
+        const answer = fetch(CONFIG.checkUrl, {
+            method: "POST",   // sent as plain text, so the browser allows it without a pre-check
+            body: JSON.stringify({ name: nameInput.value.trim(), dob: dobInput.value }),
+            signal: controller.signal
+        }).then(function (response) {
+            return response.json();
+        }).then(function (result) {
+            if (result.ok !== true) throw new Error("check failed");
+            return result.duplicate === true;
+        }).catch(function () {
+            checks.delete(key);   // ask again next time
+            return false;
+        }).finally(function () {
+            clearTimeout(timer);
+        });
+        checks.set(key, answer);
+    }
+    return checks.get(key);
+}
+
+function clearDuplicateMessage() {
+    duplicateMessage.hidden = true;
+    if (statusMessage.textContent === tr(DUPLICATE_MESSAGE)) showStatus("");
+}
+
+function showDuplicateMessage() {
+    duplicateMessage.textContent = tr(DUPLICATE_MESSAGE);
+    duplicateMessage.hidden = false;
+}
+
+// Say so as soon as both answers are filled in, without waiting for the rest of the form
+async function checkAsSoonAsFilled() {
+    clearDuplicateMessage();
+    if (!nameInput.value.trim() || !dobInput.value) return;
+    const key = checkKey();
+    const duplicate = await isDuplicate();
+    if (duplicate && key === checkKey()) showDuplicateMessage();
+}
+nameInput.addEventListener("change", checkAsSoonAsFilled);
+dobInput.addEventListener("change", checkAsSoonAsFilled);
+
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -99,6 +161,19 @@ form.addEventListener("submit", async function (event) {
         return;
     }
 
+    submitButton.disabled = true;
+    setButtonLabel("Checking...");
+    showStatus("");
+    const duplicate = await isDuplicate();
+    if (duplicate) {
+        showDuplicateMessage();
+        showStatus(DUPLICATE_MESSAGE, "error");
+        submitButton.disabled = false;
+        setButtonLabel("Join Us");
+        return;
+    }
+
+    const sentKey = checkKey();
     const body = new URLSearchParams();
     body.append(CONFIG.entries.fullname, data.get("fullname").trim());
     body.append(CONFIG.entries.email, email);
@@ -122,9 +197,7 @@ form.addEventListener("submit", async function (event) {
     // The page's consent box is required, so reaching this point means it was ticked
     body.append(CONFIG.entries.consent, CONFIG.consentChoice);
 
-    submitButton.disabled = true;
     setButtonLabel("Sending...");
-    showStatus("");
 
     try {
         // no-cors: Google does not let us read the response, so we can only
@@ -136,6 +209,7 @@ form.addEventListener("submit", async function (event) {
             body: body.toString()
         });
 
+        checks.set(sentKey, Promise.resolve(true));   // the sheet can take a moment to show it
         form.reset();
         showStatus("Thank you! Your details have been sent.", "success");
         showSuccessPopup();

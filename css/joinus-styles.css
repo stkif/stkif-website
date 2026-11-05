@@ -499,3 +499,14 @@ a.draw-cta:hover {
         width: 56px;
     }
 }
+
+/* "Already registered" message under the date of birth */
+#duplicate-msg {
+    margin: 8px 0 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #fdecea;
+    border: 1px solid #c62828;
+    color: #8e1c1c;
+    font-weight: 600;
+}

@@ -1,18 +1,11 @@
-# STK IF DEMO WEBSITE
+# STK IF WEBSITE
 
 ## DESCRIPTION
-This is a demo website for Stockholm Tamil Kultur IF aka STK IF. STK IF is a Tamil cultural and sports club taking shape in Stockholm, bringing together culture, sport and community for every generation.
-
-## AUTHORS
-
-Team RAAT: 
-Adam Aref, Anette Essel, Taiane Farias & Rubiya Jaffer @ Hyper Island
-
-Thank you to STK IF for their feedback and contributions!
+This is the official website of Stockholm Tamil Kultur IF aka STK IF, live at https://www.stkif.se. STK IF is a Tamil cultural and sports club taking shape in Stockholm, bringing together culture, sport and community for every generation.
 
 ## PROJECT STATUS
 
-This is the demo version of the website and doesn’t include any JavaScript features that are required for some features such as forms.
+The website is live. The Join Us form sends registrations to the STK membership form, and repeat registrations with the same full name and date of birth are blocked.
 
 ## USAGE
 
@@ -92,3 +85,8 @@ node tools/bump-version.js 20261027-1
 ```
 
 Use today's date and a running number. This makes every visitor's browser fetch the new files instead of mixing new pages with old styles.
+
+
+## CREDITS
+
+Original demo website by Team RAAT (Adam Aref, Anette Essel, Taiane Farias & Rubiya Jaffer) @ Hyper Island.

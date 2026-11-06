@@ -21,7 +21,7 @@ Work as a senior front-end engineer and UI/UX designer with 15+ years of shippin
 
 Read before changing anything. Key facts (confirm in `README.md`, since they can change):
 
-- Static site, one `.html` per page, served from GitHub Pages at `https://teamraat.github.io/STK-IF/`.
+- Static site, one `.html` per page, served from GitHub Pages at `https://www.stkif.se/`.
 - Audience: Tamil families in Stockholm, mostly on phones, all ages. Three languages: English, Svenska, தமிழ்.
 - **Brand:** the STK IF crest (gold, black, stone grey, the Nilgiri tahr mascot). Keep it.
 - **Fonts:** Montserrat (Latin) and Noto Sans Tamil, both self-hosted in `fonts/`. Don't add web fonts.

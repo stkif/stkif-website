@@ -9,4 +9,12 @@
 // While the list is empty, the About page only shows the "Become a sponsor" invitation.
 
 window.STK_SPONSORS = [
+    { name: "Frauangens Bilskola", logo: "frauangens-bilskola.jpg" },
+    { name: "Lyca Mobile", logo: "lyca-mobile.jpg" },
+    { name: "Millys Indian Super Market", logo: "millys-indian-super-market.jpg" },
+    { name: "Nila Groceries AB", logo: "nila-groceries-ab.jpg" },
+    { name: "Srilankan Livs", logo: "srilankan-livs.jpg" },
+    { name: "T2C Indian Restaurant", logo: "t2c-indian-restaurant.jpg" },
+    { name: "Thailammai Indisk Mat", logo: "thailammai-indisk-mat.jpg" },
+    { name: "V Speed", logo: "v-speed.jpg" },
 ];

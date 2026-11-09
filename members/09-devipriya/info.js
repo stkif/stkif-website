@@ -1,11 +1,12 @@
-// Member details for the Members page. Add a photo called photo.jpg to this folder to replace the initials.
+// Member details for the Members page. To show a photo instead of the initials: add photo.jpg to this folder
+// and change the photo line below to   photo: "photo.jpg",
 // Delete any line you don't want shown on the website.
 
 addMember({
     name: "Devipriya",
     position: "Board Member",
     group: "Board Members",
-    photo: "photo.jpg",
+    photo: "",                 // no photo yet: the card shows initials
     about: "",
     email: "",
     phone: "",

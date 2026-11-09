@@ -454,5 +454,267 @@ window.STK_TRANSLATIONS.sv = {
     "Duplicate entries are not allowed. This name and date of birth are already registered.":
         "Dubbletter är inte tillåtna. Det här namnet och födelsedatumet är redan registrerade.",
     "Checking...":
-        "Kontrollerar..."
+        "Kontrollerar...",
+    "Sponsors":
+        "Sponsorer",
+    "Pongal Thiruvizha":
+        "Pongal Thiruvizha",
+    "With thanks":
+        "Med varmt tack",
+    "Our sponsors":
+        "Våra sponsorer",
+    "Meet our sponsors":
+        "Möt våra sponsorer",
+    "Hamburger menu button":
+        "Menyknapp",
+    "Stockholm Tamil Kultur och Idrottsförening crest":
+        "Stockholm Tamil Kultur och Idrottsförenings emblem",
+    "Karaoke and Games Day":
+        "Karaoke- och spelkväll",
+    "Past events":
+        "Tidigare evenemang",
+    "SSK'S DIWALI THIRUVIZHA":
+        "SSK:S DIWALI THIRUVIZHA",
+    "Thank you to everyone who celebrated with us! This is where STK IF was introduced to the community.":
+        "Tack till alla som firade med oss! Det var här STK IF presenterades för gemenskapen.",
+    "Sat 7 Nov 2026 · 12:00–17:00":
+        "Lör 7 nov 2026 · 12:00–17:00",
+    "Thank you, sponsors":
+        "Tack, sponsorer",
+    "SSK's Diwali Thiruvizha poster":
+        "Affisch för SSK:s Diwali Thiruvizha",
+    "See all our sponsors →":
+        "Se alla våra sponsorer →",
+    "Nandri! Our events happen because local businesses believe in our community. Thank you for standing with us. Please support them back.":
+        "Nandri! Våra evenemang blir av tack vare lokala företag som tror på vår gemenskap. Tack för att ni står vid vår sida. Stöd dem gärna tillbaka.",
+    "Proud sponsors of":
+        "Stolta sponsorer av",
+    "SSK's Diwali Thiruvizha 2026":
+        "SSK:s Diwali Thiruvizha 2026",
+    "Would your business like to support Tamil culture, sport and community in Stockholm? Your logo on our posters, website and social media, and a big thank-you at our events. We'd love to hear from you.":
+        "Vill ditt företag stödja tamilsk kultur, idrott och gemenskap i Stockholm? Er logga på våra affischer, vår webbplats och i sociala medier, och ett stort tack på våra evenemang. Hör gärna av er!",
+    "Learn more":
+        "Läs mer",
+    "Visit website":
+        "Besök webbplatsen",
+    "Mobile network":
+        "Mobiloperatör",
+    "Indian supermarket":
+        "Indisk livsmedelsbutik",
+    "Groceries":
+        "Livsmedel",
+    "Driving school":
+        "Trafikskola",
+    "Sri Lankan groceries":
+        "Lankesiska livsmedel",
+    "Indian restaurant":
+        "Indisk restaurang",
+    "Indian food, Västerås":
+        "Indisk mat, Västerås",
+    "Breadcrumb":
+        "Brödsmulor",
+    "Proud sponsor of SSK's Diwali Thiruvizha 2026":
+        "Stolt sponsor av SSK:s Diwali Thiruvizha 2026",
+    "Stay close to the people who matter, here in Sweden and back home. Prepaid mobile with no contract, 5G included and international minutes in most packages.":
+        "Håll kontakten med dem som betyder mest, här i Sverige och där hemma. Kontantkort utan bindningstid, 5G ingår och utlandsminuter i de flesta paket.",
+    "See packages and prices":
+        "Se paket och priser",
+    "Why Lyca Mobile?":
+        "Varför Lyca Mobile?",
+    "Tamil Nadu · Sri Lanka":
+        "Tamil Nadu · Sri Lanka",
+    "No contract":
+        "Ingen bindningstid",
+    "Made for families far from home":
+        "För familjer långt hemifrån",
+    "Why families in our community choose Lyca Mobile":
+        "Därför väljer familjer i vår gemenskap Lyca Mobile",
+    "Prepaid with no binding period. Top up when you need to and stop whenever you like.":
+        "Kontantkort utan bindningstid. Ladda när du behöver och sluta när du vill.",
+    "5G included":
+        "5G ingår",
+    "Fast 5G comes with every package, at no extra cost.":
+        "Snabbt 5G ingår i alla paket, utan extra kostnad.",
+    "Call family back home":
+        "Ring familjen där hemma",
+    "Most 30-day packages include international minutes: from 100 up to 1,000 minutes.":
+        "De flesta 30-dagarspaket har utlandsminuter: från 100 upp till 1 000 minuter.",
+    "SIM card or eSIM":
+        "SIM-kort eller eSIM",
+    "Choose a physical SIM card, or get started in minutes with eSIM.":
+        "Välj ett vanligt SIM-kort, eller kom igång på några minuter med eSIM.",
+    "Surf in the EU":
+        "Surfa i EU",
+    "Take your data with you when you travel in the EU.":
+        "Ta med din surf när du reser i EU.",
+    "Top up for family":
+        "Ladda för familjen",
+    "With the Lyca Mobile SE app you can check your balance, buy packages and top up for friends and family.":
+        "Med appen Lyca Mobile SE kan du se ditt saldo, köpa paket och ladda åt vänner och familj.",
+    "Packages at a glance":
+        "Paketen i korthet",
+    "Pick the data you need":
+        "Välj den surf du behöver",
+    "Every 30-day package includes unlimited calls and texts within Sweden.":
+        "Alla 30-dagarspaket har fria samtal och sms inom Sverige.",
+    "per 30 days":
+        "per 30 dagar",
+    "Calls and texts in Sweden":
+        "Samtal och sms i Sverige",
+    "+ 100 international minutes":
+        "+ 100 utlandsminuter",
+    "+ 300 international minutes":
+        "+ 300 utlandsminuter",
+    "+ 500 international minutes":
+        "+ 500 utlandsminuter",
+    "+ 1,000 international minutes":
+        "+ 1 000 utlandsminuter",
+    "Popular":
+        "Populär",
+    "Prices and minutes as listed on lycamobile.se in November 2026. Offers change, so check lycamobile.se for today's packages and which countries the international minutes cover.":
+        "Priser och minuter enligt lycamobile.se i november 2026. Erbjudanden ändras, så se lycamobile.se för dagens paket och vilka länder utlandsminuterna gäller.",
+    "See today's packages on lycamobile.se":
+        "Se dagens paket på lycamobile.se",
+    "Getting started":
+        "Kom igång",
+    "Up and running in three steps":
+        "Igång i tre steg",
+    "Choose a package":
+        "Välj ett paket",
+    "Compare the packages on lycamobile.se and pick the data and minutes that suit you.":
+        "Jämför paketen på lycamobile.se och välj den surf och de minuter som passar dig.",
+    "Get your SIM or eSIM":
+        "Skaffa SIM-kort eller eSIM",
+    "Order a SIM card, or set up an eSIM straight away on a phone that supports it.":
+        "Beställ ett SIM-kort, eller aktivera ett eSIM direkt i en telefon som stöder det.",
+    "Get the app":
+        "Ladda ner appen",
+    "Download the Lyca Mobile SE app to top up, follow your usage and buy packages for family.":
+        "Ladda ner appen Lyca Mobile SE för att ladda, följa din förbrukning och köpa paket åt familjen.",
+    "About Lyca Mobile":
+        "Om Lyca Mobile",
+    "Built to keep families connected":
+        "Skapat för att hålla ihop familjer",
+    "Lyca Mobile was founded in London in 2006 by Allirajah Subaskaran, who was born in Sri Lanka. It is part of the international Lyca Group and today connects millions of customers in more than 20 countries, many of them people who live far from family.":
+        "Lyca Mobile grundades i London 2006 av Allirajah Subaskaran, som är född i Sri Lanka. Företaget ingår i den internationella Lyca Group och kopplar i dag samman miljontals kunder i över 20 länder, många av dem människor som bor långt från sin familj.",
+    "Thank you, Lyca Mobile!":
+        "Tack, Lyca Mobile!",
+    "Thank you for supporting SSK's Diwali Thiruvizha and for helping us bring the Tamil community in Stockholm together.":
+        "Tack för att ni stöttade SSK:s Diwali Thiruvizha och hjälper oss att samla den tamilska gemenskapen i Stockholm.",
+    "Visit lycamobile.se":
+        "Besök lycamobile.se",
+    "All our sponsors":
+        "Alla våra sponsorer",
+    "Lyca Mobile sponsors STK IF. STK IF is not part of Lyca Mobile and does not sell its services.":
+        "Lyca Mobile sponsrar STK IF. STK IF är inte en del av Lyca Mobile och säljer inte deras tjänster.",
+    "Lyca Mobile, our sponsor | Stockholm Tamil Kultur & IF":
+        "Lyca Mobile, vår sponsor | Stockholm Tamil Kultur & IF",
+    "STOCKHOLM TAMIL KULTUR IF":
+        "STOCKHOLM TAMIL KULTUR IF",
+    "Your roots.<br>Your people.<br><em>Your next chapter.</em>":
+        "Dina rötter.<br>Dina människor.<br><em>Ditt nästa kapitel.</em>",
+    "A little closer to home.<br>A whole community to discover.":
+        "Lite närmare hemma.<br>En hel gemenskap att upptäcka.",
+    "Tamil culture, sport and shared moments in Stockholm. Come as you are. There is a place for you here.":
+        "Tamilsk kultur, idrott och gemensamma stunder i Stockholm. Kom som du är. Här finns en plats för dig.",
+    "Find your place <span aria-hidden=\"true\">↗</span>":
+        "Hitta din plats <span aria-hidden=\"true\">↗</span>",
+    "All backgrounds. Every generation. Everyone welcome.":
+        "Alla bakgrunder. Alla generationer. Alla är välkomna.",
+    "ROOTED IN CULTURE":
+        "RÖTTER I KULTUREN",
+    "Made for connection.":
+        "Skapat för gemenskap.",
+    "Vanakkam!":
+        "Vanakkam!",
+    "A little extra reason to join":
+        "Ett litet extra skäl att gå med",
+    "Join STK. You could win.":
+        "Gå med i STK. Du kan vinna.",
+    "Register for the Super Lucky Draw at SSK Diwali Thiruvizha · 7 November 2026.":
+        "Anmäl dig till superlotteriet på SSK Diwali Thiruvizha · 7 november 2026.",
+    "Register for the draw <span aria-hidden=\"true\">↗</span>":
+        "Anmäl dig till dragningen <span aria-hidden=\"true\">↗</span>",
+    "MAKE ROOM FOR WHAT YOU LOVE":
+        "GE PLATS ÅT DET DU ÄLSKAR",
+    "More than a membership.<br><em>A sense of belonging.</em>":
+        "Mer än ett medlemskap.<br><em>En känsla av tillhörighet.</em>",
+    "Rediscover a tradition. Try something new. Meet the people who make Stockholm feel more like home.":
+        "Återupptäck en tradition. Prova något nytt. Träffa människorna som får Stockholm att kännas mer som hemma.",
+    "Culture that connects":
+        "Kultur som förenar",
+    "Music, dance, Tamil language and celebrations to share across generations.":
+        "Musik, dans, tamilska och högtider att dela mellan generationer.",
+    "Play. Move. Make friends.":
+        "Spela. Rör på dig. Få vänner.",
+    "Connect through sport, friendly games and time together.":
+        "Mötas genom idrott, vänskapliga matcher och tid tillsammans.",
+    "A place for the whole family":
+        "En plats för hela familjen",
+    "Youth activities, family days and new friendships at every age.":
+        "Ungdomsaktiviteter, familjedagar och nya vänskaper i alla åldrar.",
+    "GIVE A LITTLE. BE PART OF SOMETHING.":
+        "GE LITE. VAR EN DEL AV NÅGOT.",
+    "Bring your spark.":
+        "Bidra med din gnista.",
+    "Have a skill, an idea or a little time to share? Choose Volunteering in the form. We would love to hear from you.":
+        "Har du en färdighet, en idé eller lite tid att dela med dig av? Välj Volontär i formuläret. Vi hör gärna av dig.",
+    "WHAT HAPPENS NEXT":
+        "VAD HÄNDER SEDAN",
+    "<strong>Tell us a little about yourself.</strong><span>Choose what interests you.</span>":
+        "<strong>Berätta lite om dig själv.</strong><span>Välj det som intresserar dig.</span>",
+    "<strong>We will be in touch.</strong><span>Our team will contact you about the next steps.</span>":
+        "<strong>Vi hör av oss.</strong><span>Vårt team kontaktar dig om nästa steg.</span>",
+    "<strong>Start making connections.</strong><span>Discover your place in the STK community.</span>":
+        "<strong>Börja knyta kontakter.</strong><span>Upptäck din plats i STK-gemenskapen.</span>",
+    "YOUR NEXT CHAPTER STARTS HERE":
+        "DITT NÄSTA KAPITEL BÖRJAR HÄR",
+    "Let’s get to know you.":
+        "Låt oss lära känna dig.",
+    "A few details. A world of connection.":
+        "Några uppgifter. En värld av gemenskap.",
+    "Fields marked <span aria-hidden=\"true\">*</span> are required.":
+        "Fält markerade med <span aria-hidden=\"true\">*</span> är obligatoriska.",
+    "<span>01</span> About you":
+        "<span>01</span> Om dig",
+    "Full name <span aria-hidden=\"true\">*</span>":
+        "Fullständigt namn <span aria-hidden=\"true\">*</span>",
+    "Email address <span aria-hidden=\"true\">*</span>":
+        "E-postadress <span aria-hidden=\"true\">*</span>",
+    "Mobile number <span aria-hidden=\"true\">*</span>":
+        "Mobilnummer <span aria-hidden=\"true\">*</span>",
+    "WhatsApp number <small>Optional · if different</small>":
+        "WhatsApp-nummer <small>Valfritt · om det är ett annat</small>",
+    "Date of birth <span aria-hidden=\"true\">*</span>":
+        "Födelsedatum <span aria-hidden=\"true\">*</span>",
+    "Area in Stockholm <small>Optional</small>":
+        "Område i Stockholm <small>Valfritt</small>",
+    "<span>02</span> What brings you here?":
+        "<span>02</span> Vad lockar dig hit?",
+    "Choose at least one. You can pick more than one.":
+        "Välj minst ett. Du kan välja flera.",
+    "<strong>Sports</strong><small>Play & connect</small>":
+        "<strong>Idrott</strong><small>Spela och mötas</small>",
+    "<strong>Culture</strong><small>Celebrate our roots</small>":
+        "<strong>Kultur</strong><small>Fira våra rötter</small>",
+    "<strong>Family</strong><small>Shared moments</small>":
+        "<strong>Familj</strong><small>Gemensamma stunder</small>",
+    "<strong>Youth</strong><small>Learn & create</small>":
+        "<strong>Unga</strong><small>Lär dig och skapa</small>",
+    "<strong>Volunteering</strong><small>Make a difference</small>":
+        "<strong>Volontär</strong><small>Gör skillnad</small>",
+    "<span>03</span> Your details, with care":
+        "<span>03</span> Dina uppgifter, med omsorg",
+    "One registration per person. Questions? <a href=\"mailto:stockholmtamilkultur@gmail.com\">Get in touch</a>.":
+        "En registrering per person. Frågor? <a href=\"mailto:stockholmtamilkultur@gmail.com\">Kontakta oss</a>.",
+    "Super Lucky Draw":
+        "Superlotteriet",
+    "A community cultural dance performance":
+        "En kulturell dansuppvisning i gemenskapen",
+    "STK's Nilgiri tahr mascot welcomes you":
+        "STK:s maskot, nilgiritahren, hälsar dig välkommen",
+    "Your full name":
+        "Ditt fullständiga namn",
+    "you@example.com":
+        "du@exempel.se"
 };

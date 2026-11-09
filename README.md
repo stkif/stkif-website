@@ -72,6 +72,14 @@ Goat (Nilgiri tahr) pictures appear on every page. To change one:
 
 Each spot can also take a list of pictures (one is picked at random) or `""` to hide it. Full guide, with every spot listed: `mascots/README.md`.
 
+## SPONSORS
+
+`sponsors.html` thanks every sponsor, the About and home pages show their logos, and `lyca-mobile.html` is a page of its own for Lyca Mobile. Everything comes from one list, `sponsors/sponsors-list.js`. See `sponsors/README.md` to add or remove a sponsor or give one their own page.
+
+## EVENTS
+
+When an event has passed, move its card from the list on `events.html` (and the home page) into the "Past events" section on `events.html`, and point the "Next event" box at the top of the home page (and `experience.html`) to the next one. The home page poster popup is set in `js/poster.js`.
+
 ## LEARN TAMIL PAGE
 
 `learn-tamil.html` has tabs for Tamil history, Tamil letters, Thirukkural (with pages) and Aathichoodi, plus a "Kural of the day". The content lives in the `learn/` folder, one file per tab, so you can add verses or whole new tabs (Moothurai, Nalvazhi, proverbs) without touching the page. See `learn/README.md`.

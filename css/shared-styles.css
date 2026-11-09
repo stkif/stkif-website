@@ -113,13 +113,15 @@ header {
             width: auto;
         }
 
-    header h1 {
+    header .site-name {
+        display: block;
+        margin: 0;
         font-size: 1rem;
         font-weight: 700;
         color: #141414;
     }
 
-        header h1 span {
+        header .site-name span {
         font-weight: 400;
         }
 
@@ -231,7 +233,7 @@ header ul {
     display: none !important;
 }
 
-header h1 {
+header .site-name {
     display: none;
 }
 

@@ -151,11 +151,72 @@
 #members-intro h1,
 .mascot-beside h1,
 #membership h1,
-#volunteer-info h1 {
+#volunteer-info h1,
+#membership h2.join-heading,
+#volunteer-info h2.join-heading {
     font-size: var(--r-h2);
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1;
+}
+
+/* Home page section headings: h2 for search engines (one h1 per page), same look as the old h1 */
+h2.section-title {
+    font-size: var(--r-h2);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+    padding: 0;
+    background: linear-gradient(120deg, var(--t-heading) 20%, var(--t-accent-dark) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+}
+
+#index h2.section-title { font-size: var(--r-h2); }
+
+/* Join Us: "Membership" and "Volunteer with us" are h2 now (the page's h1 is "Join Us"), same look as before */
+#membership h2.join-heading,
+#volunteer-info h2.join-heading {
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    background: linear-gradient(120deg, var(--t-heading) 20%, var(--t-accent-dark) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+}   /* beats the older #activities h2 / #events-h2 sizes */
+
+#activities h2.section-title {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+/* ---------- Events page: past events ---------- */
+
+#past-events {
+    padding: 0 5% 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+    .past-events-title {
+        margin: 0 0 24px;
+        text-align: center;
+        font-size: clamp(24px, 3vw, 34px);
+        color: var(--t-heading);
+    }
+
+    /* same card width as the upcoming events above it */
+    #past-events .div-all-event-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    /* a little quieter than the upcoming events */
+    .event-card-container.is-past .event-card-image { filter: saturate(0.8); object-position: 50% 12%; }
+
+@media (max-width: 700px) {
+    #past-events .div-all-event-cards { grid-template-columns: 1fr; }
 }
 
 /* ---------- Event cards ---------- */
@@ -377,6 +438,45 @@ a.sponsor:hover {
     object-fit: contain;
 }
 
+/* Logos sit on their own background colour (set in sponsors/sponsors-list.js), so every tile
+   looks the same size. Only light tiles need a border. */
+.sponsor:not(.sponsor-light) { border-color: transparent; }
+.sponsor.sponsor-light { border-color: var(--t-line); }
+a.sponsor:focus-visible { outline: 3px solid var(--t-gold); outline-offset: 3px; }
+
+.sponsors-all-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-weight: 700;
+    color: var(--t-accent-dark) !important;
+}
+
+/* ---------- Home: thank-you row of sponsor logos ---------- */
+
+#home-sponsors {
+    text-align: center;
+    padding: clamp(40px, 6vw, 72px) 6% 10px;
+}
+
+#home-sponsors .sponsor-kicker {
+    margin: 0 0 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--t-accent-dark);
+}
+
+/* two even rows of four */
+#home-sponsors .sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 160px);
+    justify-content: center;
+    gap: 16px;
+    margin: 22px 0 26px;
+}
+#home-sponsors .sponsor { width: 160px; height: 92px; padding: 10px; }
+
 .sponsor-cta {
     max-width: 620px;
     margin: 0 auto;
@@ -415,8 +515,28 @@ a.sponsor:hover {
     }
 
     .sponsor { width: calc(50% - 9px); }
+    #home-sponsors .sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    #home-sponsors .sponsor { width: 100%; height: 84px; }
 }
 
 @media (max-width: 380px) {
     #hero .mascot-bubble { width: 96px; }
+}
+
+/* ---------- Header: eight menu items on laptop screens ---------- */
+/* A little tighter between 801 and 1560 px, so the full menu still fits on one line
+   (js/site.js switches to the menu button by itself whenever it doesn't). */
+@media (min-width: 801px) and (max-width: 1560px) {
+    header ul.site-menu a { padding: 8px 11px; }
+    header ul.site-menu a.menu-cta { padding: 8px 15px 8px 11px; margin-left: 6px; }
+}
+
+/* Tamil letters are joined shapes: wide letter spacing breaks them apart, so small labels keep normal spacing */
+html[data-lang="ta"] .lyca-kicker,
+html[data-lang="ta"] .lyca-section-kicker,
+html[data-lang="ta"] .lyca-plan-badge,
+html[data-lang="ta"] .sponsor-list-kicker,
+html[data-lang="ta"] #home-sponsors .sponsor-kicker,
+html[data-lang="ta"] .card-badge {
+    letter-spacing: normal;
 }

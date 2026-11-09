@@ -38,6 +38,6 @@ Positions such as President or Treasurer are translated automatically into Swedi
 
 ## Good to know
 
-- If a photo is missing, the card shows the person's initials instead.
+- If a member has no photo yet, set `photo: ""` in their `info.js`: the card shows their initials, and the site doesn't ask for a file that isn't there. When you add `photo.jpg`, change it to `photo: "photo.jpg"`.
 - Only add phone numbers and emails that the person has agreed to share publicly. A shared club email is often a good alternative.
 - If a member doesn't show up, check that the folder name in `members-list.js` exactly matches the folder name.

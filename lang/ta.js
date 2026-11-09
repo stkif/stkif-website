@@ -454,5 +454,267 @@ window.STK_TRANSLATIONS.ta = {
     "Duplicate entries are not allowed. This name and date of birth are already registered.":
         "நகல் பதிவுகளுக்கு அனுமதி இல்லை. இந்தப் பெயரும் பிறந்த தேதியும் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளன.",
     "Checking...":
-        "சரிபார்க்கிறது..."
+        "சரிபார்க்கிறது...",
+    "Sponsors":
+        "ஆதரவாளர்கள்",
+    "Pongal Thiruvizha":
+        "பொங்கல் திருவிழா",
+    "With thanks":
+        "நன்றியுடன்",
+    "Our sponsors":
+        "எங்கள் ஆதரவாளர்கள்",
+    "Meet our sponsors":
+        "எங்கள் ஆதரவாளர்களைச் சந்தியுங்கள்",
+    "Hamburger menu button":
+        "பட்டி பொத்தான்",
+    "Stockholm Tamil Kultur och Idrottsförening crest":
+        "ஸ்டாக்ஹோம் தமிழ் கலை மற்றும் விளையாட்டுக் கழகச் சின்னம்",
+    "Karaoke and Games Day":
+        "கரோக்கி மற்றும் விளையாட்டு நாள்",
+    "Past events":
+        "நடந்து முடிந்த நிகழ்வுகள்",
+    "SSK'S DIWALI THIRUVIZHA":
+        "SSK தீபாவளித் திருவிழா",
+    "Thank you to everyone who celebrated with us! This is where STK IF was introduced to the community.":
+        "எங்களுடன் கொண்டாடிய அனைவருக்கும் நன்றி! இங்குதான் STK IF சமூகத்திற்கு அறிமுகப்படுத்தப்பட்டது.",
+    "Sat 7 Nov 2026 · 12:00–17:00":
+        "சனி, 7 நவம்பர் 2026 · 12:00–17:00",
+    "Thank you, sponsors":
+        "ஆதரவாளர்களுக்கு நன்றி",
+    "SSK's Diwali Thiruvizha poster":
+        "SSK தீபாவளித் திருவிழா சுவரொட்டி",
+    "See all our sponsors →":
+        "எங்கள் அனைத்து ஆதரவாளர்களையும் பாருங்கள் →",
+    "Nandri! Our events happen because local businesses believe in our community. Thank you for standing with us. Please support them back.":
+        "நன்றி! எங்கள் சமூகத்தின் மீது நம்பிக்கை கொண்ட உள்ளூர் வணிகங்களால்தான் எங்கள் நிகழ்வுகள் சாத்தியமாகின்றன. எங்களுடன் நின்றதற்கு நன்றி. நீங்களும் அவர்களை ஆதரியுங்கள்.",
+    "Proud sponsors of":
+        "பெருமைமிகு ஆதரவாளர்கள்",
+    "SSK's Diwali Thiruvizha 2026":
+        "SSK தீபாவளித் திருவிழா 2026",
+    "Would your business like to support Tamil culture, sport and community in Stockholm? Your logo on our posters, website and social media, and a big thank-you at our events. We'd love to hear from you.":
+        "ஸ்டாக்ஹோமில் தமிழ்க் கலை, விளையாட்டு, சமூகத்தை ஆதரிக்க உங்கள் நிறுவனம் விரும்புகிறதா? எங்கள் சுவரொட்டிகள், இணையதளம், சமூக ஊடகங்களில் உங்கள் சின்னம், எங்கள் நிகழ்வுகளில் பெரிய நன்றி. உங்களிடமிருந்து கேட்க ஆவலாக உள்ளோம்.",
+    "Learn more":
+        "மேலும் அறிய",
+    "Visit website":
+        "இணையதளத்தைப் பார்வையிடுங்கள்",
+    "Mobile network":
+        "கைபேசி சேவை",
+    "Indian supermarket":
+        "இந்திய பல்பொருள் அங்காடி",
+    "Groceries":
+        "மளிகைக் கடை",
+    "Driving school":
+        "ஓட்டுநர் பயிற்சிப் பள்ளி",
+    "Sri Lankan groceries":
+        "இலங்கை மளிகைக் கடை",
+    "Indian restaurant":
+        "இந்திய உணவகம்",
+    "Indian food, Västerås":
+        "இந்திய உணவகம், வெஸ்டரோஸ்",
+    "Breadcrumb":
+        "வழிச்சுவடு",
+    "Proud sponsor of SSK's Diwali Thiruvizha 2026":
+        "SSK தீபாவளித் திருவிழா 2026-இன் பெருமைமிகு ஆதரவாளர்",
+    "Stay close to the people who matter, here in Sweden and back home. Prepaid mobile with no contract, 5G included and international minutes in most packages.":
+        "இங்கே சுவீடனிலும் தாயகத்திலும் உங்களுக்கு முக்கியமானவர்களுடன் நெருக்கமாக இருங்கள். ஒப்பந்தம் இல்லாத ப்ரீபெய்ட் சேவை, 5G உட்பட, பெரும்பாலான தொகுப்புகளில் வெளிநாட்டு அழைப்பு நிமிடங்கள்.",
+    "See packages and prices":
+        "தொகுப்புகளையும் விலைகளையும் பாருங்கள்",
+    "Why Lyca Mobile?":
+        "ஏன் Lyca Mobile?",
+    "Tamil Nadu · Sri Lanka":
+        "தமிழ்நாடு · இலங்கை",
+    "No contract":
+        "ஒப்பந்தம் இல்லை",
+    "Made for families far from home":
+        "வீட்டை விட்டுத் தொலைவில் வாழும் குடும்பங்களுக்காக",
+    "Why families in our community choose Lyca Mobile":
+        "எங்கள் சமூகக் குடும்பங்கள் ஏன் Lyca Mobile-ஐத் தேர்வு செய்கின்றன",
+    "Prepaid with no binding period. Top up when you need to and stop whenever you like.":
+        "கட்டாயக் காலம் இல்லாத ப்ரீபெய்ட். தேவைப்படும்போது ரீசார்ஜ் செய்யுங்கள், விரும்பும்போது நிறுத்துங்கள்.",
+    "5G included":
+        "5G உட்பட",
+    "Fast 5G comes with every package, at no extra cost.":
+        "ஒவ்வொரு தொகுப்பிலும் வேகமான 5G, கூடுதல் கட்டணமின்றி.",
+    "Call family back home":
+        "தாயகத்தில் உள்ள குடும்பத்தை அழையுங்கள்",
+    "Most 30-day packages include international minutes: from 100 up to 1,000 minutes.":
+        "பெரும்பாலான 30 நாள் தொகுப்புகளில் வெளிநாட்டு அழைப்பு நிமிடங்கள் உள்ளன: 100 முதல் 1,000 நிமிடங்கள் வரை.",
+    "SIM card or eSIM":
+        "SIM அட்டை அல்லது eSIM",
+    "Choose a physical SIM card, or get started in minutes with eSIM.":
+        "சாதாரண SIM அட்டையைத் தேர்வு செய்யுங்கள், அல்லது eSIM மூலம் சில நிமிடங்களில் தொடங்குங்கள்.",
+    "Surf in the EU":
+        "ஐரோப்பிய ஒன்றியத்தில் இணையம்",
+    "Take your data with you when you travel in the EU.":
+        "ஐரோப்பிய ஒன்றியத்தில் பயணம் செய்யும்போதும் உங்கள் டேட்டாவைப் பயன்படுத்துங்கள்.",
+    "Top up for family":
+        "குடும்பத்திற்கு ரீசார்ஜ்",
+    "With the Lyca Mobile SE app you can check your balance, buy packages and top up for friends and family.":
+        "Lyca Mobile SE செயலி மூலம் உங்கள் இருப்பைப் பார்க்கலாம், தொகுப்புகளை வாங்கலாம், நண்பர்களுக்கும் குடும்பத்தினருக்கும் ரீசார்ஜ் செய்யலாம்.",
+    "Packages at a glance":
+        "தொகுப்புகள் ஒரு பார்வையில்",
+    "Pick the data you need":
+        "உங்களுக்குத் தேவையான டேட்டாவைத் தேர்ந்தெடுங்கள்",
+    "Every 30-day package includes unlimited calls and texts within Sweden.":
+        "ஒவ்வொரு 30 நாள் தொகுப்பிலும் சுவீடனுக்குள் வரம்பற்ற அழைப்புகளும் குறுஞ்செய்திகளும் உண்டு.",
+    "per 30 days":
+        "30 நாட்களுக்கு",
+    "Calls and texts in Sweden":
+        "சுவீடனில் அழைப்புகளும் குறுஞ்செய்திகளும்",
+    "+ 100 international minutes":
+        "+ 100 வெளிநாட்டு நிமிடங்கள்",
+    "+ 300 international minutes":
+        "+ 300 வெளிநாட்டு நிமிடங்கள்",
+    "+ 500 international minutes":
+        "+ 500 வெளிநாட்டு நிமிடங்கள்",
+    "+ 1,000 international minutes":
+        "+ 1,000 வெளிநாட்டு நிமிடங்கள்",
+    "Popular":
+        "பிரபலம்",
+    "Prices and minutes as listed on lycamobile.se in November 2026. Offers change, so check lycamobile.se for today's packages and which countries the international minutes cover.":
+        "விலைகளும் நிமிடங்களும் நவம்பர் 2026-இல் lycamobile.se-இல் உள்ளபடி. சலுகைகள் மாறலாம்; இன்றைய தொகுப்புகளுக்கும் வெளிநாட்டு நிமிடங்கள் எந்த நாடுகளுக்குப் பொருந்தும் என்பதற்கும் lycamobile.se-ஐப் பாருங்கள்.",
+    "See today's packages on lycamobile.se":
+        "இன்றைய தொகுப்புகளை lycamobile.se-இல் பாருங்கள்",
+    "Getting started":
+        "தொடங்குவது எப்படி",
+    "Up and running in three steps":
+        "மூன்று படிகளில் தொடங்குங்கள்",
+    "Choose a package":
+        "ஒரு தொகுப்பைத் தேர்வு செய்யுங்கள்",
+    "Compare the packages on lycamobile.se and pick the data and minutes that suit you.":
+        "lycamobile.se-இல் தொகுப்புகளை ஒப்பிட்டு உங்களுக்கு ஏற்ற டேட்டாவையும் நிமிடங்களையும் தேர்ந்தெடுங்கள்.",
+    "Get your SIM or eSIM":
+        "SIM அல்லது eSIM பெறுங்கள்",
+    "Order a SIM card, or set up an eSIM straight away on a phone that supports it.":
+        "SIM அட்டையை ஆர்டர் செய்யுங்கள், அல்லது ஆதரிக்கும் கைபேசியில் உடனே eSIM அமையுங்கள்.",
+    "Get the app":
+        "செயலியைப் பதிவிறக்குங்கள்",
+    "Download the Lyca Mobile SE app to top up, follow your usage and buy packages for family.":
+        "ரீசார்ஜ் செய்ய, பயன்பாட்டைக் கண்காணிக்க, குடும்பத்திற்குத் தொகுப்புகள் வாங்க Lyca Mobile SE செயலியைப் பதிவிறக்குங்கள்.",
+    "About Lyca Mobile":
+        "Lyca Mobile பற்றி",
+    "Built to keep families connected":
+        "குடும்பங்களை இணைத்து வைக்க உருவானது",
+    "Lyca Mobile was founded in London in 2006 by Allirajah Subaskaran, who was born in Sri Lanka. It is part of the international Lyca Group and today connects millions of customers in more than 20 countries, many of them people who live far from family.":
+        "Lyca Mobile 2006-இல் லண்டனில் இலங்கையில் பிறந்த அல்லிராஜா சுபாஸ்கரனால் தொடங்கப்பட்டது. இது சர்வதேச Lyca Group-இன் ஒரு பகுதி; இன்று 20-க்கும் மேற்பட்ட நாடுகளில் லட்சக்கணக்கான வாடிக்கையாளர்களை இணைக்கிறது, அவர்களில் பலர் குடும்பத்தை விட்டுத் தொலைவில் வாழ்பவர்கள்.",
+    "Thank you, Lyca Mobile!":
+        "நன்றி, Lyca Mobile!",
+    "Thank you for supporting SSK's Diwali Thiruvizha and for helping us bring the Tamil community in Stockholm together.":
+        "SSK தீபாவளித் திருவிழாவை ஆதரித்ததற்கும், ஸ்டாக்ஹோம் தமிழ்ச் சமூகத்தை ஒன்றிணைக்க உதவுவதற்கும் நன்றி.",
+    "Visit lycamobile.se":
+        "lycamobile.se-ஐப் பார்வையிடுங்கள்",
+    "All our sponsors":
+        "எங்கள் அனைத்து ஆதரவாளர்கள்",
+    "Lyca Mobile sponsors STK IF. STK IF is not part of Lyca Mobile and does not sell its services.":
+        "Lyca Mobile, STK IF-இன் ஆதரவாளர். STK IF, Lyca Mobile-இன் ஒரு பகுதி அல்ல; அதன் சேவைகளை விற்பனை செய்வதும் இல்லை.",
+    "Lyca Mobile, our sponsor | Stockholm Tamil Kultur & IF":
+        "Lyca Mobile, எங்கள் ஆதரவாளர் | Stockholm Tamil Kultur & IF",
+    "STOCKHOLM TAMIL KULTUR IF":
+        "ஸ்டாக்ஹோம் தமிழ் கலை மற்றும் விளையாட்டுக் கழகம்",
+    "Your roots.<br>Your people.<br><em>Your next chapter.</em>":
+        "உங்கள் வேர்கள்.<br>உங்கள் மக்கள்.<br><em>உங்கள் அடுத்த அத்தியாயம்.</em>",
+    "A little closer to home.<br>A whole community to discover.":
+        "வீட்டுக்கு இன்னும் கொஞ்சம் அருகில்.<br>கண்டறிய ஒரு முழுச் சமூகம்.",
+    "Tamil culture, sport and shared moments in Stockholm. Come as you are. There is a place for you here.":
+        "ஸ்டாக்ஹோமில் தமிழ்க் கலை, விளையாட்டு, பகிர்ந்த தருணங்கள். நீங்கள் நீங்களாகவே வாருங்கள். இங்கே உங்களுக்கு ஓர் இடம் உண்டு.",
+    "Find your place <span aria-hidden=\"true\">↗</span>":
+        "உங்கள் இடத்தைக் கண்டறியுங்கள் <span aria-hidden=\"true\">↗</span>",
+    "All backgrounds. Every generation. Everyone welcome.":
+        "எல்லாப் பின்னணிகளும். எல்லாத் தலைமுறைகளும். அனைவரும் வருக.",
+    "ROOTED IN CULTURE":
+        "கலாச்சாரத்தில் வேரூன்றியது",
+    "Made for connection.":
+        "இணைப்பிற்காக உருவானது.",
+    "Vanakkam!":
+        "வணக்கம்!",
+    "A little extra reason to join":
+        "இணைய ஒரு சிறு கூடுதல் காரணம்",
+    "Join STK. You could win.":
+        "STK-இல் இணையுங்கள். நீங்கள் வெல்லலாம்.",
+    "Register for the Super Lucky Draw at SSK Diwali Thiruvizha · 7 November 2026.":
+        "SSK தீபாவளித் திருவிழாவில் சூப்பர் அதிர்ஷ்டக் குலுக்கலுக்குப் பதிவு செய்யுங்கள் · 7 நவம்பர் 2026.",
+    "Register for the draw <span aria-hidden=\"true\">↗</span>":
+        "குலுக்கலுக்குப் பதிவு செய்யுங்கள் <span aria-hidden=\"true\">↗</span>",
+    "MAKE ROOM FOR WHAT YOU LOVE":
+        "நீங்கள் விரும்புவதற்கு இடம் கொடுங்கள்",
+    "More than a membership.<br><em>A sense of belonging.</em>":
+        "உறுப்பினர் என்பதற்கும் மேலாக.<br><em>சொந்தம் என்ற உணர்வு.</em>",
+    "Rediscover a tradition. Try something new. Meet the people who make Stockholm feel more like home.":
+        "ஒரு பாரம்பரியத்தை மீண்டும் கண்டறியுங்கள். புதியதை முயலுங்கள். ஸ்டாக்ஹோமை வீடு போல் உணரச் செய்யும் மக்களைச் சந்தியுங்கள்.",
+    "Culture that connects":
+        "இணைக்கும் கலாச்சாரம்",
+    "Music, dance, Tamil language and celebrations to share across generations.":
+        "தலைமுறைகளுக்கிடையே பகிர்ந்துகொள்ள இசை, நடனம், தமிழ் மொழி, கொண்டாட்டங்கள்.",
+    "Play. Move. Make friends.":
+        "விளையாடுங்கள். இயங்குங்கள். நண்பர்களைப் பெறுங்கள்.",
+    "Connect through sport, friendly games and time together.":
+        "விளையாட்டு, நட்புப் போட்டிகள், ஒன்றாகச் செலவிடும் நேரம் வழியாக இணையுங்கள்.",
+    "A place for the whole family":
+        "முழுக் குடும்பத்திற்குமான இடம்",
+    "Youth activities, family days and new friendships at every age.":
+        "இளைஞர் செயல்பாடுகள், குடும்ப நாட்கள், எல்லா வயதிலும் புதிய நட்புகள்.",
+    "GIVE A LITTLE. BE PART OF SOMETHING.":
+        "கொஞ்சம் கொடுங்கள். ஒன்றின் பகுதியாகுங்கள்.",
+    "Bring your spark.":
+        "உங்கள் ஆர்வத்தைக் கொண்டு வாருங்கள்.",
+    "Have a skill, an idea or a little time to share? Choose Volunteering in the form. We would love to hear from you.":
+        "பகிர ஒரு திறமை, ஒரு யோசனை அல்லது சிறிது நேரம் உள்ளதா? படிவத்தில் தன்னார்வத் தொண்டைத் தேர்வு செய்யுங்கள். உங்களிடமிருந்து கேட்க ஆவலாக உள்ளோம்.",
+    "WHAT HAPPENS NEXT":
+        "அடுத்து என்ன நடக்கும்",
+    "<strong>Tell us a little about yourself.</strong><span>Choose what interests you.</span>":
+        "<strong>உங்களைப் பற்றிக் கொஞ்சம் சொல்லுங்கள்.</strong><span>உங்களுக்கு விருப்பமானதைத் தேர்வு செய்யுங்கள்.</span>",
+    "<strong>We will be in touch.</strong><span>Our team will contact you about the next steps.</span>":
+        "<strong>நாங்கள் தொடர்பு கொள்வோம்.</strong><span>அடுத்த படிகள் பற்றி எங்கள் குழு உங்களைத் தொடர்பு கொள்ளும்.</span>",
+    "<strong>Start making connections.</strong><span>Discover your place in the STK community.</span>":
+        "<strong>இணைப்புகளை உருவாக்கத் தொடங்குங்கள்.</strong><span>STK சமூகத்தில் உங்கள் இடத்தைக் கண்டறியுங்கள்.</span>",
+    "YOUR NEXT CHAPTER STARTS HERE":
+        "உங்கள் அடுத்த அத்தியாயம் இங்கே தொடங்குகிறது",
+    "Let’s get to know you.":
+        "உங்களைத் தெரிந்துகொள்வோம்.",
+    "A few details. A world of connection.":
+        "சில விவரங்கள். இணைப்பின் ஓர் உலகம்.",
+    "Fields marked <span aria-hidden=\"true\">*</span> are required.":
+        "<span aria-hidden=\"true\">*</span> குறியிட்ட புலங்கள் கட்டாயம்.",
+    "<span>01</span> About you":
+        "<span>01</span> உங்களைப் பற்றி",
+    "Full name <span aria-hidden=\"true\">*</span>":
+        "முழுப் பெயர் <span aria-hidden=\"true\">*</span>",
+    "Email address <span aria-hidden=\"true\">*</span>":
+        "மின்னஞ்சல் முகவரி <span aria-hidden=\"true\">*</span>",
+    "Mobile number <span aria-hidden=\"true\">*</span>":
+        "கைபேசி எண் <span aria-hidden=\"true\">*</span>",
+    "WhatsApp number <small>Optional · if different</small>":
+        "WhatsApp எண் <small>விருப்பம் · வேறாக இருந்தால்</small>",
+    "Date of birth <span aria-hidden=\"true\">*</span>":
+        "பிறந்த தேதி <span aria-hidden=\"true\">*</span>",
+    "Area in Stockholm <small>Optional</small>":
+        "ஸ்டாக்ஹோமில் பகுதி <small>விருப்பம்</small>",
+    "<span>02</span> What brings you here?":
+        "<span>02</span> உங்களை இங்கே அழைத்து வந்தது எது?",
+    "Choose at least one. You can pick more than one.":
+        "குறைந்தது ஒன்றைத் தேர்வு செய்யுங்கள். ஒன்றுக்கு மேற்பட்டவற்றையும் தேர்வு செய்யலாம்.",
+    "<strong>Sports</strong><small>Play & connect</small>":
+        "<strong>விளையாட்டு</strong><small>விளையாடி இணையுங்கள்</small>",
+    "<strong>Culture</strong><small>Celebrate our roots</small>":
+        "<strong>கலை & பண்பாடு</strong><small>நம் வேர்களைக் கொண்டாடுங்கள்</small>",
+    "<strong>Family</strong><small>Shared moments</small>":
+        "<strong>குடும்பம்</strong><small>பகிர்ந்த தருணங்கள்</small>",
+    "<strong>Youth</strong><small>Learn & create</small>":
+        "<strong>இளைஞர்</strong><small>கற்று உருவாக்குங்கள்</small>",
+    "<strong>Volunteering</strong><small>Make a difference</small>":
+        "<strong>தன்னார்வத் தொண்டு</strong><small>மாற்றத்தை உருவாக்குங்கள்</small>",
+    "<span>03</span> Your details, with care":
+        "<span>03</span> உங்கள் விவரங்கள், அக்கறையுடன்",
+    "One registration per person. Questions? <a href=\"mailto:stockholmtamilkultur@gmail.com\">Get in touch</a>.":
+        "ஒருவருக்கு ஒரு பதிவு. கேள்விகள் உள்ளதா? <a href=\"mailto:stockholmtamilkultur@gmail.com\">தொடர்பு கொள்ளுங்கள்</a>.",
+    "Super Lucky Draw":
+        "சூப்பர் அதிர்ஷ்டக் குலுக்கல்",
+    "A community cultural dance performance":
+        "சமூகக் கலாச்சார நடன நிகழ்ச்சி",
+    "STK's Nilgiri tahr mascot welcomes you":
+        "STK-இன் வரையாடு சின்னம் உங்களை வரவேற்கிறது",
+    "Your full name":
+        "உங்கள் முழுப் பெயர்",
+    "you@example.com":
+        "you@example.com"
 };

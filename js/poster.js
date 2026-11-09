@@ -7,7 +7,7 @@
 
 const POSTER_FOLDER = "posters/";
 const POSTER_FILES = [
-    "poster-1.jpg"
+    // Empty: no popup until the next event has a poster. Add its file name here, e.g. "poster-2.jpg"
 ];
 
 (function () {

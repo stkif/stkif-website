@@ -7,12 +7,12 @@
 
 const SLIDE_FOLDER = "slideshow/";
 const SLIDE_FILES = [
-    "slide-3.jpg",
-    "slide-1.jpg",
-    "slide-2.jpg",
-    "slide-4.jpg",
-    "slide-5.jpg",
-    "slide-6.jpg"
+    "slide-3.webp",
+    "slide-1.webp",
+    "slide-2.webp",
+    "slide-4.webp",
+    "slide-5.webp",
+    "slide-6.webp"
 ];
 const SLIDE_SECONDS = 5;      // time each picture stays on screen
 const RANDOM_ORDER = true;    // true = shuffled on every visit, false = order of the list

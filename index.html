@@ -31,15 +31,15 @@
         "sameAs": ["https://www.instagram.com/sskvibessweden", "https://www.facebook.com/StockholmSuperKings"]
     }
     </script>
-    <link rel="stylesheet" href="css/shared-styles.css?v=20261105-2">
-    <link rel="stylesheet" href="css/index-styles.css?v=20261105-2">
-    <link rel="stylesheet" href="css/events-styles.css?v=20261105-2">
-    <link rel="stylesheet" href="css/poster-styles.css?v=20261105-2">
+    <link rel="stylesheet" href="css/shared-styles.css?v=20261110-1">
+    <link rel="stylesheet" href="css/index-styles.css?v=20261110-1">
+    <link rel="stylesheet" href="css/events-styles.css?v=20261110-1">
+    <link rel="stylesheet" href="css/poster-styles.css?v=20261110-1">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="css/modern.css?v=20261105-2">
-    <link rel="stylesheet" href="css/theme.css?v=20261105-2" id="theme-css">
-    <link rel="stylesheet" href="css/mascots.css?v=20261105-2">
-    <link rel="stylesheet" href="css/refresh.css?v=20261105-2">
+    <link rel="stylesheet" href="css/modern.css?v=20261110-1">
+    <link rel="stylesheet" href="css/theme.css?v=20261110-1" id="theme-css">
+    <link rel="stylesheet" href="css/mascots.css?v=20261110-1">
+    <link rel="stylesheet" href="css/refresh.css?v=20261110-1">
 </head>
 <body>
 
@@ -52,7 +52,7 @@
         <div id="logo">
             <a class="logo-link" href="index.html" aria-label="STK IF home page">
                 <img src="images/logo.webp" alt="Stockholm Tamil Kultur IF Logo">
-                <h1>STK IF</h1>
+                <span class="site-name">STK IF</span>
             </a>
             <img id="hamburguer-buttom"src="images/hamburg.button.svg" alt="Hamburger menu button">
 
@@ -69,6 +69,8 @@
             <li><a href="learn-tamil.html">Learn Tamil</a></li>
             <li>|</li>
             <li><a href="members.html">Members</a></li>
+            <li>|</li>
+            <li><a href="sponsors.html">Sponsors</a></li>
             <li>|</li>
             <li><a href="joinus.html">Join Us</a></li>
         </ul>
@@ -89,11 +91,11 @@
             </div>
 
             <a class="hero-next-event" href="events.html">
-                <img src="posters/poster-1.jpg" alt="">
+                <img src="images/culture.avif" alt="">
                 <div class="hero-next-text">
                     <div class="hero-next-label">Next event</div>
-                    <div class="hero-next-title">SSK IF Diwali</div>
-                    <div class="hero-next-date">Nov 7. 11:00-16:00</div>
+                    <div class="hero-next-title">Pongal Thiruvizha</div>
+                    <div class="hero-next-date">End of January 2027</div>
                 </div>
             </a>
         </div>
@@ -127,7 +129,7 @@
     <section id="activities">
 
         <span class="activities-mascot" data-mascot="home-activities"></span>
-        <h1>A place for every part of you</h1>
+        <h2 class="section-title">A place for every part of you</h2>
 
         <div class="activity-card-container">
             <div class="activity-card">
@@ -165,7 +167,7 @@
     <!-- Events -->
 
     <section id="events-header">
-        <h1 id="events-h2">Events</h1>
+        <h2 id="events-h2" class="section-title">Events</h2>
     </section>
 
         <!-- Events Cards Grid -->
@@ -173,27 +175,6 @@
             <div class="div-all-event-cards">
 
                 <!-- Card 1 -->
-                <div class="event-card-container">
-                    <span class="card-date" data-no-translate><b>7</b>NOV</span>
-                    <img class="event-card-image event-card-poster" src="posters/poster-1.jpg" alt="SSK IF Diwali">
-                    <div class="card-txt-container">
-                        <h2 class="card-title">SSK IF DIWALI</h2>
-                        <p class="card-txt">An SSK IF celebration where STK IF will be introduced to the community.</p>
-                    </div>
-                    <div class="card-time-hour-container">
-                        <div class="card-svg-container">
-                            <img class="card-calendar-svg" src="images/fi-rr-calendar.svg" alt="Calendar icon">
-                            <p class="card-hour">Nov 7. 11:00-16:00</p>
-                        </div>
-                        <div class="card-svg-container">
-                            <img class="card-place-svg" src="images/fi-rr-marker.svg" alt="Location icon">
-                            <p class="card-place">Fittjaskolan Aula</p>
-                        </div>
-                    </div>
-                    <a class="card-button" href="joinus.html">Register here</a>
-                </div>
-
-                <!-- Card 2 -->
                 <div class="event-card-container">
                     <span class="card-date" data-no-translate><b>JAN</b>2027</span>
                     <img class="event-card-image" src="images/culture.avif" alt="Pongal Thiruvizha">
@@ -214,10 +195,10 @@
                     <a class="card-button" href="joinus.html">Register here</a>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 2 -->
                 <div class="event-card-container">
                     <span class="card-date"><b>Soon</b></span>
-                    <img class="event-card-image" src="images/carrom-3.jpg" alt="Karaoke and Games Day">
+                    <img class="event-card-image" src="images/carrom-3.webp" alt="Karaoke and Games Day">
                     <div class="card-txt-container">
                         <h2 class="card-title">KARAOKE &amp; GAMES DAY</h2>
                         <p class="card-txt">Sing your favourite songs and play carrom and other games. Fun for all ages.</p>
@@ -237,6 +218,14 @@
 
             </div>
         </section>
+
+    <!-- Sponsors: logos come from sponsors/sponsors-list.js (see sponsors/README.md) -->
+    <section id="home-sponsors" aria-labelledby="home-sponsors-title">
+        <p class="sponsor-kicker">With thanks</p>
+        <h2 id="home-sponsors-title" class="section-title">Our sponsors</h2>
+        <div class="sponsor-grid" id="home-sponsor-grid"></div>
+        <a class="button button-secondary" href="sponsors.html">Meet our sponsors</a>
+    </section>
 </main>
 
     <footer id="footer-eventpage">
@@ -265,12 +254,14 @@
 
     </footer>
 
-    <script src="js/slideshow.js?v=20261105-2"></script>
-    <script src="js/hero-intro.js?v=20261105-2"></script>
-    <script src="js/poster.js?v=20261105-2"></script>
-    <script src="lang/languages.js?v=20261105-2"></script>
-    <script src="js/i18n.js?v=20261105-2"></script>
-    <script src="mascots/mascot-list.js?v=20261105-2"></script>
-    <script src="js/site.js?v=20261105-2"></script>
+    <script src="js/slideshow.js?v=20261110-1"></script>
+    <script src="js/hero-intro.js?v=20261110-1"></script>
+    <script src="js/poster.js?v=20261110-1"></script>
+    <script src="lang/languages.js?v=20261110-1"></script>
+    <script src="js/i18n.js?v=20261110-1"></script>
+    <script src="mascots/mascot-list.js?v=20261110-1"></script>
+    <script src="sponsors/sponsors-list.js?v=20261110-1"></script>
+    <script src="js/sponsors.js?v=20261110-1"></script>
+    <script src="js/site.js?v=20261110-1"></script>
 </body>
 </html>

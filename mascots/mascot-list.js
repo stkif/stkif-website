@@ -29,6 +29,7 @@ window.STK_MASCOTS = {
     "gallery-heading":  "mascots/my-goats/tahr-wow.webp",         // gallery page, above the heading
     "learn-heading":    "mascots/my-goats/tahr-thumbs-up.webp",   // learn tamil page, above the heading
     "members-heading":  "mascots/my-goats/tahr-wink.webp",        // members page, above the heading
+    "sponsors-heading": "mascots/my-goats/tahr-celebrate.webp",   // sponsors page, above the heading
     "joinus-heading":   "mascots/my-goats/tahr-celebrate.webp",   // join us page, next to the heading
     "back-to-top":      "mascots/my-goats/tahr-icon.webp",        // round button that appears when you scroll down
     "footer-ridge":     "mascots/my-goats/footer-sunrise.webp",   // big picture above the footer on every page (drawn hills: "mountain-ridge")

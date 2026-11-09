@@ -60,7 +60,7 @@ header {
     box-shadow: 0 1px 0 var(--t-line), 0 8px 24px var(--t-shadow-color) !important;
 }
 
-header h1 { color: var(--t-text); }
+header .site-name { color: var(--t-text); }
 ul.site-menu a { color: var(--t-text) !important; }
 
 ul.site-menu a:hover,

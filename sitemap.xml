@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.stkif.se/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://www.stkif.se/events.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://www.stkif.se/about.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://www.stkif.se/gallery.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://www.stkif.se/</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://www.stkif.se/events.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://www.stkif.se/about.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://www.stkif.se/gallery.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://www.stkif.se/learn-tamil.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://www.stkif.se/members.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://www.stkif.se/members.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://www.stkif.se/sponsors.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://www.stkif.se/lyca-mobile.html</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://www.stkif.se/joinus.html</loc><lastmod>2026-10-25</lastmod></url>
 </urlset>

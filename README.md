@@ -80,6 +80,16 @@ Each spot can also take a list of pictures (one is picked at random) or `""` to 
 
 When an event has passed, move its card from the list on `events.html` (and the home page) into the "Past events" section on `events.html`, and point the "Next event" box at the top of the home page (and `experience.html`) to the next one. The home page poster popup is set in `js/poster.js`.
 
+## VISITOR STATISTICS (ANALYTICS)
+
+`js/analytics.js` connects the site to a statistics tool. It does nothing until you write an ID at the top of that file:
+
+- `goatcounter`: free, no cookies, no cookie banner needed. Sign up at goatcounter.com and write your code, e.g. `"stkif"`.
+- `cloudflare`: free Cloudflare Web Analytics, no cookies. Write the token from Cloudflare's "Manual setup" snippet.
+- `googleAnalytics`: Google Analytics 4 (`"G-..."`). It uses cookies, so visitors see a small banner and Analytics only starts after they click "Accept". A "Cookie settings" link in the footer lets them change their mind.
+
+Besides page views it counts clicks through to sponsors' websites (`sponsor_click`), finished Join Us registrations (`join_registration`) and language changes (`language`).
+
 ## LEARN TAMIL PAGE
 
 `learn-tamil.html` has tabs for Tamil history, Tamil letters, Thirukkural (with pages) and Aathichoodi, plus a "Kural of the day". The content lives in the `learn/` folder, one file per tab, so you can add verses or whole new tabs (Moothurai, Nalvazhi, proverbs) without touching the page. See `learn/README.md`.

@@ -540,3 +540,63 @@ html[data-lang="ta"] #home-sponsors .sponsor-kicker,
 html[data-lang="ta"] .card-badge {
     letter-spacing: normal;
 }
+
+/* ---------- Cookie banner (only shown when Google Analytics is switched on in js/analytics.js) ---------- */
+
+#cookie-banner {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1000;
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    border-radius: 18px;
+    background: var(--t-card);
+    color: var(--t-text);
+    border: 1px solid var(--t-line);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+    #cookie-banner .cookie-title { margin: 0 0 6px; font-weight: 800; color: var(--t-heading); }
+    #cookie-banner .cookie-text { margin: 0 0 14px; font-size: 0.92rem; line-height: 1.55; color: var(--t-muted); }
+
+    /* both answers look the same: saying no is as easy as saying yes */
+    .cookie-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .cookie-btn {
+        min-height: 44px;
+        margin: 0;
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 2px solid var(--t-heading);
+        background: transparent;
+        color: var(--t-heading);
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .cookie-btn:hover { background: var(--t-soft); }
+    .cookie-btn:focus-visible { outline: 3px solid var(--t-gold); outline-offset: 2px; }
+
+.cookie-settings-row { width: 100%; margin: 14px 0 0; text-align: center; }
+
+.cookie-settings {
+    margin: 0;
+    padding: 4px 8px;
+    border: 0;
+    background: none;
+    color: var(--t-footer-text, inherit);
+    font: inherit;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+    .cookie-settings:hover { opacity: 1; }
+    .cookie-settings:focus-visible { outline: 3px solid var(--t-gold); outline-offset: 2px; }

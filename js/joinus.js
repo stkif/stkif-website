@@ -42,6 +42,7 @@ const successPopup = document.getElementById("join-success");
 
 function showSuccessPopup() {
     applyDrawCampaign();   // the page may have been open since before the draw ended
+    document.dispatchEvent(new CustomEvent("stk:joined"));   // counted by js/analytics.js
     successPopup.showModal();
 }
 

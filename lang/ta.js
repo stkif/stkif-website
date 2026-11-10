@@ -716,5 +716,15 @@ window.STK_TRANSLATIONS.ta = {
     "Your full name":
         "உங்கள் முழுப் பெயர்",
     "you@example.com":
-        "you@example.com"
+        "you@example.com",
+    "May we count your visit?":
+        "உங்கள் வருகையை நாங்கள் கணக்கிடலாமா?",
+    "We would like to use Google Analytics cookies to see how our website is used, so we can plan better events. No advertising. You can change your mind at any time under \"Cookie settings\" at the bottom of every page.":
+        "எங்கள் இணையதளம் எவ்வாறு பயன்படுத்தப்படுகிறது என்பதை அறிந்து சிறந்த நிகழ்வுகளைத் திட்டமிட Google Analytics குக்கீகளைப் பயன்படுத்த விரும்புகிறோம். விளம்பரம் இல்லை. ஒவ்வொரு பக்கத்தின் கீழும் உள்ள \"குக்கீ அமைப்புகள்\" மூலம் எப்போது வேண்டுமானாலும் உங்கள் முடிவை மாற்றலாம்.",
+    "Decline":
+        "மறு",
+    "Accept":
+        "ஏற்கிறேன்",
+    "Cookie settings":
+        "குக்கீ அமைப்புகள்"
 };

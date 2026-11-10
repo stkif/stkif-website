@@ -716,5 +716,15 @@ window.STK_TRANSLATIONS.sv = {
     "Your full name":
         "Ditt fullständiga namn",
     "you@example.com":
-        "du@exempel.se"
+        "du@exempel.se",
+    "May we count your visit?":
+        "Får vi räkna ditt besök?",
+    "We would like to use Google Analytics cookies to see how our website is used, so we can plan better events. No advertising. You can change your mind at any time under \"Cookie settings\" at the bottom of every page.":
+        "Vi vill använda cookies från Google Analytics för att se hur vår webbplats används, så att vi kan planera bättre evenemang. Ingen reklam. Du kan när som helst ändra dig under \"Cookieinställningar\" längst ner på varje sida.",
+    "Decline":
+        "Avböj",
+    "Accept":
+        "Godkänn",
+    "Cookie settings":
+        "Cookieinställningar"
 };

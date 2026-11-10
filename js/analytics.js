@@ -14,8 +14,9 @@
 //                    require asking first: visitors see a small banner and Analytics only starts
 //                    after they click "Accept". Write your Measurement ID here, e.g. "G-ABC123XYZ".
 //
-// What is counted besides page views: clicks through to a sponsor's website, completed
-// Join Us registrations, and which language visitors choose.
+// What is counted besides page views: see "Things worth counting" further down (sponsor logos
+// seen, clicks to sponsors, sponsorship enquiries, registrations, social clicks, language).
+// Track a campaign (a poster QR code, an Instagram post) by adding ?utm_campaign=name to the link.
 
 var STK_ANALYTICS = {
     goatcounter: "stkif",          // https://stkif.goatcounter.com
@@ -121,22 +122,96 @@ var STK_ANALYTICS = {
     }
 
     // ---------- Things worth counting ----------
+    //
+    // These show up in GoatCounter as their own rows (and as events in Google Analytics):
+    //   sponsor-seen/<sponsor>    the sponsor's logo was on screen (half of it, for at least 1 second),
+    //                             counted once per page view: what sponsors call an "impression"
+    //   sponsor-open/<sponsor>    someone clicked the logo, card or "Learn more" on our site
+    //   sponsor-visit/<sponsor>   someone went on to the sponsor's own website
+    //   sponsor-enquiry           someone clicked "Become a sponsor"
+    //   register-click/<page>     a "Register" / "Join Us" button was clicked
+    //   joined                    a Join Us registration was completed
+    //   social/<network>          a click to our Instagram or Facebook
+    //   language/<code>           a visitor switched language
+    // The "title" of each row says which page it happened on.
+
+    var page = (location.pathname.split("/").pop() || "index.html").replace(/\.html$/, "") || "index";
+    var queue = [];
+
+    function goatReady() { return window.goatcounter && window.goatcounter.count; }
+    function flush() { while (queue.length && goatReady()) window.goatcounter.count(queue.shift()); }
 
     function track(name, label) {
-        if (window.goatcounter && window.goatcounter.count) {
-            window.goatcounter.count({ path: name + "/" + label, title: name, event: true });
+        var path = label ? name + "/" + label : name;
+        if (cfg.goatcounter) {
+            queue.push({ path: path, title: page, event: true });
+            flush();
         }
-        if (gaReady && window.gtag) window.gtag("event", name, { label: label });
+        if (gaReady && window.gtag) window.gtag("event", name.replace(/-/g, "_"), { label: label || "", page: page });
     }
     window.STKAnalytics = { track: track };
 
-    // a click through to a sponsor's own website (links marked rel="sponsored")
+    // the GoatCounter script loads a moment after the page: send what was counted meanwhile
+    if (cfg.goatcounter) {
+        var waited = 0, timer = setInterval(function () {
+            flush();
+            if ((goatReady() && !queue.length) || (waited += 500) > 15000) clearInterval(timer);
+        }, 500);
+    }
+
+    // --- sponsor logos seen (50 % visible for 1 second, once per sponsor per page view) ---
+    var seen = {};
+    var watch = ("IntersectionObserver" in window) ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+            var el = en.target, slug = el.getAttribute("data-sponsor");
+            if (!slug || seen[slug]) return;
+            if (en.isIntersecting) {
+                el.__seenTimer = setTimeout(function () {
+                    if (seen[slug]) return;
+                    seen[slug] = true;
+                    track("sponsor-seen", slug);
+                }, 1000);
+            } else {
+                clearTimeout(el.__seenTimer);
+            }
+        });
+    }, { threshold: 0.5 }) : null;
+
+    function watchSponsors() {
+        if (!watch) return;
+        Array.prototype.forEach.call(document.querySelectorAll("[data-sponsor-view]"), function (el) {
+            if (!el.__watched) { el.__watched = true; watch.observe(el); }
+        });
+    }
+    document.addEventListener("DOMContentLoaded", watchSponsors);
+    document.addEventListener("sponsors:rendered", watchSponsors);
+    watchSponsors();
+
+    // --- clicks ---
     document.addEventListener("click", function (e) {
-        var a = e.target.closest && e.target.closest('a[rel~="sponsored"]');
-        if (a) track("sponsor_click", a.hostname.replace(/^www\./, "") + location.pathname.replace(/\.html$/, ""));
+        var a = e.target.closest && e.target.closest("a, button");
+        if (!a) return;
+        var href = a.getAttribute("href") || "";
+        var sponsor = a.getAttribute("data-sponsor");
+
+        if (/(^|\s)sponsored(\s|$)/.test(a.getAttribute("rel") || "")) {
+            track("sponsor-visit", sponsor || a.hostname.replace(/^www\./, ""));
+        } else if (sponsor) {
+            track("sponsor-open", sponsor);
+        } else if (/^mailto:/i.test(href) && /sponsor/i.test(href)) {
+            track("sponsor-enquiry");
+        } else if (/instagram\.com/i.test(href)) {
+            track("social", "instagram");
+        } else if (/facebook\.com/i.test(href)) {
+            track("social", "facebook");
+        } else if (/joinus(-alternate)?\.html/.test(href)) {
+            track("register-click", page);
+        }
     });
+
     // a finished Join Us registration (js/joinus.js sends this)
-    document.addEventListener("stk:joined", function () { track("join_registration", location.pathname.replace(/^\//, "") || "joinus"); });
+    document.addEventListener("stk:joined", function () { track("joined", page); });
+
     // the language a visitor switches to
     document.addEventListener("language:changed", function (e) {
         if (e.detail && e.detail.lang) track("language", e.detail.lang);

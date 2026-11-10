@@ -17,8 +17,13 @@
     }
 
     // The logo on its own background colour, so every tile looks the same size
+    // a short name for statistics, e.g. "lyca-mobile" (from the logo file)
+    function slug(s) { return String(s.logo || s.name).replace(/\.[a-z0-9]+$/i, "").toLowerCase().replace(/[^a-z0-9]+/g, "-"); }
+
     function logoTile(s, tag) {
         var tile = el(tag || "div", "sponsor");
+        tile.setAttribute("data-sponsor-view", "");   // counted as "seen" by js/analytics.js
+        tile.setAttribute("data-sponsor", slug(s));
         tile.setAttribute("data-no-translate", "");   // company names stay as written
         if (s.bg) tile.style.background = s.bg;
         // light tiles get a thin border so they don't melt into a white page
@@ -55,6 +60,7 @@
             if (s.page) {
                 var link = el("a", "sponsor-card-logo");
                 link.href = s.page;
+                link.setAttribute("data-sponsor", slug(s));
                 link.setAttribute("aria-label", s.name);
                 link.appendChild(logoTile(s));
                 card.appendChild(link);
@@ -70,6 +76,7 @@
             if (s.page) {
                 var more = el("a", "button button-primary sponsor-more", t("Learn more"));
                 more.href = s.page;
+                more.setAttribute("data-sponsor", slug(s));
                 more.setAttribute("aria-label", t("Learn more") + ": " + s.name);
                 actions.appendChild(more);
             }
@@ -78,6 +85,7 @@
                 web.href = s.url;
                 web.target = "_blank";
                 web.rel = "noopener sponsored";
+                web.setAttribute("data-sponsor", slug(s));
                 web.setAttribute("aria-label", t("Visit website") + ": " + s.name);
                 actions.appendChild(web);
             }
@@ -103,6 +111,10 @@
     if (cards) {
         fillCards(cards);
         // "what they do" and the buttons follow the language switcher
-        document.addEventListener("language:changed", function () { fillCards(cards); });
+        document.addEventListener("language:changed", function () {
+            fillCards(cards);
+            document.dispatchEvent(new CustomEvent("sponsors:rendered"));
+        });
     }
+    document.dispatchEvent(new CustomEvent("sponsors:rendered"));   // js/analytics.js starts watching the logos
 })();

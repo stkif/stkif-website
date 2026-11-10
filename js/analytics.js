@@ -18,7 +18,7 @@
 // Join Us registrations, and which language visitors choose.
 
 var STK_ANALYTICS = {
-    goatcounter: "",
+    goatcounter: "stkif",          // https://stkif.goatcounter.com
     cloudflare: "",
     googleAnalytics: ""
 };
